@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Law Firms",
+  metaTitle: "AI for Law Firms UK | Legal AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK law firms. Document review automation, legal research AI, contract analysis, and compliance-first implementation. Book a free call.",
+  h1: "AI for Law Firms in the UK",
+  lead: "Practical AI solutions for UK law firms. Reduce document review time, automate routine legal tasks, and stay compliant with SRA and GDPR requirements.",
+  useCases: [{"title": "Document Review & Discovery", "desc": "AI-powered document review can process thousands of pages in minutes, identifying relevant clauses, risks, and inconsistencies. Reduces review time by up to 70%."}, {"title": "Legal Research", "desc": "AI tools can search case law, statutes, and regulations in seconds, summarising relevant precedents and highlighting applicable law."}, {"title": "Contract Analysis", "desc": "Automated contract review identifies non-standard clauses, missing provisions, and potential risks across large contract portfolios."}, {"title": "Client Intake & Triage", "desc": "AI chatbots handle initial client enquiries, assess case types, and route matters to the right team member."}, {"title": "Billing & Time Tracking", "desc": "AI-powered time capture automatically logs billable hours from email, calendar, and document activity."}, {"title": "Compliance Monitoring", "desc": "Automated checks for SRA compliance, AML requirements, and conflict of interest screening."}],
+  benefits: [{"title": "SRA-Aware Implementation", "desc": "We understand SRA guidelines and build AI solutions that comply with professional conduct rules. Compliance is designed in, not bolted on."}, {"title": "Client Confidentiality First", "desc": "All AI implementations protect client confidentiality. We use tools with UK data residency and strict access controls."}, {"title": "GDPR Compliant by Design", "desc": "Data protection is built into every solution. We never use client data to train public AI models."}],
+  faqs: [{"question": "Is AI allowed in UK law firms?", "answer": "Yes, but it must be used in compliance with SRA guidelines, GDPR, and client confidentiality requirements. The SRA has published guidance on AI use, emphasising that lawyers remain responsible for the quality of work. We help you implement AI in a way that meets all regulatory requirements."}, {"question": "Will AI replace paralegals and junior lawyers?", "answer": "No. AI is a tool that augments your team's capabilities, not replaces them. It handles repetitive tasks like document review so your team can focus on higher-value work: legal analysis, client relationships, and strategy. Most firms find AI makes their team more productive, not redundant."}, {"question": "How do you protect client confidentiality with AI?", "answer": "We use AI tools that process data within secure, UK-based or EU-based environments. We never use client data to train public models. All implementations include access controls, audit trails, and encryption. We can also recommend on-premise or private cloud solutions for highly sensitive matters."}, {"question": "How much does AI implementation cost for a law firm?", "answer": "Our AI Opportunity Audit starts at 750 and identifies exactly where AI can help your firm. Implementation projects start at 8,000, with full strategy engagements from 5,000. All engagements are fixed-price."}],
+  slug: "ai-for-law-firms",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>AI is changing how law firms work in the UK. From document review to legal research, AI tools can save your firm hours of manual work every week. But implementing AI in a legal practice requires care: compliance with SRA guidelines, GDPR, and client confidentiality must come first.</p>
+<p>Our team helps UK law firms adopt AI safely and effectively. We understand the regulatory landscape and we build solutions that enhance your team's capabilities without compromising on security or compliance. Whether you're a high-street solicitor or a mid-size firm, we find the AI opportunities that make sense for your practice.</p>
+<p>Law firms that adopt AI now will have a significant competitive advantage. Those that wait risk falling behind as competitors deliver faster, more cost-effective services. The key is starting with a clear understanding of where AI helps and where it doesn't.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your law firm? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

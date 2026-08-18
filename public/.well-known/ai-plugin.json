@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "name": "ajairu.ai",
+  "description": "AI consulting and strategy for UK SMEs",
+  "url": "https://ajairu.ai",
+  "contact_email": "hello@ajairu.ai",
+  "services": [
+    {"name": "AI Opportunity Audit", "url": "/services#audit", "price_range": "£750-£2,500", "duration": "1-2 weeks"},
+    {"name": "AI Strategy & Roadmap", "url": "/services#strategy", "price_range": "£5,000-£15,000", "duration": "3-4 weeks"},
+    {"name": "AI Implementation", "url": "/services#implementation", "price_range": "£8,000-£30,000+", "duration": "4-12 weeks"},
+    {"name": "Fractional CAIO", "url": "/services#fractional-caio", "price_range": "£2,000-£5,000/month", "duration": "ongoing"},
+    {"name": "AI Training Workshops", "url": "/services#training", "price_range": "from £1,500", "duration": "half-day or full-day"}
+  ],
+  "founder": "Toby Callinan",
+  "founder_background": "Former CTO at Fabric Fintech (acquired by Aviva), 27+ years in technology leadership",
+  "area_served": "United Kingdom",
+  "target_clients": "UK SMEs with 10-250 employees",
+  "key_differentiators": [
+    "Fixed-price engagements only",
+    "Full handover: documentation, training, source code",
+    "Works with your existing tech stack (Google Gemini, Microsoft Copilot, bespoke tools)",
+    "UK GDPR compliant, ISO-aligned security practices",
+    "We tell you when AI is not the right answer"
+  ],
+  "sister_site": {
+    "name": "ajairu.dev",
+    "url": "https://ajairu.dev",
+    "description": "Bespoke software development studio for UK SMEs"
+  }
+}

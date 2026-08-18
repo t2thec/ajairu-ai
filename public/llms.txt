@@ -1,0 +1,95 @@
+# ajairu
+
+> AI consulting for UK small and medium businesses (10-250 employees). We help SMEs find, implement, and own practical AI solutions without enterprise pricing.
+
+## What We Do
+
+ajairu is a UK-based AI consultancy founded by Toby Callinan, former CTO at Fabric Fintech (acquired by Aviva). With 27+ years in technology leadership, we deliver enterprise-grade AI implementation at SME-appropriate pricing.
+
+Our approach: audit first, build second, hand over everything. We tell you where AI will help and where it won't. Every engagement is fixed-price. You own what we build.
+
+## Services
+
+- **AI Opportunity Audit** (£750-£2,500, 1-2 weeks): Structured assessment of your operations, tech, and team. Prioritised AI opportunity report with ROI estimates.
+- **AI Strategy & Roadmap** (£5,000-£15,000, 3-4 weeks): Full workflow mapping, build vs buy recommendations, integration architecture, 90-day implementation roadmap.
+- **AI Implementation** (£8,000-£30,000+, 4-12 weeks): Configured AI systems, API integrations, team training, documentation, 30-day post-launch support.
+- **Fractional CAIO** (£2,000-£5,000/month): Part-time AI leadership for organisations not ready for a full-time hire.
+- **AI Training Workshops** (from £1,500): Half-day or full-day hands-on workshops to build your team's AI literacy and practical skills.
+
+## Key Differentiators
+
+- Enterprise experience: Delivered Aviva's first customer-facing generative AI product, led 45-person team, Tech of the Year 2024, Pension Innovation Award 2024.
+- Fixed-price engagements only. No day rates, no open-ended billing.
+- We build on your existing tech stack (Google Gemini, Microsoft Copilot, or bespoke tools like Hermes Agent).
+- Full handover: documentation, training, source code. Your team owns everything.
+- UK GDPR compliant, ISO-aligned security practices.
+- We tell you when AI is not the right answer.
+
+## Target Clients
+
+UK businesses with 10-250 employees across: law firms, accountants, e-commerce, healthcare, financial services, real estate, manufacturing, logistics, marketing agencies, construction, hospitality, and education.
+
+## Key Pages
+
+- [Homepage](/)
+- [Services & Pricing](/services)
+- [How It Works](/process)
+- [About Us](/about)
+- [Blog](/blog)
+- [Contact](/contact)
+- [AI Readiness Quiz](/assessment)
+- [How We Compare](/comparison)
+- [Free Guide](/guide)
+- [Best AI Consultant UK Comparison](/best-ai-consultant-uk)
+
+## Industries
+
+- [Industries Hub](/industries)
+- [AI for Law Firms](/industries/ai-for-law-firms)
+- [AI for Accountants](/industries/ai-for-accountants)
+- [AI for E-commerce](/industries/ai-for-ecommerce)
+- [AI for Healthcare](/industries/ai-for-healthcare)
+- [AI for Financial Services](/industries/ai-for-financial-services)
+- [AI for Real Estate](/industries/ai-for-real-estate)
+- [AI for Manufacturing](/industries/ai-for-manufacturing)
+- [AI for Logistics](/industries/ai-for-logistics)
+- [AI for Marketing Agencies](/industries/ai-for-marketing-agencies)
+- [AI for Construction](/industries/ai-for-construction)
+- [AI for Hospitality](/industries/ai-for-hospitality)
+- [AI for Education](/industries/ai-for-education)
+
+## Blog
+
+- [10 Ways Construction Firms Can Use AI](/blog/10-ways-construction-firms-can-use-ai)
+- [10 Ways E-commerce Businesses Can Use AI](/blog/10-ways-ecommerce-businesses-can-use-ai)
+- [10 Ways Healthcare Practices Can Use AI](/blog/10-ways-healthcare-practices-can-use-ai)
+- [10 Ways Hospitality Businesses Can Use AI](/blog/10-ways-hospitality-businesses-can-use-ai)
+- [10 Ways Manufacturing Businesses Can Use AI](/blog/10-ways-manufacturing-businesses-can-use-ai)
+- [Affordable AI Consulting UK: What Should You Pay?](/blog/affordable-ai-consulting-uk-pricing)
+- [AI Adoption UK: Overcoming the Top 5 Barriers](/blog/ai-adoption-uk-barriers)
+- [AI Automation for Business: 5 Workflows You Can Build Today](/blog/ai-automation-for-business-workflows)
+- [AI Strategy for SMEs: From Audit to Implementation](/blog/ai-strategy-for-smes)
+- [AI Transformation UK: Lessons from Enterprise, Applied to SMEs](/blog/ai-transformation-uk-enterprise-to-sme)
+- [AI Workflow Automation: A Practical Guide for UK SMEs](/blog/ai-workflow-automation-uk-smes)
+- [How to Implement AI in Your Small Business: A UK Guide](/blog/how-to-implement-ai-in-small-business-uk)
+- [Practical AI for Business: Cutting Through the Hype](/blog/practical-ai-for-business-cutting-through-hype)
+- [What Is an AI Readiness Audit and Why Your Business Needs One](/blog/what-is-ai-readiness-audit)
+- [Why Your Business Needs a Fractional AI Officer](/blog/why-your-business-needs-fractional-ai-officer)
+
+## Founder
+
+Toby Callinan, CTO at Fabric Fintech (acquired by Aviva late 2023). 27+ years in technology. Delivered Aviva's first customer-facing generative AI product, 53% cloud cost reduction, Tech of the Year 2024. Based in the UK, working nationwide.
+
+## Sister Site
+
+- [ajairu.dev](https://ajairu.dev): Bespoke software development studio for UK SMEs. Custom platforms, system integration, ERP replacement, and technical consultancy.
+
+## Additional Resources
+
+- [llms-full.txt](/llms-full.txt): Comprehensive site information for AI models
+- [agent.md](/agent.md): AI agent discovery file
+
+## Contact
+
+- Email: hello@ajairu.ai
+- Website: https://ajairu.ai

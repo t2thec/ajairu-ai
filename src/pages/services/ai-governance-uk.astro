@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `AI Governance UK | AI Policy & Compliance | ${SITE_NAME}`;
+const description = 'AI governance UK for SMEs. AI policy, compliance, and risk management including GDPR, model risk, bias testing, audit trails, and employee usage policies. From GBP 3,000. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Governance UK', 'item': `${SITE_URL}/services/ai-governance-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Governance UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI governance UK service for SMEs. AI policy, compliance, and risk management covering data protection, GDPR, model risk, bias testing, audit trails, and employee usage policies. Fixed-price from GBP 3,000.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a33,000-\u00a315,000',
+    'priceCurrency': 'GBP',
+    'description': 'Fixed-price AI governance engagement for UK SMEs, 2-4 weeks duration.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does AI governance UK cost?', answer: 'Our AI governance UK engagements start at GBP 3,000 for a foundational governance framework and range up to GBP 15,000 for comprehensive, enterprise-grade governance across multiple departments and regulated workflows. Every engagement is fixed-price. The cost depends on your business size, the number of AI systems in use, your industry regulatory requirements, and the depth of the governance framework needed.' },
+  { question: 'Do we need AI governance if we are only using off-the-shelf AI tools?', answer: 'Yes. Even off-the-shelf tools like ChatGPT, Copilot, and Claude create governance obligations. Your team is sharing business data with third-party AI services, generating AI-assisted content, and making decisions influenced by AI outputs. Without governance policies, you risk data breaches, GDPR violations, IP leakage, and reputational damage. Governance is not just for custom AI systems. It applies to any business use of AI.' },
+  { question: 'How does the EU AI Act affect UK businesses?', answer: 'The EU AI Act applies to any business that places AI systems on the EU market or whose AI outputs are used in the EU, regardless of where the business is based. UK businesses serving EU customers may need to comply. The Act classifies AI systems by risk level, from minimal to unacceptable, with strict requirements for high-risk systems. We help you assess whether your AI use falls within scope and implement the necessary compliance measures.' },
+  { question: 'What is the UK regulatory landscape for AI?', answer: 'The UK has taken a principles-based approach to AI regulation rather than enacting a single AI law like the EU. The UK AI Safety Institute provides guidance, and existing regulators (ICO, FCA, SRA, MHRA) apply sector-specific rules to AI use. The ICO has published guidance on AI and data protection. For UK SMEs, the key obligations are GDPR compliance, data protection by design, transparency about AI use, and human oversight of AI decisions. We help you navigate this landscape.' },
+  { question: 'Can AI governance be integrated with our existing compliance framework?', answer: 'Yes. We design AI governance to integrate with your existing policies and compliance processes, not replace them. If you already have GDPR documentation, data protection policies, or industry-specific compliance frameworks, we build on those foundations. AI governance becomes an extension of your current compliance posture, not a separate, parallel system. This approach is more efficient, more maintainable, and more likely to be followed by your team.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Governance UK: AI Policy, Compliance & Risk Management</h1>
+      <p>AI governance UK for SMEs with 10-250 employees. We build AI policies, compliance frameworks, and risk management processes that keep your business safe and compliant. Data protection, GDPR, model risk, bias testing, audit trails, and employee usage policies. From &pound;3,000.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Governance UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">AI governance UK is not a luxury for large corporations. It is a practical necessity for any business using AI. Without governance, your team could share sensitive data with AI tools, produce biased or inaccurate AI outputs, breach GDPR, or fall foul of emerging regulations. With governance, you use AI confidently, safely, and compliantly.</p>
+        <p style="line-height:1.7;">Most UK SMEs fall into one of two traps with AI governance. Either they ignore it entirely, hoping that nothing goes wrong, until it does. Or they overcomplicate it, creating 50-page policy documents that no one reads and no one follows. The right approach is in the middle: clear, practical governance that your team actually understands and follows, designed for your business size and risk profile.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have built AI governance frameworks for businesses across regulated and unregulated industries. The frameworks that work are the ones that are proportionate, practical, and integrated into how your team actually works. Not documents that sit on a shared drive. Living policies that guide real decisions. Read our guide to <a href="/blog/ai-governance-for-uk-smes">AI governance for UK SMEs</a> for more on this approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT AI GOVERNANCE COVERS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What AI Governance UK Covers</h2>
+      <p class="section-subtitle reveal">Six core areas of governance. Each one practical, proportionate, and designed for SMEs.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Data Protection & GDPR</h3>
+          <p>AI and GDPR intersect in ways that are not always obvious. When your team pastes customer data into ChatGPT, is that a data breach? When an AI tool processes personal data, who is the data controller? We answer these questions and build practical data protection measures into your AI usage. This includes data classification, processing agreements with AI vendors, UK data residency requirements, and DPIA (Data Protection Impact Assessment) templates for AI systems.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="clipboard" /></div>
+          <h3>Model Risk Management</h3>
+          <p>AI models can produce wrong, biased, or nonsensical outputs. We help you assess and manage model risk: understanding the limitations of the AI tools you use, establishing human review checkpoints for critical outputs, and setting quality thresholds for AI-assisted work. You learn where AI can be trusted to operate autonomously and where human oversight is essential. This prevents the most common AI failures before they reach your customers.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>Bias Testing & Fairness</h3>
+          <p>AI tools can perpetuate and amplify biases in ways that are hard to detect. We help you identify potential bias risks in your AI use cases, establish testing protocols, and implement fairness checks. This is particularly important for AI used in hiring, customer service, pricing, or any decision that affects people differently. Bias testing is not just ethical. It is increasingly a regulatory expectation.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="document" /></div>
+          <h3>Audit Trails & Logging</h3>
+          <p>When something goes wrong with an AI system, you need to know what happened. We design audit trails that log AI usage, inputs, outputs, and human review decisions. This creates accountability, supports incident investigation, and provides evidence of compliance for regulators or auditors. Audit trails are also essential for continuous improvement: you cannot fix what you cannot see.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Employee Usage Policies</h3>
+          <p>Your team needs clear, practical guidance on how to use AI at work. What data can they share with AI tools? What tasks can AI assist with? What requires human review? What is prohibited? We write employee AI usage policies in plain English that your team will actually read and follow. Not 50-page legal documents. Clear, concise guidelines that make safe AI usage the easy default.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Regulatory Compliance</h3>
+          <p>We map your AI usage against applicable UK and EU regulations, including GDPR, the EU AI Act (where applicable), the UK AI Safety Institute guidance, and industry-specific rules (FCA, SRA, NHS, ICO). You get a clear compliance status report, identified gaps, and a remediation plan. This keeps you ahead of regulatory developments rather than scrambling to catch up when rules change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS FOR UK SMEs -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Why AI Governance Matters for UK SMEs</h2>
+      <p class="section-subtitle reveal">Governance is not red tape. It is the foundation that lets you use AI with confidence.</p>
+      <div class="feature-grid">
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="shield" /></div>
+          <h3>Prevent Data Breaches</h3>
+          <p>The most common AI incident in UK businesses is not a cyberattack. It is an employee pasting sensitive data into a public AI tool. Governance policies and training prevent this. Without them, it is a matter of when, not if. The reputational and regulatory cost of a data breach far exceeds the cost of governance.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="money" /></div>
+          <h3>Avoid Regulatory Fines</h3>
+          <p>GDPR fines can reach &pound;17.5 million or 4% of global turnover. The EU AI Act includes penalties of up to 7% of global turnover for the most serious violations. While SMEs are unlikely to face maximum penalties, even modest fines and enforcement actions are costly and damaging. Governance is your defence.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="chart" /></div>
+          <h3>Build Customer Trust</h3>
+          <p>Customers are increasingly aware of and concerned about how businesses use AI. Being able to demonstrate responsible AI governance is a competitive advantage. It shows customers, partners, and regulators that you take AI seriously and use it responsibly. Trust is hard to build and easy to lose. Governance protects it.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="compass" /></div>
+          <h3>Enable Confident Adoption</h3>
+          <p>Without governance, leadership teams hesitate to adopt AI because they fear the risks. With governance, they can approve AI initiatives with confidence, knowing that data protection, compliance, and risk management are built in. Governance does not slow AI adoption. It enables it, by removing the fear of the unknown.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGULATORY LANDSCAPE -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">The UK and EU AI Regulatory Landscape</h2>
+      <p class="section-subtitle reveal">What UK SMEs need to know about current and emerging AI regulation.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <h3>UK Approach</h3>
+          <p style="margin-bottom:12px;">The UK has taken a principles-based, sector-specific approach to AI regulation rather than a single overarching AI law. Key elements:</p>
+          <ul style="font-size:0.9rem;line-height:1.8;">
+            <li><strong>UK AI Safety Institute:</strong> Provides guidance on AI safety and conducts model evaluations</li>
+            <li><strong>ICO AI Guidance:</strong> Detailed guidance on AI and data protection, DPIAs, and accountability</li>
+            <li><strong>Sector regulators:</strong> FCA, SRA, MHRA, and others apply existing rules to AI use in their sectors</li>
+            <li><strong>White paper principles:</strong> Safety, transparency, fairness, accountability, contestability</li>
+            <li><strong>No AI-specific law (yet):</strong> But existing laws (GDPR, equality, consumer protection) apply to AI use</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--teal);background:rgba(0,196,167,0.04);">
+          <h3>EU AI Act Impact</h3>
+          <p style="margin-bottom:12px;">The EU AI Act is the world's first comprehensive AI law. It affects UK businesses that:</p>
+          <ul style="font-size:0.9rem;line-height:1.8;">
+            <li><strong>Sell to EU customers:</strong> If your AI outputs are used in the EU, you may be in scope</li>
+            <li><strong>Risk classifications:</strong> AI systems are classed as unacceptable, high, limited, or minimal risk</li>
+            <li><strong>High-risk requirements:</strong> Risk management, data quality, logging, transparency, human oversight</li>
+            <li><strong>Transparency obligations:</strong> Users must know when they are interacting with AI</li>
+            <li><strong>Penalties:</strong> Up to 7% of global turnover for the most serious violations</li>
+          </ul>
+          <p style="font-size:0.9rem;margin-top:12px;">We help you assess whether your AI use falls within scope and implement compliance measures.</p>
+        </div>
+      </div>
+      <p style="margin-top:32px;line-height:1.7;max-width:800px;">The regulatory landscape is evolving rapidly. The practical approach for UK SMEs is not to wait for final rules but to implement proportionate governance now, based on current guidance and emerging regulation. This puts you ahead of the curve and makes future compliance straightforward. If you need ongoing governance oversight, consider our <a href="/services/fractional-caio-uk">fractional CAIO UK</a> service.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">AI Governance UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price. Proportionate to your business size and risk profile. No over-engineered frameworks.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Foundational</div>
+          <h3>AI Governance Essentials</h3>
+          <div class="pricing-price">&pound;3,000-&pound;5,000</div>
+          <div class="pricing-duration">2 weeks</div>
+          <ul class="pricing-features">
+            <li>Employee AI usage policy (plain English)</li>
+            <li>GDPR and data protection assessment</li>
+            <li>Data classification for AI usage</li>
+            <li>Basic model risk guidance</li>
+            <li>Approved and prohibited AI tools list</li>
+            <li>Incident response procedure</li>
+            <li>Team briefing document</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Comprehensive</div>
+          <h3>AI Governance Complete</h3>
+          <div class="pricing-price">&pound;5,000-&pound;10,000</div>
+          <div class="pricing-duration">3 weeks</div>
+          <ul class="pricing-features">
+            <li>All Essentials content, in depth</li>
+            <li>Full GDPR and DPIA framework for AI</li>
+            <li>Model risk management framework</li>
+            <li>Bias testing protocols</li>
+            <li>Audit trail and logging design</li>
+            <li>EU AI Act impact assessment</li>
+            <li>Regulatory compliance mapping</li>
+            <li>Governance committee structure</li>
+            <li>Training materials for your team</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Regulated Industries</div>
+          <h3>AI Governance Enterprise</h3>
+          <div class="pricing-price">&pound;10,000-&pound;15,000</div>
+          <div class="pricing-duration">4 weeks</div>
+          <ul class="pricing-features">
+            <li>All Complete content, in depth</li>
+            <li>Industry-specific compliance (FCA, SRA, NHS)</li>
+            <li>Full model documentation and validation</li>
+            <li>Comprehensive bias and fairness testing</li>
+            <li>Detailed audit trail implementation</li>
+            <li>Board-level governance reporting</li>
+            <li>External audit preparation</li>
+            <li>Change management and rollout support</li>
+            <li>Ongoing governance review schedule</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All prices are fixed and agreed before work starts. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How Your AI Governance UK Engagement Works</h2>
+      <p class="section-subtitle reveal">A structured process that delivers practical governance, not paperwork.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="search" /></div>
+          <h3>1. Assess</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We assess your current AI usage, data flows, regulatory obligations, and risk profile. We identify gaps and priorities.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="compass" /></div>
+          <h3>2. Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We design a proportionate governance framework: policies, procedures, risk controls, and monitoring. Built for your business, not a template.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="document" /></div>
+          <h3>3. Document</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We write the governance documents in plain English. Policies your team will read, procedures they can follow, and audit trails that work.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="graduation" /></div>
+          <h3>4. Implement</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We help you roll out the framework, brief your team, and establish the ongoing governance rhythm. Governance that works in practice, not just on paper.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Is AI Governance UK Right for You?</h2>
+      <p class="section-subtitle reveal">This service is designed for UK businesses that use AI and need to do so safely and compliantly.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="check" /></div>
+          <h3>This Is Right for You If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Your business has 10-250 employees</li>
+            <li>Your team uses AI tools but you have no governance policies</li>
+            <li>You operate in a regulated industry (finance, legal, healthcare)</li>
+            <li>You serve EU customers and need to assess EU AI Act compliance</li>
+            <li>You want to use AI confidently without risking data breaches</li>
+            <li>You need to demonstrate responsible AI use to customers or partners</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>You May Not Need This If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>You are not yet using AI tools. Start with the <a href="/services/ai-readiness-audit-uk">AI readiness audit UK</a>.</li>
+            <li>You need an AI strategy before governance. See our <a href="/services/ai-strategy-uk">AI strategy UK</a> service.</li>
+            <li>You need AI systems built with compliance built in. See our <a href="/services/ai-implementation-uk">AI implementation UK</a> service.</li>
+            <li>You need ongoing governance oversight. Consider our <a href="/services/fractional-caio-uk">fractional CAIO UK</a> service.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Governance UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our AI governance UK service.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Govern Your AI Use with Confidence?"
+    text="Book a free 30-minute discovery call. We will talk through your current AI usage, regulatory obligations, and whether an AI governance engagement is the right next step."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

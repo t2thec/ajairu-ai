@@ -1,0 +1,173 @@
+---
+import { SITE_NAME, SITE_URL, INDUSTRIES } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Sitemap';
+const description = 'Complete index of all pages on ajairu.ai: AI consulting services, industry guides, blog posts, and company information.';
+
+const mainPages = [
+  { url: '/', label: 'Home' },
+  { url: '/services/', label: 'Services' },
+  { url: '/about/', label: 'About Us' },
+  { url: '/process/', label: 'Our Process' },
+  { url: '/assessment/', label: 'Free Assessment' },
+  { url: '/guide/', label: 'Free Guide' },
+  { url: '/comparison/', label: 'Why Choose Us' },
+  { url: '/best-ai-consultant-uk/', label: 'Best AI Consultant UK' },
+  { url: '/contact/', label: 'Contact' },
+  { url: '/blog/', label: 'Blog' },
+];
+
+const services = [
+  { url: '/services/ai-readiness-audit-uk/', label: 'AI Readiness Audit' },
+  { url: '/services/ai-strategy-uk/', label: 'AI Strategy & Roadmap' },
+  { url: '/services/ai-implementation-uk/', label: 'AI Implementation' },
+  { url: '/services/ai-automation-uk/', label: 'AI Automation' },
+  { url: '/services/ai-governance-uk/', label: 'AI Governance' },
+  { url: '/services/ai-training-uk/', label: 'AI Training' },
+  { url: '/services/conversational-ai-uk/', label: 'Conversational AI' },
+  { url: '/services/fractional-caio-uk/', label: 'Fractional CAIO' },
+];
+
+const industryPages = [
+  { url: '/industries/ai-for-construction/', label: 'AI for Construction' },
+  { url: '/industries/ai-for-hospitality/', label: 'AI for Hospitality' },
+  { url: '/industries/ai-for-law-firms/', label: 'AI for Law Firms' },
+  { url: '/industries/ai-for-education/', label: 'AI for Education' },
+  { url: '/industries/ai-for-marketing-agencies/', label: 'AI for Marketing Agencies' },
+  { url: '/industries/ai-for-agriculture-uk/', label: 'AI for Agriculture' },
+  { url: '/industries/ai-for-creative-agencies-uk/', label: 'AI for Creative Agencies' },
+  { url: '/industries/ai-for-ecommerce/', label: 'AI for E-commerce' },
+  { url: '/industries/ai-for-healthcare/', label: 'AI for Healthcare' },
+  { url: '/industries/ai-for-financial-services/', label: 'AI for Financial Services' },
+  { url: '/industries/ai-for-real-estate/', label: 'AI for Real Estate' },
+  { url: '/industries/ai-for-logistics/', label: 'AI for Logistics' },
+  { url: '/industries/ai-for-manufacturing/', label: 'AI for Manufacturing' },
+  { url: '/industries/ai-for-accountants/', label: 'AI for Accountants' },
+  { url: '/industries/ai-for-facilities-management-uk/', label: 'AI for Facilities Management' },
+  { url: '/industries/ai-for-insurance-uk/', label: 'AI for Insurance' },
+  { url: '/industries/ai-for-nonprofits-uk/', label: 'AI for Nonprofits' },
+  { url: '/industries/ai-for-property-management-uk/', label: 'AI for Property Management' },
+  { url: '/industries/ai-for-recruitment-uk/', label: 'AI for Recruitment' },
+  { url: '/industries/ai-for-retail-uk/', label: 'AI for Retail' },
+  { url: '/industries/ai-for-trades-uk/', label: 'AI for Trades' },
+  { url: '/industries/ai-for-transport-uk/', label: 'AI for Transport' },
+];
+
+const blogPosts = [
+  { url: '/blog/what-is-ai-readiness-audit/', label: 'What is an AI Readiness Audit?' },
+  { url: '/blog/why-your-business-needs-fractional-ai-officer/', label: 'Why Your Business Needs a Fractional AI Officer' },
+  { url: '/blog/ai-adoption-uk-barriers/', label: 'AI Adoption Barriers in the UK' },
+  { url: '/blog/ai-strategy-for-smes/', label: 'AI Strategy for SMEs' },
+  { url: '/blog/ai-workflow-automation-uk-smes/', label: 'AI Workflow Automation for UK SMEs' },
+  { url: '/blog/affordable-ai-consulting-uk-pricing/', label: 'Affordable AI Consulting UK Pricing' },
+  { url: '/blog/ai-transformation-uk-enterprise-to-sme/', label: 'AI Transformation: Enterprise to SME' },
+  { url: '/blog/practical-ai-for-business-cutting-through-hype/', label: 'Practical AI for Business: Cutting Through the Hype' },
+  { url: '/blog/how-to-implement-ai-in-small-business-uk/', label: 'How to Implement AI in Small Business UK' },
+  { url: '/blog/ai-automation-for-business-workflows/', label: 'AI Automation for Business Workflows' },
+  { url: '/blog/10-ways-construction-firms-can-use-ai/', label: '10 Ways Construction Firms Can Use AI' },
+  { url: '/blog/10-ways-ecommerce-businesses-can-use-ai/', label: '10 Ways E-commerce Businesses Can Use AI' },
+  { url: '/blog/10-ways-healthcare-practices-can-use-ai/', label: '10 Ways Healthcare Practices Can Use AI' },
+  { url: '/blog/10-ways-hospitality-businesses-can-use-ai/', label: '10 Ways Hospitality Businesses Can Use AI' },
+  { url: '/blog/10-ways-manufacturing-businesses-can-use-ai/', label: '10 Ways Manufacturing Businesses Can Use AI' },
+];
+
+const legalPages = [
+  { url: '/privacy/', label: 'Privacy Policy' },
+  { url: '/terms/', label: 'Terms of Service' },
+];
+---
+
+<BaseLayout title={`${title} | ${SITE_NAME}`} description={description} noindex>
+  <div class="container" style="max-width:900px;margin:0 auto;padding:80px 24px 120px;">
+    <h1 style="font-size:2.5rem;font-weight:800;color:var(--navy);margin-bottom:16px;">Sitemap</h1>
+    <p style="color:var(--grey-500);font-size:1.1rem;margin-bottom:48px;">
+      Complete index of all pages on ajairu.ai.
+    </p>
+
+    <div class="sitemap-grid">
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Main Pages</h2>
+        <ul class="sitemap-list">
+          {mainPages.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Services</h2>
+        <ul class="sitemap-list">
+          {services.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Industries</h2>
+        <ul class="sitemap-list">
+          <li><a href="/industries/">All Industries</a></li>
+          {industryPages.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Blog</h2>
+        <ul class="sitemap-list">
+          {blogPosts.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="sitemap-section">
+        <h2 class="sitemap-heading">Legal</h2>
+        <ul class="sitemap-list">
+          {legalPages.map(page => (
+            <li><a href={page.url}>{page.label}</a></li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <style>
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+    }
+    .sitemap-section {
+      break-inside: avoid;
+    }
+    .sitemap-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--grey-100);
+    }
+    .sitemap-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sitemap-list li {
+      margin-bottom: 10px;
+    }
+    .sitemap-list a {
+      color: var(--grey-800);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color var(--transition);
+    }
+    .sitemap-list a:hover {
+      color: var(--teal);
+      text-decoration: underline;
+    }
+  </style>
+</BaseLayout>

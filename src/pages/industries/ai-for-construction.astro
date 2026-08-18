@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Construction",
+  metaTitle: "AI for Construction UK | Construction AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK construction. Project planning, safety monitoring, cost estimation, and document management automation.",
+  h1: "AI for Construction in the UK",
+  lead: "Practical AI solutions for UK construction businesses. Project planning, safety monitoring, cost estimation, and document management.",
+  useCases: [{"title": "Project Planning & Scheduling", "desc": "AI optimises project schedules, predicts delays, and suggests mitigation strategies based on historical data and real-time conditions."}, {"title": "Cost Estimation", "desc": "AI analyses historical project data, material costs, and labour rates to generate accurate cost estimates in minutes."}, {"title": "Safety Monitoring", "desc": "AI vision systems monitor construction sites for safety hazards, PPE compliance, and dangerous situations in real-time."}, {"title": "Document Management", "desc": "AI organises and searches project documentation, contracts, and compliance records, finding information in seconds."}, {"title": "Quality Control", "desc": "AI inspects construction work against plans and specifications, identifying defects and deviations early."}, {"title": "Material & Resource Optimisation", "desc": "AI predicts material needs, optimises delivery schedules, and reduces waste on site."}],
+  benefits: [{"title": "BIM Integration", "desc": "AI tools that integrate with your BIM software and project management systems. No rip-and-replace of existing tools."}, {"title": "Site Safety First", "desc": "AI safety monitoring helps prevent accidents before they happen. Protect your workers and your business with proactive hazard detection."}, {"title": "Margin Improvement", "desc": "AI helps deliver projects on time and on budget by predicting delays, optimising resources, and reducing waste. Every 1% improvement in project efficiency flows to the bottom line."}],
+  faqs: [{"question": "Can AI really improve construction safety?", "answer": "Yes. AI vision systems monitor construction sites in real-time, detecting safety hazards, PPE non-compliance, and dangerous situations. They alert site managers immediately, preventing accidents before they happen. This is one of the highest-impact AI applications in construction."}, {"question": "How does AI help with cost estimation?", "answer": "AI analyses your historical project data, current material costs, labour rates, and market conditions to generate accurate cost estimates quickly. This reduces the time spent on estimation and improves accuracy, helping you win more projects at the right margin."}, {"question": "Do I need to digitise my construction business first?", "answer": "Some level of digitisation helps, but you don't need to be fully digital to benefit from AI. We assess your current data availability during the audit and recommend AI applications that work with what you have. We can also help you plan the digitisation steps needed for more advanced AI."}, {"question": "How long does AI implementation take for a construction firm?", "answer": "Quick wins like document management and cost estimation can be implemented in 4-6 weeks. Full implementation with safety monitoring and BIM integration typically takes 10-16 weeks. We start with the use cases that deliver the fastest, clearest ROI for your business."}],
+  slug: "ai-for-construction",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Construction is one of the UK's largest industries, and one of the least digitised. AI is changing that. From project planning and cost estimation to safety monitoring and document management, AI helps construction firms deliver projects on time, on budget, and safely.</p>
+<p>Our team helps UK construction businesses implement AI that addresses real industry challenges. We understand the pressure of tight margins, project delays, and safety requirements. We build AI solutions that integrate with your existing project management and BIM systems.</p>
+<p>Construction generates huge amounts of data: project plans, schedules, cost estimates, safety reports, and site documentation. The opportunity is turning that data into insights that prevent problems, reduce costs, and improve project outcomes.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your construction business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

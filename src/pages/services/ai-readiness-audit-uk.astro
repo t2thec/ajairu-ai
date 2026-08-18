@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `AI Readiness Audit UK | AI Maturity Assessment | ${SITE_NAME}`;
+const description = 'AI readiness audit UK for SMEs. Assess your data, infrastructure, team, and processes before investing in AI. Fixed-price from GBP 750. Prioritised roadmap and ROI estimates included. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Readiness Audit UK', 'item': `${SITE_URL}/services/ai-readiness-audit-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Readiness Audit UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI readiness audit UK service for SMEs. Structured assessment of data, infrastructure, team, processes, and strategy with prioritised AI opportunity report, ROI estimates, and implementation roadmap. Fixed-price from GBP 750.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a3750-\u00a32,500',
+    'priceCurrency': 'GBP',
+    'description': 'Fixed-price AI readiness audit for UK SMEs, 1-2 weeks duration.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does an AI readiness audit UK cost?', answer: 'Our AI readiness audit UK engagements start at GBP 750 for a small business and range up to GBP 2,500 for larger SMEs with multiple departments. Every audit is fixed-price, so you know the total cost before we start. The price depends on your business size, the number of departments involved, and the depth of the assessment required.' },
+  { question: 'How long does an AI readiness audit take?', answer: 'Typically 1 to 2 weeks. Week 1 is discovery: interviews with your leadership, a review of your tech stack, and an assessment of your data and processes. Week 2 is analysis and report writing. You receive the complete readiness report and prioritised roadmap at the end, with no obligation to continue to strategy or implementation.' },
+  { question: 'Do we need an AI readiness audit before implementing AI?', answer: 'We strongly recommend it. The audit de-risks everything that follows by identifying where AI will and will not help before you invest in implementation. Skipping the audit is the most common reason AI projects fail: businesses invest in the wrong tools, for the wrong workflows, without the right data or team readiness. The audit costs a fraction of what a failed implementation would cost.' },
+  { question: 'What deliverables do we get from an AI readiness audit UK?', answer: 'You receive a complete AI Readiness Report including: a maturity assessment across data, infrastructure, team, processes, and strategy; prioritised AI opportunities with ROI estimates; a phased implementation roadmap; quick-win recommendations you can act on immediately; an honest assessment of where AI will not help yet; and recommended next steps. You own the report completely.' },
+  { question: 'Can we implement the recommendations ourselves?', answer: 'Yes. The readiness report is designed to be actionable. You own it completely, with full documentation of findings and recommendations. Many clients implement the quick wins themselves and engage us for the more complex opportunities. There is no lock-in to use our strategy or implementation services. The audit is a standalone deliverable.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Readiness Audit UK: Is Your Business Ready for AI?</h1>
+      <p>AI readiness audit UK for SMEs with 10-250 employees. We assess your data, infrastructure, team, processes, and strategy before you invest in AI. Fixed-price from &pound;750. You keep the report whether you work with us or not.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Readiness Audit UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">An AI readiness audit UK is the single most important first step for any business considering AI. Before you spend a penny on tools, integrations, or training, you need to know whether your business is actually ready to use AI effectively. That is what this audit answers.</p>
+        <p style="line-height:1.7;">Most UK SMEs fall into one of two traps. Either they rush into buying AI tools without understanding whether their data, processes, and team are ready, leading to failed projects and wasted budget. Or they delay indefinitely, waiting for a perfect moment that never comes, while competitors pull ahead. An AI readiness audit cuts through both problems by giving you a clear, honest picture of where you stand today and what you need to do next.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have conducted readiness audits for businesses across manufacturing, professional services, retail, healthcare, and more. The pattern is always the same: the businesses that audit first implement faster, spend less, and see results sooner than those that skip this step. Read our guide to <a href="/blog/ai-readiness-for-smes">AI readiness for UK SMEs</a> for a deeper look at why this matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT AN AUDIT COVERS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What an AI Readiness Audit UK Covers</h2>
+      <p class="section-subtitle reveal">Five pillars of readiness, assessed in depth. No box-ticking exercise.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Data Readiness</h3>
+          <p>AI is only as good as the data it works with. We assess the quality, accessibility, structure, and volume of your data. Are your records clean and consistent? Is data stored in systems AI can connect to? Are there gaps that would limit what AI can do? You get a clear picture of what data you have, what is missing, and what needs fixing before AI can add value.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>Infrastructure Readiness</h3>
+          <p>We review your existing tech stack, cloud setup, and integration capabilities. Can your current systems support AI tools? Do you have the APIs and connections needed? Will AI work alongside your CRM, accounting, and project management tools, or will you need new infrastructure first? We tell you honestly what will work and what will not.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Team Readiness</h3>
+          <p>Your people determine whether AI succeeds or fails. We assess your team's current AI literacy, willingness to adopt new tools, and capacity for change. Who is enthusiastic? Who is sceptical? What skills gaps need addressing? The audit identifies where training and change management will be needed before implementation can succeed.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Process Readiness</h3>
+          <p>AI works best on well-defined, repeatable processes. We map your key workflows and assess which are suitable for AI augmentation or automation. Which processes are stable enough for AI? Which are too variable or ad-hoc? Which have clear inputs and outputs? You learn where AI will deliver value and where it will not.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3>Strategy Readiness</h3>
+          <p>AI without strategy is just expensive experimentation. We assess whether your business goals are clear enough to guide AI investment. Do you know what problems you want AI to solve? Is there leadership alignment on AI priorities? Is there budget and appetite for change? The audit flags strategic gaps that need addressing before implementation begins.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Compliance Readiness</h3>
+          <p>We assess your current data protection posture, GDPR compliance, and any industry-specific regulatory requirements (FCA, SRA, NHS, ICO). Are you ready to use AI within UK data protection rules? Do you have the policies and controls in place? Compliance gaps are flagged early so they do not become blockers during implementation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">What You Get from Your AI Readiness Audit UK</h2>
+      <p class="section-subtitle reveal">A practical, actionable report. Not a 200-slide deck. Not vague recommendations. Something you can use.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="document" /></div>
+          <h3>AI Readiness Report</h3>
+          <p>A comprehensive assessment of your business across all five readiness pillars. Each area is scored, explained in plain English, and accompanied by specific recommendations. You see exactly where you are strong, where you have gaps, and what needs to happen before AI can deliver value. No jargon, no hype, no assumed knowledge.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>ROI Estimates</h3>
+          <p>For every AI opportunity we identify, we provide estimated time saved, cost reduction, or revenue impact. You prioritise based on numbers, not gut feel. Quick wins that can be delivered in weeks are flagged separately from longer-term initiatives that require more investment. This is what turns a readiness audit from a theoretical exercise into a business decision tool.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3>Prioritised Roadmap</h3>
+          <p>A phased implementation roadmap that tells you what to do first, what to do next, and what to leave for later. The roadmap accounts for your readiness scores, so you do not attempt initiatives that your data, team, or infrastructure are not yet ready for. Each phase has clear milestones, dependencies, and success criteria.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>Quick-Win Recommendations</h3>
+          <p>Every audit identifies 2-3 quick wins you can act on immediately, without a full strategy engagement or implementation project. These are low-cost, low-risk opportunities that deliver visible value fast. Acting on them builds momentum and team confidence before you tackle larger AI initiatives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY AUDIT BEFORE IMPLEMENTING -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Why Audit Before Implementing AI?</h2>
+      <p class="section-subtitle reveal">The most expensive AI mistake is implementing the wrong thing first.</p>
+      <div class="feature-grid">
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="money" /></div>
+          <h3>Avoid Wasted Investment</h3>
+          <p>Businesses that skip the audit and jump straight to implementation often invest in tools that do not fit their workflows, data, or team. The audit costs a fraction of what a failed implementation would cost. It is the cheapest form of insurance against expensive mistakes.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="target" /></div>
+          <h3>Prioritise with Evidence</h3>
+          <p>Without an audit, AI investment decisions are based on gut feel, vendor pitches, or what competitors are doing. The audit gives you evidence: which opportunities will deliver the most value, which are quickest to implement, and which should wait. You invest where the return is highest.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="users" /></div>
+          <h3>Build Team Buy-In</h3>
+          <p>An audit involves your team in the assessment process. They see the findings, understand the rationale, and feel part of the decision. This builds the buy-in and trust needed for successful adoption. Imposing AI tools on a team that was never consulted is a recipe for resistance.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="shield" /></div>
+          <h3>Identify Compliance Gaps Early</h3>
+          <p>Compliance issues discovered during implementation are expensive to fix. Compliance gaps identified during the audit are cheap to address. We flag GDPR, data residency, and industry-specific regulatory considerations before you commit to any tool or workflow, so compliance is designed in, not bolted on.</p>
+        </div>
+      </div>
+      <p style="margin-top:32px;line-height:1.7;max-width:800px;">If your audit shows you are ready for a full strategy, the findings feed directly into our <a href="/services/ai-strategy-uk">AI strategy UK</a> engagement, saving time and cost. If it shows you are ready for implementation, we can move straight to our <a href="/services/ai-implementation-uk">AI implementation UK</a> service. If it shows you need to fix foundational issues first, you will know exactly what to address and in what order.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">AI Readiness Audit UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price. No open-ended billing. You know the total cost before we start.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Small Business</div>
+          <h3>Readiness Audit Essentials</h3>
+          <div class="pricing-price">&pound;750-&pound;1,200</div>
+          <div class="pricing-duration">1 week</div>
+          <ul class="pricing-features">
+            <li>Up to 2 departments assessed</li>
+            <li>All 5 readiness pillars covered</li>
+            <li>Top 3-5 AI opportunities identified</li>
+            <li>ROI estimates for top opportunities</li>
+            <li>Prioritised roadmap with quick wins</li>
+            <li>Walk-away protection: you keep the report</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Growing SME</div>
+          <h3>Readiness Audit Complete</h3>
+          <div class="pricing-price">&pound;1,200-&pound;1,800</div>
+          <div class="pricing-duration">1-2 weeks</div>
+          <ul class="pricing-features">
+            <li>Up to 4 departments assessed</li>
+            <li>All 5 readiness pillars in depth</li>
+            <li>Top 5-10 AI opportunities with ROI</li>
+            <li>Detailed prioritised roadmap</li>
+            <li>Quick-win recommendations</li>
+            <li>Compliance gap analysis</li>
+            <li>Team readiness and skills assessment</li>
+            <li>Recommended next steps with timeline</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Larger Organisation</div>
+          <h3>Readiness Audit Enterprise-Grade</h3>
+          <div class="pricing-price">&pound;1,800-&pound;2,500</div>
+          <div class="pricing-duration">2 weeks</div>
+          <ul class="pricing-features">
+            <li>All departments assessed</li>
+            <li>Deep-dive on all 5 readiness pillars</li>
+            <li>Full opportunity register (10+ use cases)</li>
+            <li>Comprehensive roadmap with phases</li>
+            <li>Industry-specific compliance deep dive</li>
+            <li>Detailed team capability assessment</li>
+            <li>Board-level summary included</li>
+            <li>Infrastructure and data architecture review</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All prices are fixed and agreed before work starts. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How Your AI Readiness Audit UK Works</h2>
+      <p class="section-subtitle reveal">A structured process that takes you from uncertainty to a clear readiness picture in 1-2 weeks.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chat" /></div>
+          <h3>Day 1-2: Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We interview your leadership and key team members, review your tech stack, and understand your business goals and current AI usage.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="search" /></div>
+          <h3>Day 3-5: Assess</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We assess your data, infrastructure, team, processes, strategy, and compliance readiness against proven AI adoption criteria.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chart" /></div>
+          <h3>Day 6-8: Analyse</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We score each readiness pillar, identify AI opportunities, estimate ROI, and build the prioritised roadmap with quick wins.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="check" /></div>
+          <h3>Day 9-14: Deliver</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">You receive the complete readiness report, roadmap, and recommendations. You own it all, with no obligation to continue.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Is an AI Readiness Audit UK Right for You?</h2>
+      <p class="section-subtitle reveal">This service is designed for UK businesses that are considering AI but want to know if they are ready before investing.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="check" /></div>
+          <h3>This Is Right for You If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Your business has 10-250 employees</li>
+            <li>You know AI matters but are not sure where to start</li>
+            <li>You want to avoid investing in the wrong AI tools</li>
+            <li>You need to make the case for AI investment to your board</li>
+            <li>You want an honest, independent assessment of your readiness</li>
+            <li>You have tried AI tools but they did not deliver results</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>You May Not Need This If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>You already have a clear AI strategy and just need implementation. See our <a href="/services/ai-implementation-uk">AI implementation UK</a> service instead.</li>
+            <li>You want to automate a single specific workflow. See our <a href="/services/ai-automation-uk">AI automation UK</a> service.</li>
+            <li>You need ongoing AI leadership rather than a one-time assessment. Consider our <a href="/services/fractional-caio-uk">Fractional CAIO UK</a> service.</li>
+            <li>You want to train your team on AI tools. See our <a href="/services/ai-training-uk">AI training UK</a> service.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Readiness Audit UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our AI readiness audit UK service.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Find Out If Your Business Is Ready for AI?"
+    text="Book a free 30-minute discovery call. We will talk through your business and whether an AI readiness audit is the right starting point for you."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

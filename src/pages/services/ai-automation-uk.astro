@@ -1,0 +1,283 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `AI Automation UK | Workflow Automation for SMEs | ${SITE_NAME}`;
+const description = 'AI automation UK for SMEs. Fixed-price workflow automation that saves 10-20 hours per week. Connect your tools with AI-powered automations. From GBP 3,000. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Automation UK', 'item': `${SITE_URL}/services/ai-automation-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Automation UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI automation UK service for SMEs. Workflow automation that connects existing tools with AI-powered processes. Save 10-20 hours per week. Fixed-price from GBP 3,000.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a33,000-\u00a315,000',
+    'priceCurrency': 'GBP',
+    'description': 'Fixed-price AI automation engagement for UK SMEs, 2-6 weeks duration.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does AI automation UK cost?', answer: 'AI automation UK engagements start at GBP 3,000 for a single workflow automation and range up to GBP 15,000 for comprehensive multi-workflow automation across departments. Every engagement is fixed-price. The cost depends on the number of workflows being automated, the complexity of the integrations between your tools, and the level of AI decision-making required.' },
+  { question: 'What is the difference between AI automation and traditional automation?', answer: 'Traditional automation follows rigid rules: if this happens, do that. It breaks down when anything varies or requires judgment. AI automation handles variation and context. It can read and categorise emails, draft responses, extract data from documents, and make decisions based on content. This makes it far more powerful for real-world business workflows that are not perfectly predictable.' },
+  { question: 'What tools do you use for AI automation UK?', answer: 'We use platforms like Zapier AI, Make.com, n8n, Power Automate, and custom API integrations. For the AI layer, we use ChatGPT API, Claude API, and industry-specific AI tools. We always start with tools you already use or that are affordable and well-supported. You own all configurations and documentation.' },
+  { question: 'How long does it take to see results from AI automation?', answer: 'Most AI automation UK engagements deliver measurable time savings within the first week of launch. Single-workflow automations are typically live within 2-3 weeks. More complex multi-workflow projects take 4-6 weeks. The 30-day post-launch support period ensures your team is comfortable and the automations are performing as expected.' },
+  { question: 'Can AI automation handle our industry-specific workflows?', answer: 'Yes. We have built AI automations for UK businesses across 12 industries including law, accountancy, healthcare, manufacturing, e-commerce, and construction. The AI tools we use are general-purpose, but the workflows we build are tailored to your specific industry and business processes. Read our guide to AI automation for business workflows for examples.' },
+  { question: 'Is AI automation UK compliant with GDPR?', answer: 'Yes. All AI automation UK engagements include GDPR compliance as standard. We use tools with UK or EU data processing options, implement appropriate data protection measures, and ensure that personal data is handled in accordance with UK GDPR. For regulated industries, we also handle industry-specific compliance (FCA, SRA, NHS) as part of the build.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Automation UK: Workflow Automation That Saves 10-20 Hours Per Week</h1>
+      <p>AI automation UK for SMEs with 10-250 employees. We connect your existing tools with AI-powered automations that eliminate manual steps, reduce errors, and free your team for higher-value work. Fixed-price from &pound;3,000. You own everything.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Automation UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">AI automation UK is one of the most practical, high-impact things a UK SME can do with AI. Unlike speculative AI projects that promise future transformation, workflow automation delivers measurable savings from day one.</p>
+        <p style="line-height:1.7;">When most people hear "AI automation for business," they picture something complex and expensive. The reality is far simpler. Some of the most valuable AI automations are straightforward workflows that connect tools you already use, eliminating manual steps that eat hours every week.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have built AI automations for businesses across manufacturing, professional services, retail, and healthcare. The businesses that start with workflow automation see the fastest, clearest return on investment. Read our <a href="/blog/ai-workflow-automation-uk-smes">practical guide to AI workflow automation for UK SMEs</a> for a deeper dive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE AUTOMATE -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Common AI Automation UK Workflows We Build</h2>
+      <p class="section-subtitle reveal">The most impactful AI automations for UK SMEs. Each one delivers measurable time savings.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="email" /></div>
+          <h3>Customer Enquiry Triage</h3>
+          <p>AI reads incoming emails and messages, categorises them by type (pricing, support, complaint, booking), drafts a response, and routes to the right person. Typical result: 60-80% of enquiries get a first response in seconds, not hours. 10-15 hours saved per week.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="document" /></div>
+          <h3>Invoice & Document Processing</h3>
+          <p>AI extracts data from invoices, receipts, and purchase orders automatically. No more manual data entry. Data flows directly into your accounting system. Typical result: 70% reduction in processing time, fewer errors, faster approval cycles.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3>Meeting Notes & Action Items</h3>
+          <p>AI transcribes meetings, generates summaries, extracts action items with owners and deadlines, and syncs them to your project management tool. Typical result: 3-5 hours saved per person per week, and nothing gets forgotten.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="megaphone" /></div>
+          <h3>Content Drafting Pipeline</h3>
+          <p>AI generates first drafts of blog posts, social media updates, product descriptions, and email newsletters from your brief or data. Your team edits and polishes. Typical result: 50-70% reduction in content creation time.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="search" /></div>
+          <h3>Internal Knowledge Search</h3>
+          <p>AI indexes your company documents, policies, and past work so anyone can ask a question in plain English and get an instant answer. Typical result: 50% reduction in time spent searching for information.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Report Generation</h3>
+          <p>AI pulls data from multiple systems, generates formatted reports, and distributes them on a schedule. No more manual report compilation. Typical result: 5-10 hours saved per week on reporting alone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">AI Automation UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price. No day rates. You know the total cost before we start.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single Workflow</div>
+          <h3>AI Automation Starter</h3>
+          <div class="pricing-price">&pound;3,000-&pound;6,000</div>
+          <div class="pricing-duration">2-3 weeks</div>
+          <ul class="pricing-features">
+            <li>One AI workflow automated end-to-end</li>
+            <li>Integration with 2-3 existing tools</li>
+            <li>Team training on the new workflow</li>
+            <li>Documentation and runbook</li>
+            <li>30-day post-launch support</li>
+            <li>GDPR compliance included</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Multi-Workflow</div>
+          <h3>AI Automation Complete</h3>
+          <div class="pricing-price">&pound;6,000-&pound;12,000</div>
+          <div class="pricing-duration">4-6 weeks</div>
+          <ul class="pricing-features">
+            <li>3-5 AI workflows automated</li>
+            <li>Integration with 5+ existing tools</li>
+            <li>Team training (group + 1:1)</li>
+            <li>Full documentation suite</li>
+            <li>30-day post-launch support</li>
+            <li>Security and compliance setup</li>
+            <li>Performance monitoring</li>
+            <li>Workflow optimisation included</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Department-Wide</div>
+          <h3>AI Automation Enterprise</h3>
+          <div class="pricing-price">&pound;12,000-&pound;15,000</div>
+          <div class="pricing-duration">6-8 weeks</div>
+          <ul class="pricing-features">
+            <li>5+ AI workflows across a department</li>
+            <li>Full tech stack integration</li>
+            <li>Comprehensive training programme</li>
+            <li>Complete documentation</li>
+            <li>30-day post-launch support</li>
+            <li>Full compliance implementation</li>
+            <li>Change management support</li>
+            <li>Ongoing optimisation recommendations</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All prices are fixed and agreed before work starts. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How AI Automation UK Works</h2>
+      <p class="section-subtitle reveal">A structured approach that delivers working automations, not demos.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="search" /></div>
+          <h3>1. Identify</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We identify your most time-consuming manual workflows and assess which ones are best suited for AI automation.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="compass" /></div>
+          <h3>2. Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We design the automation flow, select the right AI tools, and plan the integrations with your existing systems.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="wrench" /></div>
+          <h3>3. Build</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We configure the automation, connect your tools, test thoroughly, and document everything.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="graduation" /></div>
+          <h3>4. Launch</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We train your team, launch the automation, and stay for 30 days to ensure it works and your team is comfortable.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- AI AUTOMATION VS TRADITIONAL -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">AI Automation vs Traditional Automation</h2>
+      <p class="section-subtitle reveal">Why AI automation is more powerful than rule-based automation for real business workflows.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <h3>Traditional Automation</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Follows rigid rules: if X happens, do Y</li>
+            <li>Breaks when anything varies or requires judgment</li>
+            <li>Cannot read or understand unstructured content</li>
+            <li>Cannot draft responses or make decisions</li>
+            <li>Requires exact data formats to work</li>
+            <li>Good for predictable, repeatable processes only</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--teal);background:rgba(0,196,167,0.04);">
+          <h3>AI Automation</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Handles variation, context, and nuance</li>
+            <li>Reads and categorises emails, documents, messages</li>
+            <li>Drafts responses and makes recommendations</li>
+            <li>Extracts data from unstructured sources</li>
+            <li>Adapts when inputs change format or content</li>
+            <li>Works for real-world business workflows, not just ideal ones</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:24px;line-height:1.7;max-width:800px;">The difference matters because most real business workflows are not perfectly predictable. Customer enquiries do not follow a template. Invoices come in different formats. Meeting discussions vary wildly. Traditional automation breaks at the first sign of variation. AI automation handles it gracefully, which is why it delivers value in places where traditional automation simply cannot work.</p>
+    </div>
+  </section>
+
+  <!-- GETTING STARTED -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How to Get Started with AI Automation UK</h2>
+      <p class="section-subtitle reveal">Three simple steps to go from manual workflows to AI-powered automation.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3>1. Free Discovery Call</h3>
+          <p>Book a free 30-minute call. Tell us about your most time-consuming manual workflows. We will assess which ones are best suited for AI automation and give you an honest estimate of potential time savings.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="search" /></div>
+          <h3>2. Workflow Assessment</h3>
+          <p>We map your top 3-5 manual workflows, evaluate them for AI automation potential, and provide a fixed-price quote for implementing the ones that will deliver the most value. No obligation to proceed.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>3. Build and Launch</h3>
+          <p>We configure the automations, integrate them with your tools, train your team, and launch. 30 days of post-launch support ensures everything works as expected and your team is comfortable running it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Automation UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our AI automation UK service.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Automate Your Workflows?"
+    text="Book a free 30-minute discovery call. We will talk through your most time-consuming workflows and whether AI automation is the right solution."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

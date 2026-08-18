@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Education",
+  metaTitle: "AI for Education UK | Schools & Training AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK education and training providers. Personalised learning, assessment automation, admin reduction, and safeguarding-compliant implementation. Book a free call.",
+  h1: "AI for Education in the UK",
+  lead: "Practical AI solutions for UK schools, training providers, and edtech businesses. Personalise learning, automate assessment, reduce admin workload, and keep student data safe.",
+  useCases: [{"title": "Personalised Learning Paths", "desc": "AI adapts course content to each learner's pace and ability, providing additional resources where they struggle and advancing where they excel."}, {"title": "Assessment & Feedback", "desc": "AI marks objective assessments instantly and drafts feedback on written work for teacher review, reducing marking time by up to 60%."}, {"title": "Admin & Scheduling", "desc": "Automate timetabling, parent communications, attendance tracking, and report generation, freeing teaching staff for actual teaching."}, {"title": "Content Creation", "desc": "AI generates lesson materials, quizzes, and study guides aligned to curriculum standards, giving teachers a head start on resource creation."}, {"title": "Early Intervention", "desc": "AI identifies students at risk of falling behind or disengaging by analysing attendance, assessment, and engagement patterns."}, {"title": "Language Support", "desc": "AI translation and language tools help ESL students access content and support multilingual school communities."}],
+  benefits: [{"title": "Safeguarding First", "desc": "We design AI solutions with safeguarding at the core. Student data is protected, access is controlled, and all tools comply with DfE guidance and Keeping Children Safe in Education."}, {"title": "Teacher Augmentation", "desc": "Our AI solutions reduce admin burden so teachers can focus on teaching. We never replace the teacher's judgment with AI."}, {"title": "Curriculum Aligned", "desc": "All AI-generated content and assessment aligns with the UK national curriculum, exam board specifications, or your training framework."}],
+  faqs: [{"question": "Is AI safe to use in schools?", "answer": "Yes, when implemented correctly. We use AI tools that process data within secure, UK-based environments. We never use student data to train public models. All implementations include safeguarding controls, access restrictions, and full compliance with DfE guidance and GDPR."}, {"question": "Will AI replace teachers?", "answer": "No. AI is a tool that reduces admin burden and supports personalised learning, but it cannot replace the professional judgment, empathy, and classroom management that teachers provide. We design AI that gives teachers more time to teach, not less."}, {"question": "How much does AI implementation cost for a school or training provider?", "answer": "Our AI Opportunity Audit starts at 750 and identifies exactly where AI can help your institution. Implementation projects start at 8,000, with full strategy engagements from 5,000. All engagements are fixed-price."}, {"question": "Can AI work with our existing systems?", "answer": "Yes. We integrate AI with your existing MIS, VLE, and assessment platforms. We do not ask you to change systems. We enhance what you already have."}],
+  slug: "ai-for-education",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>AI is changing education in the UK. From reducing teacher workload to personalising learning, AI tools can help schools and training providers do more with their existing resources. But implementing AI in education requires care: safeguarding, data protection, and pedagogical quality must come first.</p>
+<p>Our team helps UK education and training providers adopt AI safely and effectively. We understand the regulatory landscape and we build solutions that support teachers, not replace them. Whether you are a school, a multi-academy trust, a training company, or an edtech startup, we find the AI opportunities that make sense for your setting.</p>
+<p>Education providers that adopt AI now will give their students and staff a significant advantage. The key is starting with a clear understanding of where AI helps and where it doesn't.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your education or training organisation? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

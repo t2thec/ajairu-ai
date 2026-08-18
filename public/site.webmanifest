@@ -1,0 +1,23 @@
+{
+  "name": "ajairu",
+  "short_name": "ajairu",
+  "description": "Practical AI consulting for UK SMEs. AI readiness audits, strategy roadmaps, and implementation. Fixed-price engagements.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2332",
+  "theme_color": "#00c4a7",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

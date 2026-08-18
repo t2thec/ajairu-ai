@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL, FOUNDER_NAME } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `Best AI Consultant UK 2026 | Comparison of UK AI Consultancies | ${SITE_NAME}`;
+const description = 'A factual comparison of 11 UK AI consultancies including focus, pricing, team size, location, and services. Find the right AI consultant for your UK business.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Best AI Consultant UK', 'item': `${SITE_URL}/best-ai-consultant-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Consulting Services',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI consulting for UK SMEs including opportunity audits, strategy roadmaps, implementation, fractional CAIO, and training workshops. Fixed-price engagements from £750.',
+  'offers': { '@type': 'Offer', 'priceRange': '£750-£30,000+', 'priceCurrency': 'GBP' },
+};
+
+const faqs = [
+  { question: 'How much does an AI consultant cost in the UK?', answer: 'UK AI consultancy rates vary widely. Freelancers may charge £300-£800 per day, while Big Four firms charge £100,000+ for full engagements. Mid-market specialists like us offer fixed-price engagements from £750 for an audit to £30,000+ for full implementation, with no day-rate billing.' },
+  { question: 'What should I look for in an AI consultant?', answer: 'Look for: fixed-price engagements (not open-ended day rates), a track record of delivered systems (not just strategy decks), UK data residency and GDPR compliance, team training and handover (not dependency), and willingness to tell you where AI will not help. Avoid consultants who lead with technology rather than your business problems.' },
+  { question: 'Do I need a large budget to work with an AI consultant?', answer: 'No. A good AI consultant should offer a low-cost starting point. Our AI Opportunity Audit starts at £750 and tells you exactly where AI can help, including where it cannot. You can stop there with no obligation to continue to strategy or implementation.' },
+  { question: 'Are UK AI consultants different from US-based ones?', answer: 'UK AI consultants understand GDPR, UK data residency requirements, and UK-specific industry regulations (FCA, SRA, NHS, etc). This matters because data governance and compliance are fundamental to responsible AI adoption, not optional add-ons.' },
+  { question: 'Can a small business afford AI consulting?', answer: 'Yes. The key is choosing a consultant that works with SMEs specifically. Consultants focused on enterprise clients will have pricing structures that exclude small businesses. Look for fixed-price audits, clear service tiers, and a focus on businesses with 10-250 employees.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+
+const consultancies = [
+  { name: 'OpenKit', focus: 'AI app development & consulting', pricing: 'Project-based, contact for quotes', teamSize: '10-50', location: 'London', certifications: 'Microsoft Partner, AWS Partner', services: 'AI app development, LLM integration, chatbots, custom AI solutions', url: 'https://opencode.ai' },
+  { name: 'Evolve AI', focus: 'AI strategy & enablement', pricing: 'Contact for quotes', teamSize: '10-50', location: 'London / Remote', certifications: 'ISO 27001', services: 'AI strategy, MLOps, data science, AI training', url: 'https://evolveai.io' },
+  { name: 'Insightful AI', focus: 'AI consulting for SMEs', pricing: 'Contact for quotes', teamSize: '1-10', location: 'UK-wide (remote)', certifications: 'Not publicly listed', services: 'AI readiness assessments, workflow automation, AI training', url: 'https://insightfulai.co.uk' },
+  { name: 'Quilliam AI', focus: 'AI safety & assurance', pricing: 'Contact for quotes', teamSize: '1-10', location: 'London', certifications: 'AI safety specialism', services: 'AI assurance, model evaluation, risk assessment, compliance', url: 'https://quilliam.ai' },
+  { name: 'BOSME', focus: 'AI for SMEs', pricing: 'Contact for quotes', teamSize: '1-10', location: 'UK', certifications: 'Not publicly listed', services: 'AI consulting, automation, CRM integration', url: 'https://bosme.co.uk' },
+  { name: 'Generativ', focus: 'Generative AI consulting', pricing: 'Contact for quotes', teamSize: '10-50', location: 'London', certifications: 'Not publicly listed', services: 'GenAI strategy, LLM implementation, AI product development', url: 'https://generativ.ai' },
+  { name: 'Aperic', focus: 'AI & data consulting', pricing: 'Contact for quotes', teamSize: '10-50', location: 'London', certifications: 'Not publicly listed', services: 'Data engineering, ML, AI strategy, analytics', url: 'https://aperic.co.uk' },
+  { name: 'Talk Think Do', focus: 'AI product development', pricing: 'Contact for quotes', teamSize: '10-50', location: 'UK-wide', certifications: 'Not publicly listed', services: 'AI product design, conversational AI, custom LLM solutions', url: 'https://talkthinkdo.com' },
+  { name: '10 Kinds', focus: 'AI & automation consulting', pricing: 'Contact for quotes', teamSize: '1-10', location: 'UK', certifications: 'Not publicly listed', services: 'AI automation, process optimisation, ML solutions', url: 'https://10kinds.com' },
+  { name: 'iwantmore.ai', focus: 'AI adoption & training', pricing: 'Contact for quotes', teamSize: '1-10', location: 'UK / Remote', certifications: 'Not publicly listed', services: 'AI training, adoption workshops, automation consulting', url: 'https://iwantmore.ai' },
+  { name: SITE_NAME, focus: 'AI consulting for UK SMEs', pricing: 'Fixed-price: £750-£30,000+', teamSize: 'Founder-led + specialist network', location: 'UK-wide (remote)', certifications: 'GDPR-compliant, UK data residency', services: 'AI opportunity audits, strategy roadmaps, implementation, fractional CAIO, training workshops', url: SITE_URL, isUs: true },
+];
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Best AI Consultant UK: A Factual Comparison</h1>
+      <p>An independent comparison of UK AI consultancies. We include ourselves because we believe in transparency. This page exists to help you make an informed decision, not to sell you on us.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Best AI Consultant UK'}]} />
+
+  <!-- DIRECT ANSWER -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">The best AI consultant for your UK business depends on your size, budget, and what you need. For SMEs with 10-250 employees, look for a consultant that offers fixed-price engagements, builds working systems (not just strategy decks), handles GDPR and UK data residency, and trains your team to be self-sufficient. {SITE_NAME} is one option, but this comparison covers 11 UK AI consultancies so you can choose the right fit.</p>
+        <p style="line-height:1.7;">Below is a factual comparison table of UK AI consultancies. We have included ourselves in the list. Pricing information is based on publicly available data where possible, and noted as "contact for quotes" where it is not published. We update this table when we find new information.</p>
+      </div>
+
+      <div class="reveal" style="margin-top:40px;padding:24px 28px;background:var(--teal-light);border-radius:10px;border-left:4px solid var(--teal);max-width:800px;">
+        <h3 style="font-size:1.1rem;color:var(--navy);margin-bottom:12px;">Quick answer: what to look for</h3>
+        <ul style="font-size:0.95rem;color:var(--grey-600);line-height:1.8;margin:0;">
+          <li><strong>Published pricing</strong> - if they will not tell you the cost upfront, you will not like the invoice</li>
+          <li><strong>Working systems, not just decks</strong> - ask what they actually build, not just what they advise on</li>
+          <li><strong>Founder involvement</strong> - does the person who scopes the work do the work, or is it handed to juniors?</li>
+          <li><strong>IP ownership</strong> - you should own everything they build, with documentation and training included</li>
+          <li><strong>Compliance built in</strong> - GDPR and UK data residency should be part of the engagement, not an add-on</li>
+          <li><strong>Willingness to say no</strong> - a good consultant tells you where AI will not help, before you spend money finding out</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">UK AI Consultancy Comparison Table</h2>
+      <p class="section-subtitle reveal">11 UK AI consultancies compared on focus, pricing, team size, location, certifications, and services.</p>
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Consultancy</th>
+              <th>Focus</th>
+              <th>Pricing</th>
+              <th>Team Size</th>
+              <th>Location</th>
+              <th>Certifications</th>
+              <th>Key Services</th>
+            </tr>
+          </thead>
+          <tbody>
+            {consultancies.map((c) => (
+              <tr class={c.isUs ? 'us-col' : ''}>
+                <td class="col-label">
+                  {c.isUs ? <strong>{c.name} (us)</strong> : <a href={c.url} rel="nofollow noopener" target="_blank">{c.name}</a>}
+                </td>
+                <td>{c.focus}</td>
+                <td>{c.pricing}</td>
+                <td>{c.teamSize}</td>
+                <td>{c.location}</td>
+                <td>{c.certifications}</td>
+                <td>{c.services}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="reveal" style="font-size:0.85rem;color:var(--grey-400);margin-top:16px;">Information in this table is based on publicly available data as of August 2026. Pricing and team sizes may have changed since publication. Contact each consultancy directly for current information.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO CHOOSE -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">How to Choose the Right AI Consultant</h2>
+      <p class="section-subtitle reveal">Five questions to ask any AI consultant before you commit.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <h3>1. Do they offer fixed pricing?</h3>
+          <p>If a consultant only offers day-rate billing, your costs are open-ended. Fixed-price engagements mean you know the total cost before you start. This is the single most important question to ask.</p>
+        </div>
+        <div class="card reveal">
+          <h3>2. Do they build working systems?</h3>
+          <p>Some consultants deliver strategy decks and leave. Others configure and integrate AI into your tools, train your team, and stay for post-launch support. Decide which you need before you sign.</p>
+        </div>
+        <div class="card reveal">
+          <h3>3. Do they handle compliance?</h3>
+          <p>GDPR, UK data residency, and industry-specific regulations (FCA, SRA, NHS) must be designed in from the start, not bolted on later. Ask about their compliance approach in detail.</p>
+        </div>
+        <div class="card reveal">
+          <h3>4. Will your team be self-sufficient?</h3>
+          <p>If the system only works when the consultant is in the room, you have created a dependency. Look for consultants that include training, documentation, and handover as standard.</p>
+        </div>
+        <div class="card reveal">
+          <h3>5. Will they tell you when AI is wrong?</h3>
+          <p>The best consultants will tell you where AI will not help. If a consultant never says "no," they are selling, not advising. A good AI consultant saves you money by preventing bad investments.</p>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--teal);background:rgba(0,196,167,0.04);">
+          <h3>Want our answers?</h3>
+          <p>We tick every box above. Fixed pricing, working systems, compliance built in, team self-sufficiency, and honest "don't bother" recommendations. <a href="/services">See our services</a> or <a href="/contact">book a free call</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+      <div class="prose" style="max-width:800px;">
+        {faqs.map((f) => (
+          <div style="margin-bottom:24px;">
+            <h3 style="font-size:1.1rem;margin-bottom:8px;">{f.question}</h3>
+            <p style="color:var(--grey-600);line-height:1.6;">{f.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title={`Talk to ${SITE_NAME}`}
+    text="Book a free 30-minute discovery call. We'll talk through your business and whether AI makes sense for you right now. No pitch, no pressure."
+    secondaryCtaText="View Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

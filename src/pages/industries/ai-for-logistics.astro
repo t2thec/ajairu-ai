@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Logistics",
+  metaTitle: "AI for Logistics UK | Supply Chain AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK logistics. Route optimisation, demand forecasting, warehouse automation, and supply chain visibility.",
+  h1: "AI for Logistics in the UK",
+  lead: "Practical AI solutions for UK logistics businesses. Route optimisation, demand forecasting, warehouse automation, and supply chain visibility.",
+  useCases: [{"title": "Route Optimisation", "desc": "AI optimises delivery routes in real-time based on traffic, weather, and delivery priorities, reducing fuel costs by 10-20%."}, {"title": "Demand Forecasting", "desc": "AI predicts demand by region and product, improving forecast accuracy by 20-40% and reducing stockouts."}, {"title": "Warehouse Automation", "desc": "AI optimises picking routes, slotting, and inventory placement, reducing warehouse labour costs by 15-25%."}, {"title": "Supply Chain Visibility", "desc": "AI provides real-time visibility across your supply chain, predicting disruptions and suggesting alternatives automatically."}, {"title": "Fleet Management", "desc": "AI monitors vehicle health, predicts maintenance needs, and optimises fleet utilisation to reduce downtime and costs."}, {"title": "Last-Mile Optimisation", "desc": "AI optimises last-mile delivery with dynamic routing, customer preference handling, and delivery time prediction."}],
+  benefits: [{"title": "TMS & WMS Integration", "desc": "AI tools that integrate with your existing transport management and warehouse management systems. No rip-and-replace."}, {"title": "Real-Time Decision Making", "desc": "AI makes decisions in real-time: rerouting vehicles, reallocating inventory, and predicting delays before they happen."}, {"title": "Cost Reduction Focus", "desc": "Every AI implementation is measured against cost reduction: fuel savings, labour efficiency, reduced downtime, and fewer stockouts."}],
+  faqs: [{"question": "How much can AI save on fuel costs?", "answer": "AI route optimisation typically reduces fuel costs by 10-20%. By optimising routes in real-time based on traffic, weather, and delivery priorities, AI reduces unnecessary mileage and idle time. For a fleet of 20 vehicles, this can save 50,000-100,000 per year."}, {"question": "Can AI help with last-mile delivery?", "answer": "Yes. AI is particularly valuable for last-mile delivery, which is the most expensive and complex part of logistics. AI optimises routes, predicts delivery times, handles customer preferences, and reduces failed deliveries. This is where AI delivers some of the fastest ROI in logistics."}, {"question": "Do I need a large fleet for AI to be worthwhile?", "answer": "No. Even businesses with 5-10 vehicles can benefit from AI route optimisation and fleet management. The key is starting with the highest-impact use case for your operation. Our 750 audit identifies which AI applications make sense for your specific fleet size and operation."}, {"question": "How does AI integrate with my existing logistics software?", "answer": "Most AI tools integrate with popular TMS and WMS platforms. We assess your current tech stack during the audit and recommend AI tools that fit your existing setup. We assess your current setup and recommend the right approach, whether that is configuring existing integrations or building custom ones."}],
+  slug: "ai-for-logistics",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Logistics is about efficiency, and AI is the most powerful efficiency tool available. From optimising delivery routes to forecasting demand and automating warehouse operations, AI helps logistics businesses reduce costs, improve service, and stay competitive.</p>
+<p>Our team helps UK logistics businesses implement AI that delivers measurable operational improvements. We understand the pressure of tight margins, rising fuel costs, and customer expectations for faster delivery. We build AI solutions that address these challenges directly.</p>
+<p>Logistics generates vast amounts of data: vehicle telemetry, delivery records, inventory levels, and customer orders. The opportunity is turning that data into automated decisions that reduce costs and improve service levels across your operation.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your logistics company? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

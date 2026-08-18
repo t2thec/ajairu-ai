@@ -1,0 +1,267 @@
+# ajairu.ai: Full Site Information for AI Models
+
+> This is the expanded llms.txt for ajairu.ai, providing comprehensive information about the AI consulting practice for UK SMEs. For the summary version, see https://ajairu.ai/llms.txt
+
+## Company Overview
+
+ajairu is a UK-based AI consultancy serving small and medium businesses (10-250 employees). We help SMEs find, implement, and own practical AI solutions without enterprise pricing. From opportunity audits to full implementation and ongoing AI leadership, we make AI work for businesses that are too large for generic advice but too small for Big Four consultancy fees.
+
+Founded by Toby Callinan, former CTO at Fabric Fintech (acquired by Aviva late 2023). With 27+ years in technology leadership, we deliver enterprise-grade AI implementation at SME-appropriate pricing. At Aviva, we delivered Aviva's first customer-facing generative AI product and achieved 53% cloud cost reduction, earning Tech of the Year 2024.
+
+Our approach: audit first, build second, hand over everything. We tell you where AI will help and where it won't. Every engagement is fixed-price. You own what we build: documentation, training, and source code all transfer to your team.
+
+## Services: Full Descriptions
+
+### AI Opportunity Audit
+- **Price:** £750-£2,500
+- **Timeline:** 1-2 weeks
+- **URL:** https://ajairu.ai/services#audit
+
+Structured assessment of your operations, tech, and team. We map your workflows against AI capabilities to find where the real value is, and where it isn't. You get a prioritised AI opportunity report with ROI estimates.
+
+This is the Discover + Diagnose phase of our 4D methodology. It de-risks everything that follows and often saves clients from investing in the wrong areas. Many clients use this as a standalone engagement to validate whether AI is worth pursuing before committing to a strategy or implementation.
+
+### AI Strategy & Roadmap
+- **Price:** £5,000-£15,000
+- **Timeline:** 3-4 weeks
+- **URL:** https://ajairu.ai/services#strategy
+
+Full workflow mapping, build vs buy recommendations, integration architecture, and a 90-day implementation roadmap. We design the complete solution: which tools, how they connect, and how we roll them out without disrupting your business.
+
+This is the Design phase. You get a complete AI Strategy & Roadmap document that you can implement yourself, with us, or with another provider. No lock-in.
+
+### AI Implementation
+- **Price:** £8,000-£30,000+
+- **Timeline:** 4-12 weeks
+- **URL:** https://ajairu.ai/services#implementation
+
+This is where most consultants stop. We don't. We implement the plan, connect everything to your tools, train your people, and stay for 30 days after launch to make sure everything works. Full documentation, full training, full handover.
+
+What you get: configured AI systems, API integrations, team training, documentation, and 30-day post-launch support. Working AI systems that your team can run and extend independently.
+
+### Fractional CAIO
+- **Price:** £2,000-£5,000/month
+- **Timeline:** ongoing
+- **URL:** https://ajairu.ai/services#fractional-caio
+
+Part-time AI leadership for organisations not ready for a full-time hire. We provide senior AI strategy, governance, vendor selection, and team mentoring on a flexible basis. Ideal for businesses that need AI direction but can't justify a £150,000+ full-time CAIO salary.
+
+What you get: monthly strategy sessions, AI governance framework, vendor and tool evaluation, team training and mentoring, board-level AI reporting, and ongoing opportunity identification.
+
+### AI Training Workshops
+- **Price:** from £1,500
+- **Timeline:** half-day or full-day
+- **URL:** https://ajairu.ai/services#training
+
+Half-day or full-day hands-on workshops to build your team's AI literacy and practical skills. No jargon, no hype, just practical skills your team can use immediately.
+
+Workshop topics: AI fundamentals for business, prompt engineering for daily work, AI-powered data analysis, building your first AI workflow, AI governance and compliance, and industry-specific AI use cases.
+
+## Process Methodology: The 4D Method
+
+Our process has four steps: Discover, Diagnose, Design, and Deliver. Most engagements take 4-12 weeks from start to finish. You can stop at any stage with no obligation to continue.
+
+### 1. Discover: We Learn Your Business
+Every engagement starts with understanding your business, not our technology. We don't walk in with a template, we build the picture from scratch. We learn your operations, your team, your tech stack, and your goals.
+
+Output: A baseline understanding document that everything else builds on. You review and approve it before we move to diagnosis.
+
+### 2. Diagnose: We Find Real Opportunities
+Using what we learned in Discover, we map your workflows against AI capabilities to find where the real value is, and where it isn't. We're honest about what AI can and can't do for your specific situation.
+
+Output: A prioritised AI Opportunity Report with ROI estimates. This is the core deliverable of the AI Opportunity Audit.
+
+### 3. Design: We Architect the Solution
+For opportunities worth pursuing, we design the full solution: which tools, how they connect, and how we roll them out without disrupting your business. Build vs buy recommendations, integration architecture, and a 90-day implementation roadmap.
+
+Output: A complete AI Strategy & Roadmap document. This is the core deliverable of the Strategy engagement.
+
+### 4. Deliver: We Build, Integrate, Train
+This is where most consultants stop. We don't. We implement the plan, connect everything to your tools, train your people, and stay for 30 days after launch to make sure everything works.
+
+Output: Working AI systems, trained team, full documentation, and self-sufficiency. This is the Implementation engagement.
+
+### Typical Timeline
+- **Day 0:** Free 30-min discovery call. We discuss your business and whether AI makes sense.
+- **Weeks 1-2:** AI Opportunity Audit. Discover + Diagnose. You get your prioritised opportunity report.
+- **Weeks 3-5:** Strategy & Roadmap. Design phase. You get your 90-day implementation plan.
+- **Weeks 6-12:** Implementation. Deliver phase. Working AI systems, trained team, 30-day support.
+
+## Key Differentiators
+
+- **Enterprise experience at SME pricing:** Delivered Aviva's first customer-facing generative AI product, led 45-person team, Tech of the Year 2024, Pension Innovation Award 2024, 53% cloud cost reduction.
+- **Fixed-price engagements only.** No day rates, no open-ended billing. 76% of UK businesses see high costs as a significant barrier to AI adoption. we solve this.
+- **We build on your existing tech stack.** Google Gemini, Microsoft Copilot, or bespoke tools like Hermes Agent. We don't force you to rip and replace.
+- **Full handover.** Documentation, training, source code. Your team owns everything. No dependency on us.
+- **UK GDPR compliant, ISO-aligned security practices.** UK data residency where possible. We never use client data to train public AI models.
+- **We tell you when AI is not the right answer.** Honest "don't bother" recommendations are part of every audit.
+
+## Industries We Serve
+
+### Law Firms
+- **URL:** https://ajairu.ai/industries/ai-for-law-firms
+- AI for document review, contract analysis, legal research, and client communication. UK data residency and strict access controls. GDPR compliant by design. We never use client data to train public AI models.
+
+### Accountants
+- **URL:** https://ajairu.ai/industries/ai-for-accountants
+- AI for automated compliance, data extraction, client advisory, and practice management. Free your team from routine compliance work so they can deliver higher-value advisory services. No rip and replace. We build on your existing tools.
+
+### E-commerce
+- **URL:** https://ajairu.ai/industries/ai-for-ecommerce
+- AI for product descriptions, search, inventory management, customer service, and personalisation. GDPR-compliant data handling with UK data residency where possible. Tools that pay for themselves quickly.
+
+### Healthcare
+- **URL:** https://ajairu.ai/industries/ai-for-healthcare
+- AI for appointments, clinical documentation, patient communication, and administrative efficiency. Every AI tool includes human oversight. AI supports clinicians, it doesn't make clinical decisions independently.
+
+### Financial Services
+- **URL:** https://ajairu.ai/industries/ai-for-financial-services
+- AI for risk assessment, fraud detection, customer service, and compliance automation. Risk-first approach: every implementation includes risk assessment, model validation, and governance frameworks that risk teams and regulators trust.
+
+### Real Estate
+- **URL:** https://ajairu.ai/industries/ai-for-real-estate
+- AI for lead qualification, property valuations, automated listings, and client communication. AI valuations based on data, not guesswork, more accurate valuations mean faster sales and happier clients.
+
+### Manufacturing
+- **URL:** https://ajairu.ai/industries/ai-for-manufacturing
+- AI for predictive maintenance, quality control, supply chain optimisation, and production scheduling. Measurable ROI: reduced downtime, lower defect rates, optimised inventory, and energy savings.
+
+### Logistics
+- **URL:** https://ajairu.ai/industries/ai-for-logistics
+- AI for route optimisation, demand forecasting, warehouse management, and fleet efficiency. Every implementation measured against cost reduction: fuel savings, labour efficiency, reduced downtime, and fewer stockouts.
+
+### Marketing Agencies
+- **URL:** https://ajairu.ai/industries/ai-for-marketing-agencies
+- AI for content generation, campaign optimisation, client reporting, and creative workflows. Every implementation measured against client outcomes: better ROI, faster delivery, and improved campaign performance. More productive, not bigger.
+
+### Construction
+- **URL:** https://ajairu.ai/industries/ai-for-construction
+- AI for estimating, scheduling, safety, compliance, and project management. AI helps deliver projects on time and on budget by predicting delays, optimising resources, and reducing waste.
+
+### Hospitality
+- **URL:** https://ajairu.ai/industries/ai-for-hospitality
+- AI for dynamic pricing, booking automation, staff scheduling, and guest experience. GDPR-compliant data handling, UK data residency, and full compliance with hospitality regulations including allergen and food safety standards.
+
+### Education
+- **URL:** https://ajairu.ai/industries/ai-for-education
+- AI for assessment, personalised learning, administrative automation, and curriculum support. All AI-generated content aligns with the UK national curriculum, exam board specifications, or your training framework.
+
+### Industries Hub
+- **URL:** https://ajairu.ai/industries
+
+## Blog Post Summaries
+
+### 10 Ways Construction Firms Can Use AI
+- **URL:** https://ajairu.ai/blog/10-ways-construction-firms-can-use-ai
+- Practical AI use cases for UK construction SMEs, from estimating and scheduling to safety and compliance, with real time and cost savings.
+
+### 10 Ways E-commerce Businesses Can Use AI
+- **URL:** https://ajairu.ai/blog/10-ways-ecommerce-businesses-can-use-ai
+- Practical AI use cases for UK e-commerce SMEs, from product descriptions and search to inventory and customer service, with real ROI examples.
+
+### 10 Ways Healthcare Practices Can Use AI
+- **URL:** https://ajairu.ai/blog/10-ways-healthcare-practices-can-use-ai
+- Practical AI use cases for UK healthcare SMEs, from appointments and clinical documentation to patient communication and administrative efficiency.
+
+### 10 Ways Hospitality Businesses Can Use AI
+- **URL:** https://ajairu.ai/blog/10-ways-hospitality-businesses-can-use-ai
+- Practical AI use cases for UK hospitality SMEs, from bookings and pricing to staff scheduling and reviews, with real time savings.
+
+### 10 Ways Manufacturing Businesses Can Use AI
+- **URL:** https://ajairu.ai/blog/10-ways-manufacturing-businesses-can-use-ai
+- Practical AI use cases for UK manufacturing SMEs, from predictive maintenance and quality control to supply chain and quality assurance.
+
+### Affordable AI Consulting UK: What Should You Pay?
+- **URL:** https://ajairu.ai/blog/affordable-ai-consulting-uk-pricing
+- A transparent guide to AI consulting costs in the UK, from readiness audits to implementation, with real price ranges for SMEs.
+
+### AI Adoption UK: Overcoming the Top 5 Barriers
+- **URL:** https://ajairu.ai/blog/ai-adoption-uk-barriers
+- The five biggest barriers to AI adoption for UK businesses and practical strategies to overcome each one, backed by research.
+
+### AI Automation for Business: 5 Workflows You Can Build Today
+- **URL:** https://ajairu.ai/blog/ai-automation-for-business-workflows
+- Five practical AI automation workflows UK businesses can implement now to save time, reduce errors, and cut operational costs.
+
+### AI Strategy for SMEs: From Audit to Implementation
+- **URL:** https://ajairu.ai/blog/ai-strategy-for-smes
+- A practical framework for building an AI strategy that takes UK SMEs from readiness audit to real implementation, step by step.
+
+### AI Transformation UK: Lessons from Enterprise, Applied to SMEs
+- **URL:** https://ajairu.ai/blog/ai-transformation-uk-enterprise-to-sme
+- How UK SMEs can apply enterprise AI transformation lessons without enterprise budgets, teams, or timelines. A practical adaptation guide.
+
+### AI Workflow Automation: A Practical Guide for UK SMEs
+- **URL:** https://ajairu.ai/blog/ai-workflow-automation-uk-smes
+- A practical guide to AI workflow automation for UK SMEs, covering tools, processes, and how to choose your first automation project.
+
+### How to Implement AI in Your Small Business: A UK Guide
+- **URL:** https://ajairu.ai/blog/how-to-implement-ai-in-small-business-uk
+- A practical step-by-step guide for UK small businesses to implement AI, from identifying opportunities to deployment, with real examples.
+
+### Practical AI for Business: Cutting Through the Hype
+- **URL:** https://ajairu.ai/blog/practical-ai-for-business-cutting-through-hype
+- A no-nonsense guide to practical AI for UK businesses, separating real value from hype, with clear steps to get started.
+
+### What Is an AI Readiness Audit and Why Your Business Needs One
+- **URL:** https://ajairu.ai/blog/what-is-ai-readiness-audit
+- An AI readiness audit assesses your data, processes, and team to reveal exactly where AI can deliver value. Here is what it covers and why it matters.
+
+### Why Your Business Needs a Fractional AI Officer
+- **URL:** https://ajairu.ai/blog/why-your-business-needs-fractional-ai-officer
+- A fractional AI officer gives UK SMEs senior AI leadership at a fraction of the cost. Here is what the role involves and when you need one.
+
+## FAQ: Common Questions
+
+### How much does AI consulting cost for a small business?
+Our AI Opportunity Audit starts at £750 and gives you a clear picture of where AI can help. Full strategy engagements run £5,000-£15,000, and implementation projects start at £8,000. Ongoing Fractional CAIO support is £2,000-£5,000/month. Training workshops start at £1,500.
+
+### Do we need technical staff to work with you?
+No. We work with businesses at any level of AI maturity. Our process is jargon-free and we build your team's confidence and capability as part of every engagement. Full training and documentation are included.
+
+### Is our data safe when using AI tools?
+Yes. We take a security-first approach with UK data residency, GDPR compliance, and enterprise-grade data governance built into every engagement. We recommend tools that keep your data within the UK/EU and we never use client data to train public AI models.
+
+### How long does an AI implementation take?
+An AI Opportunity Audit takes 1-2 weeks. A strategy and roadmap engagement takes 3-5 weeks. Implementation projects typically run 6-12 weeks depending on complexity, with 30 days of post-launch support included.
+
+### What size businesses do you work with?
+We specialise in UK SMEs with 10-250 employees. This is where we see the biggest gap: businesses that are too large for generic advice but too small for Big Four consultancy fees.
+
+### Why are your prices fixed and not day-rate?
+76% of UK businesses see high costs as a significant barrier to AI adoption. Day-rate consulting creates a perverse incentive: the longer it takes, the more the consultant earns. Fixed-price engagements align our interests with yours.
+
+### What determines where I fall within a price range?
+It depends on your business size, the complexity of your operations, the number of departments involved, and the depth of the engagement. The free discovery call helps us understand your needs and gives you an accurate quote.
+
+### Do we have to do the audit before strategy or implementation?
+No, but we strongly recommend it. The audit de-risks everything that follows and often saves clients from investing in the wrong areas. If you already have a clear sense of what you need, we can start with strategy or implementation directly.
+
+### Can we get funding or grants for AI consulting?
+Possibly. There are various UK government and regional initiatives that support AI adoption and digital transformation for SMEs. We can discuss current options during the discovery call and help you identify whether any apply. Our reports are structured to support funding applications where relevant.
+
+### Why not just hire a freelancer for AI work?
+Freelancers can be cheaper day-to-day, but they carry single-person risk: no cover when they are ill or unavailable, no governance framework, and no compliance infrastructure. If your freelancer leaves, you're left with AI systems nobody understands.
+
+### Why not go DIY with ChatGPT or Copilot?
+DIY is free to start but expensive in time. Without external guidance, most SMEs spend 6+ months on trial and error, face team resistance, and have no governance or compliance framework. The hidden cost is lost productivity and missed opportunities.
+
+### Why not use a Big Four consultancy?
+Big Four firms have excellent expertise, but their engagement model is built for enterprise: £100,000+ minimums, slide-deck deliverables, subcontracted delivery, and timelines measured in quarters. For SMEs, the middle ground is better.
+
+## Comparison Pages
+
+- [How We Compare](https://ajairu.ai/comparison): Why the "middle ground" between freelancers, DIY, and Big Four is better for SMEs
+- [Best AI Consultant UK](https://ajairu.ai/best-ai-consultant-uk): Independent factual comparison of UK AI consultancies
+
+## Sister Site
+
+- **ajairu.dev** (https://ajairu.dev): Bespoke software development studio for UK SMEs. Services include System Integration & Automation (£8,000-£30,000), Bespoke Software Platforms (£25,000-£80,000+), SaaS/ERP Replacement (£30,000-£80,000+), AI Automation (£8,000-£30,000), Technical Consultancy (£2,000-£10,000), and Ongoing Support (from £350/month). Same founder, same fixed-price model, focused on building custom software rather than AI consulting.
+
+## Contact
+
+- Email: hello@ajairu.ai
+- Website: https://ajairu.ai
+- Founder: Toby Callinan
+- Location: UK, working nationwide
+- Engagement model: Fixed-price only, free 30-minute discovery call

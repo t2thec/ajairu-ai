@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `AI Implementation UK | AI Build & Integration for SMEs | ${SITE_NAME}`;
+const description = 'AI implementation UK for SMEs. Fixed-price AI system configuration, API integrations, team training, and 30-day post-launch support. From GBP 8,000. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Implementation UK', 'item': `${SITE_URL}/services/ai-implementation-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Implementation UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI implementation UK service for SMEs. Configured AI systems, API integrations with existing tools, team training, documentation, and 30-day post-launch support. Fixed-price from GBP 8,000.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a38,000-\u00a330,000+',
+    'priceCurrency': 'GBP',
+    'description': 'Fixed-price AI implementation engagement for UK SMEs, 6-12 weeks duration.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does AI implementation UK cost?', answer: 'AI implementation UK engagements start at GBP 8,000 for a focused single-workflow implementation and range up to GBP 30,000+ for multi-system integrations across departments. Every engagement is fixed-price. The cost depends on the number of AI systems being configured, the complexity of integrations with your existing tools, and the level of team training required.' },
+  { question: 'How long does AI implementation take?', answer: 'Typically 6 to 12 weeks. Simple single-workflow implementations take 4-6 weeks. Multi-system integrations across departments take 8-12 weeks. Every engagement includes 30 days of post-launch support at no additional cost. We do not consider the engagement complete until your team is running the systems independently.' },
+  { question: 'Do we need an AI strategy before implementation?', answer: 'Not necessarily, but it helps. If you already know which AI use cases you want to implement, we can start directly. If you are not sure, we recommend the AI Opportunity Audit (from GBP 750) or a full <a href="/services/ai-strategy-uk">AI strategy UK</a> engagement first. Starting implementation without a clear use case is the most common reason AI projects fail.' },
+  { question: 'What tools do you use for AI implementation?', answer: 'We work with a range of AI tools and platforms: ChatGPT Enterprise, Microsoft Copilot, Zapier AI, Make.com, and industry-specific AI platforms. We also build custom AI solutions when your needs go beyond what existing tools offer. Every implementation is configured around your specific workflows and integrated with your existing systems. You own all configurations, integrations, and documentation.' },
+  { question: 'What happens after the AI implementation is complete?', answer: 'You get 30 days of post-launch support included in the price. During this period, we monitor performance, fix issues, and help your team adapt. After 30 days, you can engage us for ongoing support or manage everything independently. Full documentation and training mean your team can run the systems without us.' },
+  { question: 'How is AI implementation UK different from generic AI implementation?', answer: 'AI implementation UK means compliance is built in from the start. GDPR, UK data residency, and industry-specific regulations (FCA, SRA, NHS, ICO) are designed into the implementation, not added later. We also use tools that have UK or EU data processing options, ensuring your data stays within appropriate jurisdictions.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer.replace(/<[^>]*>/g, '') },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Implementation UK: We Build Working AI Systems for Your Business</h1>
+      <p>AI implementation UK businesses can rely on. We configure AI systems, integrate them with your existing tools, train your team, and provide 30 days of post-launch support. Fixed-price from &pound;8,000. You own everything we build.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Implementation UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">AI implementation UK is where most AI projects fail. Not because the technology does not work, but because the implementation is handed to juniors, the team is not trained, and there is no post-launch support. We do things differently.</p>
+        <p style="line-height:1.7;">Our AI implementation UK service is the execution phase of our 4-step process. We take the strategy or audit findings and turn them into working AI systems that your team can actually use. Not slide decks. Not demos. Configured, integrated, documented AI systems that save time and money from day one.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have implemented AI systems for businesses across <a href="/industries">multiple UK industries</a>. The pattern that works is always the same: understand your workflows, configure AI tools around them, integrate with your existing stack, train your team thoroughly, and stay for 30 days after launch to make sure everything works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What Is Included in Your AI Implementation UK Engagement</h2>
+      <p class="section-subtitle reveal">Everything needed to go from plan to working AI systems. No surprises, no add-ons.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>AI System Configuration</h3>
+          <p>We configure AI tools for your specific workflows. Off-the-shelf first (ChatGPT Enterprise, Copilot, Zapier AI), custom only when necessary. Each system is set up to match how your team actually works, not how a vendor thinks it should work.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>API Integrations</h3>
+          <p>We connect AI systems to your existing tools: CRM, accounting, project management, comms, document storage. Your AI tools work within your current stack, not alongside it. No rip-and-replace, no forcing you onto new platforms.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Security & Compliance</h3>
+          <p>GDPR compliance, UK data residency, and security best practices are implemented as part of the build, not added later. Access controls, audit trails, and data protection are built into every system we deploy.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3>Team Training</h3>
+          <p>Group training sessions plus 1:1 coaching for key users. Your team learns how to use, manage, and extend the AI systems. Not a one-hour demo. Practical, hands-on training that builds real capability.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="document" /></div>
+          <h3>Full Documentation</h3>
+          <p>System documentation, user guides, troubleshooting runbooks, and admin manuals. When the engagement ends, your team has everything they need to run and maintain the systems independently. No lock-in.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="lifebuoy" /></div>
+          <h3>30-Day Post-Launch Support</h3>
+          <p>We stay for 30 days after launch. We monitor performance, fix issues, answer questions, and help your team adapt. This is included in the price, not sold as an add-on. We do not consider the job done until your team is self-sufficient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">AI Implementation UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price. You know the total cost before we start. No day rates, no open-ended billing.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Single Workflow</div>
+          <h3>AI Implementation Starter</h3>
+          <div class="pricing-price">&pound;8,000-&pound;15,000</div>
+          <div class="pricing-duration">4-6 weeks</div>
+          <ul class="pricing-features">
+            <li>One AI system configured and integrated</li>
+            <li>Integration with up to 3 existing tools</li>
+            <li>Team training (group session)</li>
+            <li>Full documentation</li>
+            <li>30-day post-launch support</li>
+            <li>Security and compliance setup</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Multi-Workflow</div>
+          <h3>AI Implementation Complete</h3>
+          <div class="pricing-price">&pound;15,000-&pound;25,000</div>
+          <div class="pricing-duration">8-10 weeks</div>
+          <ul class="pricing-features">
+            <li>2-4 AI systems configured and integrated</li>
+            <li>Integration with 5+ existing tools</li>
+            <li>Team training (group + 1:1 sessions)</li>
+            <li>Full documentation and runbooks</li>
+            <li>30-day post-launch support</li>
+            <li>Security, compliance, and data governance</li>
+            <li>Performance monitoring setup</li>
+            <li>Workflow automation included</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Full Organisation</div>
+          <h3>AI Implementation Enterprise</h3>
+          <div class="pricing-price">&pound;25,000-&pound;30,000+</div>
+          <div class="pricing-duration">10-12 weeks</div>
+          <ul class="pricing-features">
+            <li>5+ AI systems across multiple departments</li>
+            <li>Full tech stack integration</li>
+            <li>Comprehensive training programme</li>
+            <li>Complete documentation suite</li>
+            <li>30-day post-launch support</li>
+            <li>Full compliance implementation</li>
+            <li>Change management support</li>
+            <li>Board-level performance reporting</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All prices are fixed and agreed before work starts. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE IMPLEMENT -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Common AI Implementation UK Projects</h2>
+      <p class="section-subtitle reveal">The most impactful AI implementations we deliver for UK SMEs.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <h3>Customer Enquiry Automation</h3>
+          <p>AI reads incoming emails and messages, categorises them, drafts responses, and routes to the right person. Typical result: 60-80% of enquiries get a first response in seconds, not hours.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Document Processing</h3>
+          <p>AI extracts data from invoices, receipts, and purchase orders automatically. No more manual data entry. Typical result: 70% reduction in processing time, fewer errors.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Internal Knowledge Base</h3>
+          <p>AI indexes your company documents so anyone can ask questions in plain English and get instant answers. Typical result: 50% reduction in time spent searching for information.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Content Drafting Automation</h3>
+          <p>AI generates first drafts of marketing content, product descriptions, and email newsletters. Your team edits and polishes. Typical result: 50-70% reduction in content creation time.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Meeting Notes & Action Items</h3>
+          <p>AI transcribes meetings, generates summaries, and extracts action items with owners and deadlines. Typical result: 3-5 hours saved per person per week.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Workflow Automation</h3>
+          <p>Connect your tools with AI-powered automations that eliminate manual steps. See our dedicated <a href="/services/ai-automation-uk">AI automation UK</a> service for workflow-focused projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Why Choose Our AI Implementation UK Service</h2>
+      <p class="section-subtitle reveal">What makes our implementation approach different from the alternatives.</p>
+      <div class="feature-grid">
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="building" /></div>
+          <h3>Enterprise Experience, SME Pricing</h3>
+          <p>Our founder led a 45-person team at Aviva that delivered enterprise-scale AI. We bring that discipline to SME budgets. You get enterprise-grade implementation without the enterprise invoice.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="target" /></div>
+          <h3>Fixed-Price, No Surprises</h3>
+          <p>You know the total cost before we start. No day-rate billing, no scope creep, no surprise invoices. If the scope changes, we discuss it openly and agree a new fixed price before proceeding.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="handshake" /></div>
+          <h3>You Own Everything</h3>
+          <p>Full source code, configurations, documentation, and training materials. When the engagement ends, your team can run, maintain, and extend everything independently. No vendor lock-in.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="shield" /></div>
+          <h3>Compliance Built In</h3>
+          <p>GDPR, UK data residency, and industry-specific regulations are implemented as part of the build. Not an expensive add-on. Not a separate compliance engagement. Part of the implementation from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Implementation UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our AI implementation UK service.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Implement AI in Your Business?"
+    text="Book a free 30-minute discovery call. We will talk through your business, your goals, and whether AI implementation is the right next step for you."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

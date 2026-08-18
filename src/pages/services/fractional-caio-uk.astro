@@ -1,0 +1,326 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `Fractional CAIO UK | Part-Time AI Leadership | ${SITE_NAME}`;
+const description = 'Fractional CAIO UK for SMEs. Part-time AI leadership providing strategy, governance, vendor selection, team mentoring, and board reporting. From GBP 2,000/month. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'Fractional CAIO UK', 'item': `${SITE_URL}/services/fractional-caio-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Fractional CAIO UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Fractional CAIO UK service for SMEs. Part-time Chief AI Officer providing strategic direction, AI governance, vendor selection, team mentoring, and board-level reporting. From GBP 2,000 per month with flexible commitment.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a32,000-\u00a35,000/month',
+    'priceCurrency': 'GBP',
+    'description': 'Monthly fractional CAIO engagement for UK SMEs, flexible commitment, scale up or down.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does a fractional CAIO UK cost?', answer: 'Our fractional CAIO UK service starts at GBP 2,000 per month for a light-touch engagement (1-2 days per month) and ranges up to GBP 5,000 per month for a more hands-on role (3-5 days per month). The monthly fee is fixed and agreed upfront. You can scale up or down month to month as your needs change. There are no hidden costs or day-rate surprises.' },
+  { question: 'How is a fractional CAIO different from an AI consultant?', answer: 'An AI consultant delivers project-based work: a strategy, an audit, an implementation. A fractional CAIO is your ongoing AI leader. They provide continuous strategic direction, attend leadership meetings, manage vendors, mentor your team, and report to your board. Think of it as having a part-time executive on your leadership team, not an external advisor who drops in and leaves.' },
+  { question: 'Do we need a fractional CAIO if we already have an AI strategy?', answer: 'A strategy is a document. A fractional CAIO makes sure it gets executed. Many SMEs have a good AI strategy that sits on a shelf because no one owns the execution. A fractional CAIO takes accountability for delivering the strategy, adjusting it as circumstances change, and keeping AI initiatives on track. If your strategy is already being executed effectively by an internal leader, you may not need a fractional CAIO.' },
+  { question: 'What commitment do we need to make?', answer: 'The minimum commitment is 3 months. This gives enough time to understand your business, establish a working rhythm, and deliver visible value. After the first 3 months, the engagement is month-to-month. You can scale the days up or down, pause for a month, or end the engagement with 30 days notice. There are no long-term lock-in contracts.' },
+  { question: 'Can a fractional CAIO help with vendor selection and tool decisions?', answer: 'Yes. Vendor selection is one of the most valuable things a fractional CAIO does. The AI tools market is crowded and confusing, with hundreds of vendors making similar claims. A fractional CAIO cuts through the noise, evaluates tools against your specific needs, negotiates pricing, and manages vendor relationships. This alone often saves more than the cost of the engagement by preventing bad tool purchases.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>Fractional CAIO UK: Senior AI Leadership Without the Full-Time Cost</h1>
+      <p>Fractional CAIO UK for SMEs with 10-250 employees. A part-time Chief AI Officer who provides strategy, governance, vendor selection, team mentoring, and board reporting. From &pound;2,000/month. Flexible, no long-term lock-in.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'Fractional CAIO UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">A fractional CAIO UK gives your business experienced AI leadership without the &pound;150,000+ salary of a full-time Chief AI Officer. You get a senior AI leader on your team, part-time, who provides strategic direction, manages vendors, mentors your people, and reports to your board. All for a fraction of the cost.</p>
+        <p style="line-height:1.7;">Most UK SMEs need AI leadership. They do not need it full-time. A fractional CAIO is the answer for businesses that are serious about AI but cannot justify, or do not yet need, a full-time executive. You get the strategic thinking, the governance oversight, and the board-level communication that AI initiatives require, scaled to your budget and your stage of AI maturity.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have seen what happens when SMEs try to lead AI initiatives without dedicated leadership. AI becomes everyone's second priority, which means it is no one's first priority. Projects stall. Tools get bought and unused. Teams lose confidence. A fractional CAIO fixes this by giving AI a clear owner with the authority and expertise to drive it forward. Read our guide to <a href="/blog/fractional-caio-for-smes">fractional CAIO for UK SMEs</a> for more on this model.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT A FRACTIONAL CAIO DOES -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What a Fractional CAIO Does</h2>
+      <p class="section-subtitle reveal">The five core responsibilities of a fractional CAIO in a UK SME.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>AI Strategy & Direction</h3>
+          <p>Your fractional CAIO owns the AI strategy and keeps it aligned with your business goals. They prioritise initiatives, sequence investments, and adjust the plan as your business evolves. Not a one-time document that sits on a shelf, but a living strategy that guides decisions week to week. They make sure every AI investment moves you toward a clear business outcome.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>AI Governance & Compliance</h3>
+          <p>Your fractional CAIO establishes and maintains the governance framework that keeps AI safe, compliant, and ethical. This includes data protection policies, model risk management, bias testing protocols, employee usage guidelines, and audit trails. They ensure you stay ahead of UK and EU regulatory developments, including the EU AI Act and UK AI Safety Institute guidance. See our dedicated <a href="/services/ai-governance-uk">AI governance UK</a> service for more detail.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>Vendor & Tool Selection</h3>
+          <p>The AI tools market is overwhelming. Your fractional CAIO cuts through the noise. They evaluate vendors against your specific needs, negotiate pricing, manage relationships, and make build-vs-buy decisions. They prevent expensive mistakes and ensure you invest in tools that fit your workflows, budget, and compliance requirements. This alone often saves more than the cost of the engagement.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Team Mentoring & Capability Building</h3>
+          <p>Your fractional CAIO builds internal AI capability rather than creating dependency. They mentor key team members, identify skills gaps, recommend training, and gradually transfer ownership of AI initiatives to your people. The goal is to reach a point where your team can manage AI independently, with the fractional CAIO providing oversight and strategic direction. See our <a href="/services/ai-training-uk">AI training UK</a> service for team workshops.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Board Reporting & ROI Tracking</h3>
+          <p>Your fractional CAIO communicates AI progress to your board in language they understand. No technical jargon, no hype. Clear reports on what was invested, what was delivered, and what return was generated. They track ROI across all AI initiatives and make the case for future investment based on evidence, not promises. This is how AI gets taken seriously at the leadership level.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3>Initiative Oversight & Execution</h3>
+          <p>Your fractional CAIO oversees the execution of AI initiatives, whether delivered by your internal team, external vendors, or our implementation services. They keep projects on track, manage risks, resolve blockers, and ensure deliverables meet quality standards. They are the single point of accountability for AI outcomes, so nothing falls between the cracks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SMEs NEED AI LEADERSHIP -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Why SMEs Need AI Leadership but Cannot Afford Full-Time</h2>
+      <p class="section-subtitle reveal">The gap between what SMEs need and what they can afford is exactly what a fractional CAIO fills.</p>
+      <div class="feature-grid">
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="money" /></div>
+          <h3>The Cost Gap</h3>
+          <p>A full-time Chief AI Officer in the UK commands a salary of &pound;150,000 to &pound;250,000+, plus benefits, bonus, and equity. For a business with 50-250 employees, that is a significant overhead. A fractional CAIO delivers the same strategic leadership for &pound;2,000-&pound;5,000 per month. You get the expertise without the full-time cost.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="target" /></div>
+          <h3>The Expertise Gap</h3>
+          <p>Finding and hiring a good full-time CAIO is hard. The talent pool is small, competition is fierce, and the risk of a bad hire is high. A fractional CAIO gives you access to experienced AI leadership immediately, without a 6-month recruitment process. You get someone who has done this before, not someone learning on your budget.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="compass" /></div>
+          <h3>The Workload Gap</h3>
+          <p>Most SMEs do not have enough AI work to keep a full-time CAIO busy. The role involves bursts of intense strategic work followed by periods of oversight and monitoring. A fractional CAIO matches the time invested to the actual workload. You are not paying for idle time between initiatives. Scale up during major projects, scale down during steady-state operations.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="users" /></div>
+          <h3>The Accountability Gap</h3>
+          <p>Without a dedicated AI leader, accountability is diffused. The CEO has too many other priorities. The IT director lacks AI-specific expertise. No one owns AI outcomes end to end. A fractional CAIO fills this gap with a clear, named owner of AI strategy and execution. When everyone is responsible, no one is. When someone is accountable, things happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What Is Included in Your Fractional CAIO UK Engagement</h2>
+      <p class="section-subtitle reveal">Everything you would expect from a senior AI leader, scaled to your needs and budget.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3>Monthly Strategy Sessions</h3>
+          <p>Regular strategy sessions with your leadership team to review AI progress, prioritise initiatives, and align AI investment with business goals. These are working sessions, not status updates. Decisions get made, actions get assigned, and accountability is clear.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>AI Initiative Prioritisation</h3>
+          <p>Continuous assessment and reprioritisation of AI initiatives based on business impact, readiness, and resource availability. Your fractional CAIO ensures you are always working on the highest-value opportunities, not just the most visible or exciting ones.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>Vendor Management</h3>
+          <p>End-to-end vendor management: evaluation, selection, negotiation, onboarding, and ongoing relationship management. Your fractional CAIO is your advocate with AI vendors, ensuring you get the right tools at the right price with the right support.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Governance & Risk Management</h3>
+          <p>Establishment and maintenance of AI governance frameworks, including data protection, model risk, bias testing, and employee usage policies. Your fractional CAIO keeps you compliant with UK GDPR, the EU AI Act, and industry-specific regulations.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3>Team Mentoring</h3>
+          <p>1:1 mentoring for key team members who are taking on AI responsibilities. Your fractional CAIO builds internal capability so that, over time, your team can manage AI initiatives independently. The goal is to reduce dependency on external support, not increase it.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Board-Level Reporting</h3>
+          <p>Quarterly board reports that communicate AI progress, ROI, risks, and recommendations in clear business language. Your board gets the information they need to make informed decisions about AI investment, without technical jargon or hype.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">Fractional CAIO UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed monthly fee. Flexible commitment. Scale up or down as your needs change.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Light-Touch</div>
+          <h3>Fractional CAIO Advisory</h3>
+          <div class="pricing-price">&pound;2,000-&pound;3,000<span style="font-size:0.85rem;font-weight:500;color:var(--grey-500);"> /month</span></div>
+          <div class="pricing-duration">1-2 days per month</div>
+          <ul class="pricing-features">
+            <li>Monthly strategy session with leadership</li>
+            <li>AI initiative prioritisation and oversight</li>
+            <li>Vendor evaluation and recommendations</li>
+            <li>Email and call support between sessions</li>
+            <li>Quarterly board summary report</li>
+            <li>Flexible, scale up or down monthly</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Enquire</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Hands-On</div>
+          <h3>Fractional CAIO Strategic</h3>
+          <div class="pricing-price">&pound;3,000-&pound;4,000<span style="font-size:0.85rem;font-weight:500;color:var(--grey-500);"> /month</span></div>
+          <div class="pricing-duration">2-3 days per month</div>
+          <ul class="pricing-features">
+            <li>Bi-weekly strategy sessions with leadership</li>
+            <li>Full AI initiative oversight and execution</li>
+            <li>Vendor management and negotiation</li>
+            <li>Team mentoring for key AI champions</li>
+            <li>Governance framework maintenance</li>
+            <li>Quarterly board-level reporting</li>
+            <li>Priority email and call support</li>
+            <li>Risk and compliance monitoring</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Enquire</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Deep Engagement</div>
+          <h3>Fractional CAIO Leadership</h3>
+          <div class="pricing-price">&pound;4,000-&pound;5,000<span style="font-size:0.85rem;font-weight:500;color:var(--grey-500);"> /month</span></div>
+          <div class="pricing-duration">3-5 days per month</div>
+          <ul class="pricing-features">
+            <li>Weekly leadership engagement</li>
+            <li>Full strategic and operational ownership</li>
+            <li>Active vendor and partner management</li>
+            <li>Comprehensive team mentoring programme</li>
+            <li>Full governance and compliance oversight</li>
+            <li>Monthly board-level reporting</li>
+            <li>On-call support for AI initiatives</li>
+            <li>Change management and stakeholder engagement</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Enquire</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All fees are fixed monthly and agreed before engagement starts. Minimum 3-month commitment, then month-to-month. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How a Fractional CAIO Engagement Works</h2>
+      <p class="section-subtitle reveal">A structured onboarding that gets your fractional CAIO up to speed fast, then a sustainable monthly rhythm.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chat" /></div>
+          <h3>Week 1: Onboard</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We immerse in your business: goals, current AI usage, team, tech stack, and strategic priorities. We establish the working rhythm and reporting structure.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="search" /></div>
+          <h3>Week 2-3: Assess</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We assess your current AI initiatives, vendor relationships, governance posture, and team capability. We identify quick wins and longer-term priorities.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="compass" /></div>
+          <h3>Month 2+: Lead</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We provide ongoing strategic direction, oversee initiatives, manage vendors, mentor your team, and report to your board on a regular monthly rhythm.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chart" /></div>
+          <h3>Ongoing: Review</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We review progress quarterly, adjust the strategy as needed, and scale the engagement up or down based on your evolving needs and AI maturity.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Is a Fractional CAIO UK Right for You?</h2>
+      <p class="section-subtitle reveal">This service is designed for UK businesses that need ongoing AI leadership without a full-time hire.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="check" /></div>
+          <h3>This Is Right for You If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Your business has 10-250 employees</li>
+            <li>You have AI initiatives underway but no one owns them</li>
+            <li>You need AI leadership but cannot afford a full-time CAIO</li>
+            <li>Your AI strategy is not being executed effectively</li>
+            <li>You want to build internal AI capability over time</li>
+            <li>You need board-level communication on AI progress and ROI</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>You May Not Need This If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>You have not yet assessed your AI readiness. Start with the <a href="/services/ai-readiness-audit-uk">AI readiness audit UK</a>.</li>
+            <li>You need a one-time AI strategy, not ongoing leadership. See our <a href="/services/ai-strategy-uk">AI strategy UK</a> service.</li>
+            <li>You need AI systems built and integrated. See our <a href="/services/ai-implementation-uk">AI implementation UK</a> service.</li>
+            <li>You already have a strong internal AI leader. You may just need our <a href="/services/ai-training-uk">AI training UK</a> workshops for your team.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Fractional CAIO UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our fractional CAIO UK service.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready for Senior AI Leadership Without the Full-Time Cost?"
+    text="Book a free 30-minute discovery call. We will talk through your business, your AI initiatives, and whether a fractional CAIO is the right fit for your current stage."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

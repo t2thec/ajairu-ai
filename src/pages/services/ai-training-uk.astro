@@ -1,0 +1,342 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `AI Training UK | AI Workshops for Business Teams | ${SITE_NAME}`;
+const description = 'AI training UK for business teams. Practical, hands-on AI workshops covering AI literacy, prompt engineering, tool selection, security, and governance. From GBP 1,500. On-site or remote. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Training UK', 'item': `${SITE_URL}/services/ai-training-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Training UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI training UK service for SMEs. Practical, hands-on AI workshops for business teams covering AI literacy, prompt engineering, tool selection, security, and governance. Half-day, full-day, and multi-week formats. From GBP 1,500.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a31,500-\u00a310,000',
+    'priceCurrency': 'GBP',
+    'description': 'Fixed-price AI training workshops for UK SMEs. Half-day from GBP 1,500, full-day from GBP 2,500, multi-week programmes from GBP 5,000.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does AI training UK cost?', answer: 'Our AI training UK workshops start at GBP 1,500 for a half-day session and range up to GBP 10,000 for comprehensive multi-week training programmes. Half-day workshops are from GBP 1,500, full-day workshops from GBP 2,500, and multi-week programmes from GBP 5,000. Every workshop is fixed-price and tailored to your business. The cost depends on the format, number of participants, and level of customisation required.' },
+  { question: 'Do our team need any technical background for the training?', answer: 'No. Our AI training UK workshops are designed for business teams, not technical specialists. We use plain English, practical examples, and hands-on exercises that anyone can follow. Whether your team includes accountants, marketers, operations managers, or customer service staff, the training is accessible and immediately useful. No coding, no technical prerequisites, no jargon.' },
+  { question: 'Can the training be customised to our industry and tools?', answer: 'Yes. Every workshop is tailored to your business. We incorporate your industry context, your existing tools, and your specific use cases into the training. Your team practices with real examples from their day-to-day work, not generic scenarios. This makes the training immediately applicable and far more effective than off-the-shelf courses. Tell us your industry and goals, and we design the workshop around them.' },
+  { question: 'Is the training delivered on-site or remotely?', answer: 'Both options are available. On-site training is delivered at your offices anywhere in the UK. Remote training is delivered via video conferencing with interactive exercises and breakout sessions. On-site is ideal for full-day workshops and team-building. Remote works well for half-day sessions and distributed teams. Both formats include hands-on exercises, Q&A, and post-training reference materials.' },
+  { question: 'What happens after the training?', answer: 'Every workshop includes post-training reference materials, a summary of key techniques, and a list of recommended next steps for your team. For multi-week programmes, we include follow-up sessions to reinforce learning and address questions that arise as your team applies the skills. You can also engage us for ongoing support through our <a href="/services/fractional-caio-uk">fractional CAIO</a> service if you want continued AI leadership and mentoring.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer.replace(/<[^>]*>/g, '') },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Training UK: Practical AI Workshops for Business Teams</h1>
+      <p>AI training UK for SMEs with 10-250 employees. Hands-on workshops that build real AI skills your team can use the next day. AI literacy, prompt engineering, tool selection, security, and governance. From &pound;1,500. On-site or remote.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Training UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">AI training UK is the difference between buying AI tools and actually using them. 75% of UK businesses say they need AI training and education, yet most settle for generic online courses that teach theory without context. Our workshops are different. They are practical, hands-on, and tailored to your business.</p>
+        <p style="line-height:1.7;">Your team does not need to understand how large language models work. They need to know how to use AI tools to do their jobs faster, better, and more efficiently. That is what we teach. Not theory. Not jargon. Real skills your team can apply the moment the workshop ends. From writing effective prompts to selecting the right tool for a task to understanding the security and governance implications of using AI at work.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have trained teams across manufacturing, professional services, retail, healthcare, and more. The teams that invest in training see dramatically better adoption rates and ROI from AI tools than those that simply hand out licenses and hope for the best. A team that knows how to use AI well can save 10-20 hours per week per person. A team that does not will waste time on bad prompts, produce low-quality AI outputs, and eventually give up on the tools altogether. Training is the difference between AI that works and AI that gathers dust. Read our guide to <a href="/blog/ai-training-for-uk-businesses">AI training for UK businesses</a> for more on why this matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT OUR TRAINING COVERS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What Our AI Training UK Covers</h2>
+      <p class="section-subtitle reveal">Five core modules. Each one practical, hands-on, and immediately applicable.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>AI Literacy Fundamentals</h3>
+          <p>We start with the basics, in plain English. What AI can and cannot do. Where it helps in business. Where it does not. How to tell the difference between hype and reality. Your team leaves with a clear, honest understanding of AI that cuts through the noise. No technical background required. No jargon. Just practical knowledge that helps them make better decisions about when and how to use AI.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3>Prompt Engineering</h3>
+          <p>The single most valuable AI skill for business teams. We teach your team how to write prompts that get useful results from AI tools like ChatGPT, Claude, and Copilot. Not generic tips, but hands-on practice with real examples from your industry and workflows. Your team learns how to ask better questions, iterate on responses, and get AI to produce work that is actually useful, not generic and bland.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>Tool Selection</h3>
+          <p>The AI tools market is overwhelming. We help your team understand the landscape: which tools do what, which are right for your workflows, and which to avoid. They learn to evaluate tools against real business needs rather than vendor marketing. This prevents expensive mistakes and ensures your team uses the right tool for each task, rather than forcing everything through one platform.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Security & Governance</h3>
+          <p>AI is powerful, but it comes with risks. We teach your team how to use AI safely and responsibly at work. What data can and cannot be shared with AI tools. How to avoid common security pitfalls. What your governance policies mean in practice. This module ensures your team uses AI within your compliance framework, protecting your business from data leaks, regulatory breaches, and reputational damage.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>Hands-On Workshops</h3>
+          <p>The core of our training. Your team works through real scenarios from their day-to-day work, using AI tools to solve actual problems. Not simulated exercises. Real tasks, real outputs, real practice. By the end of the workshop, your team has used AI to produce work they can use immediately. This is how skills stick: by doing, not by watching slides.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>Workflow Integration</h3>
+          <p>We help your team identify where AI fits into their existing workflows. Which tasks can be augmented with AI? Which can be automated? Which should stay manual? Your team leaves with a personalised action plan for incorporating AI into their daily work, not just a head full of theory they will forget by Monday.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Who Our AI Training UK Is For</h2>
+      <p class="section-subtitle reveal">We tailor every workshop to the audience. Different roles need different skills.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="briefcase" /></div>
+          <h3>Leadership Teams</h3>
+          <p>For directors, founders, and senior managers who need to understand AI strategically. We cover what AI means for your business model, where to invest, how to assess ROI, and how to lead AI adoption across your organisation. This is not technical training. It is strategic AI literacy for decision-makers who need to guide their business through the AI transition.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="users" /></div>
+          <h3>Business Teams</h3>
+          <p>For operational teams who will use AI tools in their daily work. Marketing, sales, operations, customer service, finance, HR. We teach practical skills: prompt engineering, tool selection, workflow integration, and safe usage. Your team leaves with hands-on experience and a plan for using AI in their specific roles. This is where the biggest productivity gains come from.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="user" /></div>
+          <h3>Individuals & AI Champions</h3>
+          <p>For individuals who are becoming AI champions within your organisation, or who need deeper skills to lead AI initiatives. We cover advanced prompt engineering, tool evaluation, basic automation, and how to support colleagues in adopting AI. These are the people who will drive AI adoption internally after the training is over.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">AI Training UK Formats</h2>
+      <p class="section-subtitle reveal">Three formats to fit your team's availability, goals, and budget.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Half-Day Workshop</h3>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--teal-dark);margin:12px 0;">from &pound;1,500</div>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:16px;">3-4 hours, on-site or remote</p>
+          <ul style="font-size:0.9rem;line-height:1.8;">
+            <li>AI literacy fundamentals</li>
+            <li>Core prompt engineering techniques</li>
+            <li>Tool overview for your industry</li>
+            <li>Hands-on exercises (2-3 scenarios)</li>
+            <li>Security and governance basics</li>
+            <li>Reference materials included</li>
+          </ul>
+          <p style="margin-top:12px;font-size:0.9rem;">Ideal for teams that need a practical introduction to AI with hands-on practice. Up to 15 participants.</p>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--teal);background:rgba(0,196,167,0.04);">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3>Full-Day Workshop</h3>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--teal-dark);margin:12px 0;">from &pound;2,500</div>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:16px;">6-7 hours, on-site or remote</p>
+          <ul style="font-size:0.9rem;line-height:1.8;">
+            <li>All half-day content, in depth</li>
+            <li>Advanced prompt engineering</li>
+            <li>Detailed tool selection workshop</li>
+            <li>Extended hands-on exercises (4-6 scenarios)</li>
+            <li>Workflow integration planning</li>
+            <li>Security and governance deep dive</li>
+            <li>Personalised action plans for each participant</li>
+            <li>Post-training reference materials</li>
+          </ul>
+          <p style="margin-top:12px;font-size:0.9rem;">Ideal for teams that need comprehensive AI skills and a clear plan for applying them. Up to 15 participants.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3>Multi-Week Programme</h3>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--teal-dark);margin:12px 0;">from &pound;5,000</div>
+          <p style="color:var(--grey-500);font-size:0.9rem;margin-bottom:16px;">3-6 weeks, blended delivery</p>
+          <ul style="font-size:0.9rem;line-height:1.8;">
+            <li>Full-day kickoff workshop</li>
+            <li>Weekly hands-on sessions (2-3 hours)</li>
+            <li>Real-world AI projects between sessions</li>
+            <li>1:1 coaching for AI champions</li>
+            <li>Advanced automation and integration</li>
+            <li>Governance framework development</li>
+            <li>Progress reviews and follow-up</li>
+            <li>Capability transfer to internal team</li>
+          </ul>
+          <p style="margin-top:12px;font-size:0.9rem;">Ideal for organisations building internal AI capability with sustained support. Up to 20 participants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">AI Training UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price. Tailored to your business. No generic, off-the-shelf content.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Half-Day</div>
+          <h3>AI Training Essentials</h3>
+          <div class="pricing-price">&pound;1,500-&pound;2,000</div>
+          <div class="pricing-duration">3-4 hours</div>
+          <ul class="pricing-features">
+            <li>AI literacy fundamentals</li>
+            <li>Core prompt engineering</li>
+            <li>Tool overview for your industry</li>
+            <li>2-3 hands-on exercises</li>
+            <li>Security and governance basics</li>
+            <li>Up to 15 participants</li>
+            <li>On-site or remote</li>
+            <li>Reference materials included</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Full-Day</div>
+          <h3>AI Training Complete</h3>
+          <div class="pricing-price">&pound;2,500-&pound;4,000</div>
+          <div class="pricing-duration">6-7 hours</div>
+          <ul class="pricing-features">
+            <li>All half-day content, in depth</li>
+            <li>Advanced prompt engineering</li>
+            <li>Detailed tool selection workshop</li>
+            <li>4-6 hands-on exercises</li>
+            <li>Workflow integration planning</li>
+            <li>Security and governance deep dive</li>
+            <li>Personalised action plans</li>
+            <li>Up to 15 participants</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Multi-Week</div>
+          <h3>AI Training Programme</h3>
+          <div class="pricing-price">&pound;5,000-&pound;10,000</div>
+          <div class="pricing-duration">3-6 weeks</div>
+          <ul class="pricing-features">
+            <li>Full-day kickoff workshop</li>
+            <li>Weekly hands-on sessions</li>
+            <li>Real-world AI projects</li>
+            <li>1:1 coaching for AI champions</li>
+            <li>Advanced automation and integration</li>
+            <li>Governance framework development</li>
+            <li>Progress reviews and follow-up</li>
+            <li>Up to 20 participants</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All prices are fixed and agreed before work starts. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How Our AI Training UK Works</h2>
+      <p class="section-subtitle reveal">A structured approach that delivers skills your team can use immediately.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chat" /></div>
+          <h3>1. Scope</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We discuss your team, industry, current AI usage, and goals. We design the workshop around your specific needs and workflows.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="compass" /></div>
+          <h3>2. Customise</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We build custom exercises using real examples from your business. No generic scenarios. Your team practices on tasks they recognise.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="graduation" /></div>
+          <h3>3. Deliver</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We deliver the workshop on-site or remotely. Hands-on, interactive, and practical. Your team leaves with skills they can use the next day, not a head full of theory they will forget by Monday.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="check" /></div>
+          <h3>4. Reinforce</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We provide reference materials, action plans, and follow-up support. For multi-week programmes, we reinforce learning with ongoing sessions.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Is AI Training UK Right for You?</h2>
+      <p class="section-subtitle reveal">This service is designed for UK businesses that want their teams to use AI effectively, not just have access to it.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="check" /></div>
+          <h3>This Is Right for You If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Your business has 10-250 employees</li>
+            <li>You have AI tools but your team is not using them effectively</li>
+            <li>You want to build internal AI capability, not dependency</li>
+            <li>Your team needs practical skills, not theory</li>
+            <li>You want training tailored to your industry and workflows</li>
+            <li>You need to ensure your team uses AI safely and compliantly</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>You May Not Need This If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>You have not yet assessed your AI readiness. Start with the <a href="/services/ai-readiness-audit-uk">AI readiness audit UK</a>.</li>
+            <li>You need an AI strategy before training your team. See our <a href="/services/ai-strategy-uk">AI strategy UK</a> service.</li>
+            <li>You need AI systems built and integrated. See our <a href="/services/ai-implementation-uk">AI implementation UK</a> service.</li>
+            <li>You need ongoing AI leadership rather than one-time training. Consider our <a href="/services/fractional-caio-uk">fractional CAIO UK</a> service.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Training UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our AI training UK service.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Build Your Team's AI Skills?"
+    text="Book a free 30-minute discovery call. We will talk through your team, your goals, and which training format will deliver the most value for your business."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

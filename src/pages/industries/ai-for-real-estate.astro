@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Real Estate",
+  metaTitle: "AI for Real Estate UK | Property AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK real estate. Automated valuations, property matching, virtual tours, and client communication automation.",
+  h1: "AI for Real Estate in the UK",
+  lead: "Practical AI solutions for UK estate agents and property businesses. Automate valuations, enhance property matching, and improve client communication.",
+  useCases: [{"title": "Automated Valuations", "desc": "AI analyses comparable sales, market trends, and property features to generate accurate valuations in seconds."}, {"title": "Intelligent Property Matching", "desc": "AI matches buyers to properties based on preferences, behaviour, and lifestyle factors, not just price and location."}, {"title": "Virtual Staging & Tours", "desc": "AI-powered virtual staging and tours let buyers experience properties remotely, increasing engagement and reducing wasted viewings."}, {"title": "Client Communication", "desc": "AI chatbots handle enquiries, schedule viewings, and provide property information 24/7, capturing leads outside business hours."}, {"title": "Market Analysis", "desc": "AI analyses market trends, predicts price movements, and identifies investment opportunities for your clients."}, {"title": "Document Automation", "desc": "AI automates conveyancing paperwork, tenancy agreements, and compliance checks, reducing admin time significantly."}],
+  benefits: [{"title": "Property Platform Integration", "desc": "AI tools that integrate with Rightmove, Zoopla, and your existing CRM and property management software."}, {"title": "Faster Lead Response", "desc": "AI responds to enquiries in seconds, not hours. Studies show responding within 5 minutes makes you 21x more likely to qualify a lead."}, {"title": "Data-Driven Valuations", "desc": "AI valuations are based on data, not guesswork. More accurate valuations mean faster sales and happier clients."}],
+  faqs: [{"question": "Can AI really value properties accurately?", "answer": "AI valuations are typically within 3-5% of final sale price, which is comparable to or better than manual valuations for most properties. AI analyses thousands of data points: comparable sales, market trends, property features, and local area data. For unique or unusual properties, human expertise is still essential."}, {"question": "Will AI replace estate agents?", "answer": "No. AI handles routine tasks like valuations, property matching, and initial enquiries, but the human elements of estate agency, building relationships, negotiating, and guiding clients through emotional decisions, remain essential. AI makes agents more efficient and effective, not redundant."}, {"question": "How quickly can I implement AI in my estate agency?", "answer": "Quick wins like AI chatbots and automated valuations can be implemented in 4-6 weeks. Full implementation with CRM integration and property matching typically takes 8-12 weeks. Our 750 audit identifies the fastest, highest-ROI opportunities for your specific business."}, {"question": "Does AI work with Rightmove and Zoopla?", "answer": "Yes. Many AI tools integrate with major property portals and CRM systems. We assess your current setup and recommend the right approach, whether that is configuring existing integrations or building custom ones. During the audit, we assess your current tech stack and recommend AI tools that fit your existing setup."}],
+  slug: "ai-for-real-estate",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>The UK property market is fast-moving and highly competitive. Estate agents and property businesses that use AI can respond faster, value more accurately, and provide a better experience for buyers, sellers, landlords, and tenants. AI is no longer a nice-to-have, it's becoming a competitive necessity.</p>
+<p>Our team helps UK real estate businesses implement AI that improves efficiency and client experience. From automated property valuations to intelligent property matching and 24/7 client communication, we focus on AI that delivers real business value.</p>
+<p>Whether you're an independent estate agent or a multi-branch property group, AI can help you do more with your existing team. The key is starting with the use cases that deliver the fastest, clearest return on investment.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your real estate agency? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

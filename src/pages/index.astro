@@ -1,0 +1,483 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL, CONTACT_EMAIL, FOUNDER_NAME, INDUSTRIES } from '../config';
+import Icon from '../components/Icon.astro';
+
+const title = `AI Consulting UK | AI Consultant UK | ${SITE_NAME}, Practical AI for UK SMEs`;
+const description = 'AI consulting UK for SMEs. Enterprise-grade expertise at independent pricing. AI readiness audits, strategy roadmaps and implementation from GBP 750. Book a free call.';
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#localbusiness`,
+  'name': SITE_NAME,
+  'description': 'AI consulting UK providing practical AI consulting services for SMEs. AI readiness audits, strategy roadmaps, and implementation for UK businesses.',
+  'url': SITE_URL,
+  'email': CONTACT_EMAIL,
+  'priceRange': '\u00a3\u00a3',
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'founder': { '@type': 'Person', 'name': FOUNDER_NAME, 'jobTitle': 'Technology Architect & AI Consultant' },
+  'address': { '@type': 'PostalAddress', 'addressCountry': 'GB' },
+  'knowsAbout': ['AI implementation', 'AI strategy', 'AI readiness audit', 'AI automation', 'fractional AI officer', 'AI transformation'],
+  'sameAs': [
+    'https://www.linkedin.com/in/tobycallinan',
+    'https://github.com/t2thec',
+  ],
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE_URL}/#organization`,
+  'name': SITE_NAME,
+  'url': SITE_URL,
+  'email': CONTACT_EMAIL,
+  'founder': { '@type': 'Person', 'name': FOUNDER_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'Practical AI consulting for UK SMEs. AI readiness audits, strategy roadmaps, and implementation services.',
+  'sameAs': [
+    'https://www.linkedin.com/in/tobycallinan',
+    'https://github.com/t2thec',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  'name': SITE_NAME,
+  'url': SITE_URL,
+  'publisher': { '@id': `${SITE_URL}/#organization` },
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': `${SITE_URL}/blog?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Opportunity Audit',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'A structured assessment of your operations, technology, and team readiness, with a prioritised AI opportunity report and ROI estimates.',
+  'offers': { '@type': 'Offer', 'priceRange': '\u00a3750-\u00a32,500', 'priceCurrency': 'GBP' },
+};
+
+const faqQuestions = [
+  { question: 'How much does AI consulting cost for a small business?', answer: 'Our AI Opportunity Audit starts at &pound;750 and gives you a clear picture of where AI can help. Full strategy engagements run &pound;5,000-&pound;15,000, and implementation projects start at &pound;8,000. All engagements are fixed-price with no open-ended billing.' },
+  { question: 'Do we need technical staff to work with you?', answer: 'No. We work with businesses at any level of AI maturity. Our process is jargon-free and we build your team\'s capability so they can manage AI tools independently after the engagement ends.' },
+  { question: 'Is our data safe when using AI tools?', answer: 'Yes. We take a security-first approach with UK data residency, GDPR compliance, and enterprise-grade data governance built into every engagement. We recommend tools that keep your data within the UK/EU where possible.' },
+  { question: 'How long does an AI implementation take?', answer: 'An AI Opportunity Audit takes 1-2 weeks. A strategy and roadmap engagement takes 3-5 weeks. Implementation projects typically run 6-12 weeks depending on complexity, with 30 days of post-launch support included.' },
+  { question: 'What size businesses do you work with?', answer: 'We specialise in UK SMEs with 10-250 employees. This is where we see the biggest gap: businesses that are too large for generic advice but too small for Big Four consultancy fees.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqQuestions.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer.replace(/&pound;/g, '\u00a3').replace(/<[^>]*>/g, '') },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[localBusinessSchema, organizationSchema, websiteSchema, serviceSchema, faqSchema]}>
+  <Hero
+    badge="We Build AI Systems, We Don't Just Advise"
+    title={`AI Consulting UK: <span class="accent">Practical AI</span> for UK Small &amp; Medium Businesses`}
+    lead="AI consulting UK businesses trust. You know AI matters. You don't know where to start. We find the AI opportunities worth pursuing and build them. Not strategy decks. Working systems your team can run. Typical clients save 10-20 hours a week within 8 weeks, and most engagements pay for themselves in under 90 days."
+    secondaryCtaText="Take the Free AI Readiness Quiz"
+    secondaryCtaHref="/assessment"
+  />
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-grid">
+        <div class="trust-item">
+          <div class="num">27+</div>
+          <div class="label">Years in Technology</div>
+        </div>
+        <div class="trust-item">
+          <div class="num">Fixed</div>
+          <div class="label">Price Engagements</div>
+        </div>
+        <div class="trust-item">
+          <div class="num">Full</div>
+          <div class="label">Source &amp; IP Ownership</div>
+        </div>
+        <div class="trust-item">
+          <div class="num">&pound;750</div>
+          <div class="label">Audit with Walk-Away Protection</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="section bg-grey" id="problem">
+    <div class="container">
+      <h2 class="section-title reveal">You're Not Behind. You Just Need a Starting Point.</h2>
+      <div class="reveal" style="max-width:760px;margin:0 auto 48px;">
+        <p style="font-size:1.15rem;line-height:1.7;color:var(--grey-600);">If you run a business, you've been hearing about AI for months. Maybe your competitors are already using it. Maybe your board is asking what your AI strategy is. And maybe you've looked at a few tools and thought: which one of these actually works for a business my size?</p>
+        <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-500);margin-top:16px;">You're not alone. Here's what the research shows about where UK SMEs are stuck, and how we solve each one.</p>
+      </div>
+      <div class="problem-list">
+        <div class="problem-item reveal">
+          <div class="pct">71%</div>
+          <div class="pcontent">
+            <h4>"We don't know what we'd use AI for"</h4>
+            <p>71% of non-adopters cite "lack of identified need." Our <a href="/services#audit">AI Opportunity Audit</a> finds the high-ROI use cases specific to your business, so you know exactly where to start.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">60%</div>
+          <div class="pcontent">
+            <h4>"We don't have AI skills in-house"</h4>
+            <p>60% cite limited AI expertise as a barrier. We build your team's capability through training and documentation, not dependency on an external consultant forever.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">76%</div>
+          <div class="pcontent">
+            <h4>"AI consulting is too expensive"</h4>
+            <p>76% see high costs as a significant barrier. Every engagement is fixed-price. You know the cost before we start, no open-ended billing. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK</a>.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">72%</div>
+          <div class="pcontent">
+            <h4>"The regulation is unclear"</h4>
+            <p>72% see unclear regulation as a barrier. We handle compliance and GDPR considerations as part of every engagement from day one, so you don't have to figure it out alone.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">51%</div>
+          <div class="pcontent">
+            <h4>"We're worried about data security"</h4>
+            <p>51% need hands-on support. We take a security-first approach with UK data residency and enterprise-grade data governance, built into every project.</p>
+          </div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="pct">47%</div>
+          <div class="pcontent">
+            <h4>"We don't have an AI budget set"</h4>
+            <p>47% have no specific AI budget. We help you build the business case with ROI estimates before you commit to larger investment, so you can make the case with numbers, not gut feel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION / 3-TIER SERVICES -->
+  <section class="section" id="solutions">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Our Approach</span>
+      <h2 class="section-title reveal">AI Consulting UK: Three Steps to AI That Actually Works</h2>
+      <p class="section-subtitle reveal">From finding your first opportunity to a fully implemented AI system. Start at whichever stage fits, no pressure to buy all three. This is AI consulting for SMEs UK made simple.</p>
+      <div class="cards-grid cards-3">
+        <ServiceCard
+          icon="search"
+          title="AI Opportunity Audit"
+          description="A structured assessment of your operations, technology, and team readiness. Find out exactly where AI can save time and money. This is your AI readiness audit, the first step."
+          features={['Prioritised AI opportunity report', 'ROI estimates for top opportunities', 'Team readiness assessment', '1-2 weeks, from \u00a3750']}
+          linkText="Learn about the Audit"
+          linkHref="/services#audit"
+        />
+        <ServiceCard
+          icon="map"
+          title="AI Strategy &amp; Roadmap"
+          description="A complete plan for AI adoption across your business. Workflow mapping, build-vs-buy recommendations, and a 90-day implementation roadmap. Our AI strategy UK service."
+          features={['Full workflow mapping across departments', 'Integration architecture', 'Build vs buy recommendations', '3-5 weeks, from \u00a35,000']}
+          linkText="Learn about AI Strategy UK"
+          linkHref="/services/ai-strategy-uk"
+        />
+        <ServiceCard
+          icon="wrench"
+          title="AI Implementation"
+          description="We configure and integrate AI systems into your existing tools, train your team, and provide 30 days of post-launch support. AI implementation UK businesses can rely on."
+          features={['Configured AI systems tailored to your workflows', 'API integrations with existing tools', 'Team training and documentation', '6-12 weeks, from \\u00a38,000']}
+          linkText="Learn about AI Implementation UK"
+          linkHref="/services/ai-implementation-uk"
+        />
+      </div>
+      <p class="text-center mt-3 reveal">Also available: <a href="/services#fractional-caio">Fractional CAIO</a> (part-time AI leadership), <a href="/services/ai-automation-uk">AI automation UK</a> services, and <a href="/services#training">AI Training Workshops</a> from &pound;1,500.</p>
+    </div>
+  </section>
+
+  <!-- DEDICATED SERVICE LINKS -->
+  <section class="section bg-grey" id="dedicated-services">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Specialised Services</span>
+      <h2 class="section-title reveal">AI Consulting UK Services, In Detail</h2>
+      <p class="section-subtitle reveal">Each area of AI consulting UK SMEs need has its own dedicated page with pricing, process, and FAQs. Explore the specific service that matches where you are today.</p>
+      <div class="cards-grid cards-3">
+        <a href="/services/ai-strategy-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Strategy UK</h3>
+          <p style="font-size:0.9rem;">A complete AI adoption roadmap for your business. From &pound;5,000.</p>
+        </a>
+        <a href="/services/ai-implementation-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Implementation UK</h3>
+          <p style="font-size:0.9rem;">We build, integrate, and train your team. Working AI systems from &pound;8,000.</p>
+        </a>
+        <a href="/services/ai-automation-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Automation UK</h3>
+          <p style="font-size:0.9rem;">Workflow automation that saves 10-20 hours per week. From &pound;3,000.</p>
+        </a>
+      </div>
+      <div class="cards-grid cards-3" style="margin-top:24px;">
+        <a href="/services/ai-readiness-audit-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="search" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Readiness Audit UK</h3>
+          <p style="font-size:0.9rem;">Assess your data, infrastructure, and team readiness. From &pound;750.</p>
+        </a>
+        <a href="/services/fractional-caio-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="briefcase" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">Fractional CAIO UK</h3>
+          <p style="font-size:0.9rem;">Part-time AI leadership for SMEs. From &pound;2,000/month.</p>
+        </a>
+        <a href="/services/ai-governance-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Governance UK</h3>
+          <p style="font-size:0.9rem;">AI policy, compliance, and risk management. From &pound;3,000.</p>
+        </a>
+      </div>
+      <div class="cards-grid cards-2" style="margin-top:24px;">
+        <a href="/services/ai-training-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Training UK</h3>
+          <p style="font-size:0.9rem;">Practical AI workshops for business teams. From &pound;1,500.</p>
+        </a>
+        <a href="/services/conversational-ai-uk" class="card reveal" style="text-align:center;padding:32px 24px;display:block;">
+          <div class="card-icon"><Icon name="chat" /></div>
+          <h3 style="font-size:1.15rem;margin-bottom:8px;">Conversational AI UK</h3>
+          <p style="font-size:0.9rem;">AI chatbots and assistants for support and sales. From &pound;8,000.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your business and point you to the right service, even if that is none of them yet."
+    primaryCtaText="Book a Free Call"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+
+  <!-- WHAT WE DON'T DO -->
+  <section class="section bg-grey" id="what-we-dont-do">
+    <div class="container">
+      <div class="split-content">
+        <div class="reveal">
+          <span class="eyebrow">Boundaries</span>
+          <h2>What We Don't Do</h2>
+          <p>Being clear about what we don't do is as important as what we do. It saves both of us time, and it's why our clients trust us.</p>
+          <ul style="list-style:none;margin-top:20px;">
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No slide-only strategy.</strong> We build working systems, not 200-slide decks that gather dust. Every engagement is designed for execution.</span>
+            </li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No day-rate billing.</strong> Fixed prices only. You know the total cost before we start. No open-ended invoices, no surprise charges.</span>
+            </li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No dependency-creating systems.</strong> Your team owns everything we build. Full documentation, training, and handover. When we leave, you can run it without us.</span>
+            </li>
+            <li style="padding:10px 0;border-bottom:1px solid var(--grey-100);display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No tech jargon.</strong> Plain English, always. If we use a technical term, we explain it. You'll always understand what you're paying for.</span>
+            </li>
+            <li style="padding:10px 0;display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:#e53935;font-weight:700;flex-shrink:0;">&#x2717;</span>
+              <span><strong>No AI for the sake of AI.</strong> We tell you where it won't help. If a spreadsheet or simpler tool solves your problem better, we'll say so. Technology follows the problem, not the other way around.</span>
+            </li>
+          </ul>
+          <p style="margin-top:20px;">Learn more about <a href="/about">our approach</a> or explore our <a href="/services">services and pricing</a>.</p>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:16px;justify-content:center;">
+          <div class="card" style="border-left:4px solid var(--teal);">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+              <Icon name="target" size={28} />
+              <h3 style="margin:0;">Outcomes, Not Technology</h3>
+            </div>
+            <p style="font-size:0.9rem;margin:0;">We lead with your business problems, not AI. Every recommendation includes estimated ROI. The goal is hours saved and costs reduced, not technology deployed.</p>
+          </div>
+          <div class="card" style="border-left:4px solid var(--teal);">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+              <Icon name="shield" size={28} />
+              <h3 style="margin:0;">Compliance Built In</h3>
+            </div>
+            <p style="font-size:0.9rem;margin:0;">GDPR, UK data residency, and security best practices are part of every engagement. We never use your data to train public models.</p>
+          </div>
+          <div class="card" style="border-left:4px solid var(--teal);">
+            <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+              <Icon name="handshake" size={28} />
+              <h3 style="margin:0;">You Own the Result</h3>
+            </div>
+            <p style="font-size:0.9rem;margin:0;">Full documentation, training, and handover. When the engagement ends, your team can run and extend everything independently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE COMPARE -->
+  <section class="section" id="how-we-compare">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">The Middle Ground</span>
+      <h2 class="section-title reveal">How We Compare</h2>
+      <p class="section-subtitle reveal">We sit in the gap between Big Four consultancies and DIY. Here's why that middle ground is where SMEs win.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="opacity:0.7;">
+          <h3 style="font-size:1rem;">Big Four Consultancy</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);">&pound;100k+ engagements. Slide decks, subcontracted delivery, enterprise timelines. Too big, too expensive, too slow for an SME.</p>
+        </div>
+        <div class="card reveal" style="opacity:0.7;">
+          <h3 style="font-size:1rem;">Freelancer</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);">Cheap but single-person risk. No governance, no compliance framework, no cover when they're ill or unavailable.</p>
+        </div>
+        <div class="card reveal" style="opacity:0.7;">
+          <h3 style="font-size:1rem;">DIY</h3>
+          <p style="font-size:0.85rem;color:var(--grey-500);">Free but 6 months of trial and error. No governance, team resistance, no clear path. Likely to stall or fail without external guidance.</p>
+        </div>
+        <div class="card reveal" style="border:2px solid var(--teal);background:rgba(0,196,167,0.04);">
+          <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+            <Icon name="target" size={22} />
+            <h3 style="font-size:1rem;margin:0;color:var(--navy);">{SITE_NAME}</h3>
+          </div>
+          <p style="font-size:0.85rem;color:var(--grey-600);">Enterprise experience, SME pricing, fixed scope, you own the result. The right size, the right price, the right approach.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/comparison">See the detailed comparison table</a> or <a href="/best-ai-consultant-uk">compare UK AI consultancies</a>.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES SECTION -->
+  <section class="section bg-grey" id="industries">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Sectors We Serve</span>
+      <h2 class="section-title reveal">AI Consulting for Every Industry</h2>
+      <p class="section-subtitle reveal">We work across sectors, bringing enterprise-grade AI expertise to each. Explore how AI applies to your industry specifically, with use cases, benefits, and sector-specific guidance.</p>
+      <div class="cards-grid cards-4">
+        {INDUSTRIES.map((ind) => (
+          <a href={`/industries/${ind.slug}`} class="card reveal industry-card" style="text-align:center;padding:24px 16px;display:block;">
+            <div class="card-icon"><Icon name={ind.icon} /></div>
+            <h3 style="font-size:1rem;margin-bottom:8px;">{ind.name}</h3>
+            <p style="font-size:0.85rem;">AI solutions tailored to your sector.</p>
+          </a>
+        ))}
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">Don't see your industry? <a href="/industries">Browse all industries</a> or <a href="/contact">get in touch</a> and we'll tell you if AI makes sense for your sector.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <h2 class="section-title reveal">Why UK SMEs Choose {SITE_NAME} as Their AI Advisor</h2>
+      <p class="section-subtitle reveal">Enterprise-grade AI expertise without the enterprise price tag. Here's what makes us different as your AI consultant for small business UK.</p>
+      <div class="feature-grid">
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="building" /></div>
+          <h3>Enterprise Experience</h3>
+          <p>AI implementation at enterprise scale, applied to SME budgets. You get Big Four knowledge without the Big Four invoice.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="target" /></div>
+          <h3>Fixed-Price Engagements</h3>
+          <p>No open-ended billing. You know the cost before we start. Every engagement has a clear scope and deliverable.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="compass" /></div>
+          <h3>Jargon-Free Approach</h3>
+          <p>Plain English, not buzzwords. If we use a technical term, we explain it. You'll always understand what you're getting.</p>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-icon"><Icon name="graduation" /></div>
+          <h3>Self-Sufficient Teams</h3>
+          <p>We build your team's capability, not dependency. After the engagement, your people can manage and extend AI tools independently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" id="process">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">How It Works</span>
+      <h2 class="section-title reveal">A 4-Step Process That De-risks AI</h2>
+      <p class="section-subtitle reveal">No black boxes. No surprise bills. A proven methodology that takes you from uncertainty to implemented AI.</p>
+      <ProcessSteps />
+      <p class="text-center mt-3 reveal"><a href="/process">See the full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section class="section bg-grey" id="free-guide">
+    <div class="container">
+      <div class="reveal" style="max-width:680px;margin:0 auto;text-align:center;">
+        <h2 class="section-title">Free Guide: 5 AI Use Cases That Pay for Themselves in 90 Days</h2>
+        <p class="section-subtitle">Practical use cases with real numbers, not hype. Cost estimates, time savings, and tools you can use today.</p>
+        <a href="/guide" class="btn btn-primary btn-lg" style="margin-top:16px;">Get the Free Guide</a>
+        <p style="font-size:0.85rem;color:var(--grey-400);margin-top:12px;">No spam. One email with the PDF.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="section" id="blog-preview">
+    <div class="container">
+      <h2 class="section-title reveal">Latest from the Blog</h2>
+      <p class="section-subtitle reveal">Practical, no-hype guides on AI adoption for UK SMEs.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <span class="blog-tag">AI Implementation</span>
+          <h3 style="font-size:1.15rem;"><a href="/blog/how-to-implement-ai-in-small-business-uk">How to Implement AI in Your Small Business: A UK Guide</a></h3>
+          <p>A step-by-step guide for UK small businesses ready to start with AI.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">AI Readiness</span>
+          <h3 style="font-size:1.15rem;"><a href="/blog/what-is-ai-readiness-audit">What Is an AI Readiness Audit?</a></h3>
+          <p>Understand what an AI readiness audit is and why your business needs one.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">AI Automation</span>
+          <h3 style="font-size:1.15rem;"><a href="/blog/ai-automation-for-business-workflows">AI Automation for Business: 5 Workflows You Can Build Today</a></h3>
+          <p>Five practical AI automations you can build today.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/blog">Read all articles</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">Questions UK SMEs Ask Us</h2>
+      <p class="section-subtitle reveal">Straight answers to the most common concerns about AI consulting for small businesses.</p>
+      <FAQ items={faqQuestions} />
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <CTASection
+    title="Ready to Find Your AI Opportunities?"
+    text="Book a free, no-obligation 30-minute discovery call. We'll talk through your business, your goals, and whether AI makes sense for you right now. No pitch. No pressure."
+  />
+</BaseLayout>

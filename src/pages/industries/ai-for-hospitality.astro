@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Hospitality",
+  metaTitle: "AI for Hospitality UK | Hotel & Restaurant AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK hospitality businesses. Booking automation, personalised guest experiences, demand forecasting, and review management. Book a free call.",
+  h1: "AI for Hospitality in the UK",
+  lead: "Practical AI solutions for UK hotels, restaurants, and venues. Personalise guest experiences, forecast demand, automate bookings, and manage reviews without losing the human touch.",
+  useCases: [{"title": "Guest Personalisation", "desc": "AI analyses booking history and preferences to tailor room recommendations, dining suggestions, and special offers for each guest, increasing repeat bookings by up to 30%."}, {"title": "Demand Forecasting", "desc": "Predict occupancy and pricing based on events, seasonality, weather, and local demand. Optimise room rates dynamically without manual guesswork."}, {"title": "Booking & Enquiry Automation", "desc": "AI chatbots handle booking enquiries, room requests, and FAQ 24/7, freeing front desk staff for in-person guests. Integrates with your existing PMS."}, {"title": "Review Management", "desc": "AI monitors and responds to reviews across TripAdvisor, Google, and Booking.com, flagging negative reviews for immediate follow-up and generating draft responses for approval."}, {"title": "Inventory & Supply", "desc": "Predict ingredient demand for restaurants and bars, reducing food waste by up to 25% and optimising supplier orders."}, {"title": "Staff Scheduling", "desc": "AI forecasts staffing needs based on bookings, events, and historical data, ensuring you have the right team at the right time without overstaffing."}],
+  benefits: [{"title": "Guest Experience First", "desc": "We design AI that enhances the guest experience, not replaces it. Your staff spend less time on admin and more time with guests."}, {"title": "Works With Your PMS", "desc": "We integrate AI with your existing property management system, booking engine, and POS. No rip-and-replace, no new platforms to learn."}, {"title": "UK Compliance Built-In", "desc": "GDPR-compliant data handling, UK data residency where possible, and full compliance with hospitality regulations including allergen and food safety standards."}],
+  faqs: [{"question": "Will AI make our hospitality feel less personal?", "answer": "No. The opposite. AI handles the repetitive tasks, bookings, and data analysis so your team can focus on what matters: the guest experience. The best hospitality AI works behind the scenes, giving your staff more time for genuine human connection."}, {"question": "Can AI work with our existing booking system?", "answer": "Yes. We integrate AI with your existing PMS, booking engine, and POS system. We do not ask you to change platforms. We enhance what you already have."}, {"question": "How much does AI implementation cost for a hospitality business?", "answer": "Our AI Opportunity Audit starts at 750 and identifies exactly where AI can help your venue. Implementation projects start at 8,000, with full strategy engagements from 5,000. All engagements are fixed-price."}, {"question": "Is guest data safe with AI tools?", "answer": "We use AI tools that process data within secure, UK-based or EU-based environments. We never use guest data to train public models. All implementations include access controls and encryption. We can recommend on-premise solutions for highly sensitive data."}],
+  slug: "ai-for-hospitality",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>AI is transforming hospitality in the UK. From boutique hotels to restaurant groups, AI tools help you deliver better guest experiences while reducing operational costs. But implementing AI in hospitality requires balance: technology should support your team, not replace the personal touch that guests value.</p>
+<p>Our team helps UK hospitality businesses adopt AI in a way that works for them. We understand the sector and we build solutions that integrate with your existing systems. Whether you run a single venue or a growing group, we find the AI opportunities that make sense for your business.</p>
+<p>Hospitality businesses that adopt AI now will pull ahead of competitors still relying on manual processes. The key is starting with a clear understanding of where AI helps and where it doesn't.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your hospitality business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

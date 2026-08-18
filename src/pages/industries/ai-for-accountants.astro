@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Accountants",
+  metaTitle: "AI for Accountants UK | Accounting AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK accountants. Bookkeeping automation, audit enhancement, tax research AI, and advisory services. Fixed-price engagements.",
+  h1: "AI for Accountants in the UK",
+  lead: "Practical AI solutions for UK accounting practices. Automate bookkeeping, enhance audit quality, and deliver advisory services that clients value.",
+  useCases: [{"title": "Automated Bookkeeping", "desc": "AI categorises transactions, reconciles accounts, and flags anomalies automatically. Reduces manual bookkeeping time by up to 60%."}, {"title": "Audit Enhancement", "desc": "AI analyses 100% of transactions instead of sampling, identifying anomalies and risk patterns that manual reviews miss."}, {"title": "Tax Research & Compliance", "desc": "AI tools search tax legislation, case law, and HMRC guidance in seconds, keeping your team up to date with the latest rules."}, {"title": "Client Advisory Dashboards", "desc": "AI-powered dashboards give clients real-time financial insights, turning compliance data into advisory opportunities."}, {"title": "Invoice & Expense Processing", "desc": "OCR and AI extract data from receipts and invoices automatically, eliminating manual data entry."}, {"title": "Fraud Detection", "desc": "AI monitors transactions for unusual patterns, duplicate payments, and potential fraud in real-time."}],
+  benefits: [{"title": "ICAEW & ACCA Aware", "desc": "We understand professional standards for UK accountants. AI implementations comply with ethical guidelines and professional conduct rules."}, {"title": "Practice Management Integration", "desc": "AI tools that integrate with Xero, QuickBooks, Sage, and your existing practice management software. No rip-and-replace."}, {"title": "From Compliance to Advisory", "desc": "Free your team from routine compliance work so they can deliver higher-value advisory services that clients pay more for."}],
+  faqs: [{"question": "Can AI replace bookkeepers in my practice?", "answer": "AI automates much of the routine bookkeeping work, but it doesn't replace the need for qualified staff. Instead, it frees your team to focus on review, advisory, and client relationships. Most firms find AI lets them take on more clients without hiring more bookkeepers."}, {"question": "How does AI affect audit quality?", "answer": "AI improves audit quality by analysing 100% of transactions rather than sampling. It identifies anomalies, unusual patterns, and risk areas that manual sampling might miss. Your auditors still make the professional judgements, but they do so with better data."}, {"question": "Is AI compliant with UK accounting standards?", "answer": "Yes, when implemented correctly. AI tools don't replace professional judgement, they support it. We ensure all implementations comply with ICAEW, ACCA, and FRC guidelines. The accountant remains responsible for the work product."}, {"question": "How long does AI implementation take for an accounting firm?", "answer": "An AI Opportunity Audit takes 1-2 weeks. Implementation projects typically run 6-12 weeks depending on the number of tools and integrations required. We start with quick wins that deliver value within the first month."}],
+  slug: "ai-for-accountants",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Accounting practices in the UK are under pressure. Compliance work is becoming commoditised, clients expect more for less, and advisory services are where the value lies. AI can help you automate the routine, enhance the complex, and free up your team to deliver the advisory work clients actually want.</p>
+<p>Our team helps UK accounting firms adopt AI in a way that's practical, compliant, and profitable. We understand the ICAEW and ACCA regulatory landscape, and we know how to implement AI tools that integrate with your existing practice management software.</p>
+<p>From automating bookkeeping and bank reconciliation to enhancing audit quality and speeding up tax research, AI is already delivering real ROI for forward-thinking UK accountants. The question isn't whether to adopt AI, but how to do it in a way that maximises value while managing risk.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your accountancy practice? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

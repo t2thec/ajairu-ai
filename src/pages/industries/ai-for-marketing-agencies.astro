@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Marketing Agencies",
+  metaTitle: "AI for Marketing Agencies UK | Agency AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK marketing agencies. Content automation, campaign optimisation, client reporting, and competitive intelligence.",
+  h1: "AI for Marketing Agencies in the UK",
+  lead: "Practical AI solutions for UK marketing agencies. Automate content creation, enhance campaign performance, and deliver more for your clients.",
+  useCases: [{"title": "Content Generation", "desc": "AI generates first drafts of blog posts, social media content, and ad copy, reducing content creation time by 50-70%."}, {"title": "Campaign Optimisation", "desc": "AI analyses campaign performance in real-time, adjusting targeting, bidding, and creative for better ROI."}, {"title": "Automated Reporting", "desc": "AI generates client reports automatically, pulling data from all platforms and presenting insights in minutes rather than hours."}, {"title": "SEO & Keyword Research", "desc": "AI identifies keyword opportunities, analyses competitor content, and suggests optimisation strategies automatically."}, {"title": "Social Media Management", "desc": "AI schedules posts at optimal times, suggests content ideas, and analyses engagement patterns."}, {"title": "Competitive Intelligence", "desc": "AI monitors competitor activity, ad spend, and content strategy, giving you and your clients an edge."}],
+  benefits: [{"title": "Platform Integration", "desc": "AI tools that integrate with Google Ads, Meta Ads, HubSpot, and your existing marketing stack."}, {"title": "Scale Without Hiring", "desc": "AI lets you take on more clients without proportionally increasing headcount. Your team becomes more productive, not bigger."}, {"title": "Client Results Focus", "desc": "Every AI implementation is measured against client outcomes: better ROI, faster delivery, and improved campaign performance."}],
+  faqs: [{"question": "Will AI replace creative teams in marketing agencies?", "answer": "No. AI is a tool that enhances your creative team's output. It handles first drafts, data analysis, and routine optimisation, freeing your creatives to focus on strategy, ideation, and client relationships. The best agencies use AI to make their human talent more effective, not to replace them."}, {"question": "How much time can AI save on content creation?", "answer": "AI typically reduces content creation time by 50-70% for first drafts. Your team still reviews, edits, and polishes the content, but they start from a strong draft rather than a blank page. This lets you produce more content for clients without expanding your team."}, {"question": "Can AI improve campaign ROI for clients?", "answer": "Yes. AI analyses campaign data in real-time and makes adjustments that humans can't do manually: micro-adjusting bids, testing creative variations, and optimising targeting. This typically improves campaign ROI by 15-30% compared to manual management."}, {"question": "How quickly can my agency start using AI?", "answer": "Quick wins like AI content generation and automated reporting can be implemented in 2-4 weeks. Full implementation with campaign optimisation and competitive intelligence typically takes 6-10 weeks. We start with the tools that deliver the fastest value for your agency and clients."}],
+  slug: "ai-for-marketing-agencies",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Marketing agencies are under pressure to deliver more for less. Clients expect faster turnaround, better results, and lower costs. AI can help you meet all three expectations by automating routine work, enhancing creative output, and delivering data-driven insights at scale.</p>
+<p>Our team helps UK marketing agencies implement AI that improves efficiency and client results. From content generation to campaign optimisation and automated reporting, we focus on AI that makes your team more productive and your clients happier.</p>
+<p>Marketing is one of the sectors where AI adoption is most advanced. The agencies that embrace AI now will have a significant advantage over those that don't. The key is implementing AI in a way that enhances your team's creativity rather than replacing it.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your marketing agency? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

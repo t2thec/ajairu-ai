@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL } from '../../config';
+
+const title = `AI Strategy UK | AI Strategy Consulting for SMEs | ${SITE_NAME}`;
+const description = 'AI strategy UK for SMEs. Fixed-price AI strategy and roadmap engagements from GBP 5,000. Workflow mapping, build-vs-buy recommendations, 90-day implementation roadmap. Book a free call.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': `${SITE_URL}/services` },
+    { '@type': 'ListItem', 'position': 3, 'name': 'AI Strategy UK', 'item': `${SITE_URL}/services/ai-strategy-uk` },
+  ],
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AI Strategy UK',
+  'provider': { '@type': 'LocalBusiness', 'name': SITE_NAME },
+  'areaServed': { '@type': 'Country', 'name': 'United Kingdom' },
+  'description': 'AI strategy UK service for SMEs. Complete AI adoption roadmap with workflow mapping, build-vs-buy recommendations, integration architecture, and 90-day implementation plan.',
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '\u00a35,000-\u00a315,000',
+    'priceCurrency': 'GBP',
+    'description': 'Fixed-price AI strategy engagement for UK SMEs, 3-5 weeks duration.',
+  },
+};
+
+const faqs = [
+  { question: 'How much does an AI strategy UK engagement cost?', answer: 'Our AI strategy UK engagements start at GBP 5,000 for a small business and range up to GBP 15,000 for larger SMEs with multiple departments. Every engagement is fixed-price, so you know the total cost before we start. The price depends on your business size, the number of departments involved, and the depth of analysis required.' },
+  { question: 'How long does an AI strategy engagement take?', answer: 'Typically 3 to 5 weeks. Week 1 is discovery and interviews. Weeks 2-3 are workflow mapping and opportunity analysis. Weeks 4-5 are roadmap creation, build-vs-buy decisions, and documentation. You receive the complete strategy document at the end, with no obligation to continue to implementation.' },
+  { question: 'Do we need to do an AI readiness audit first?', answer: 'We strongly recommend it but it is not mandatory. The AI Opportunity Audit (from GBP 750) de-risks the strategy engagement by identifying where AI will and will not help before you invest in a full strategy. If you already have a clear sense of what you need, we can start directly with the strategy engagement.' },
+  { question: 'What deliverables do we get from an AI strategy UK engagement?', answer: 'You receive a complete AI Strategy and Roadmap document including: workflow maps for every department, prioritised AI opportunities with ROI estimates, build-vs-buy recommendations for each use case, integration architecture for your existing tech stack, a 90-day implementation roadmap with milestones, a team training plan, and a compliance and data governance framework.' },
+  { question: 'Can we implement the strategy ourselves?', answer: 'Yes. The strategy document is designed to be actionable. You own it completely, with full documentation. Many clients implement the quick wins themselves and engage us for the more complex integrations. There is no lock-in to use our implementation services.' },
+  { question: 'Is an AI strategy UK different from a general AI strategy?', answer: 'Yes. An AI strategy UK engagement accounts for UK-specific regulations including GDPR, UK data residency requirements, and industry-specific compliance (FCA, SRA, NHS, ICO guidelines). A generic AI strategy may not address these critical compliance factors that UK businesses must handle.' },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((q) => ({
+    '@type': 'Question',
+    'name': q.question,
+    'acceptedAnswer': { '@type': 'Answer', 'text': q.answer },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, serviceSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Strategy UK: A Complete AI Adoption Roadmap for Your Business</h1>
+      <p>AI strategy UK engagements for SMEs with 10-250 employees. We map your workflows, identify where AI creates real value, and build a 90-day implementation roadmap. Fixed-price from &pound;5,000. You own the strategy document.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Services',href:'/services'},{name:'AI Strategy UK'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">An AI strategy UK engagement gives you a clear, practical plan for adopting AI across your business. Not a 200-slide deck. A working document that tells you what to do first, what to do next, and what to leave alone for now.</p>
+        <p style="line-height:1.7;">Most UK SMEs do not need a 50-page AI strategy document. They need a roadmap that moves them from "we know we should do something with AI" to "we are using AI and it is saving us money." That is what this engagement delivers. Our <a href="/blog/ai-strategy-for-smes">AI strategy for SMEs</a> approach is built specifically for businesses with 10 to 250 employees, not enterprise-scale organisations with dedicated AI teams.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have built AI strategies for businesses across manufacturing, professional services, retail, healthcare, and more. The approach that works is always the same: start with an audit, prioritise ruthlessly, pilot quickly, and scale what works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">What Is Included in Your AI Strategy UK Engagement</h2>
+      <p class="section-subtitle reveal">Every AI strategy UK engagement delivers a complete, actionable roadmap. Here is what you get.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3>Workflow Mapping</h3>
+          <p>We map workflows across every department to identify where AI can save time, reduce costs, or generate revenue. Not theoretical use cases. Real opportunities based on how your business actually works.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="chart" /></div>
+          <h3>ROI Estimates</h3>
+          <p>Every AI opportunity in the strategy includes estimated time saved, cost reduction, or revenue impact. You prioritise based on numbers, not gut feel. Quick wins are flagged separately from longer-term initiatives.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="settings" /></div>
+          <h3>Build vs Buy Analysis</h3>
+          <p>For each use case, we recommend the right approach, whether that is configuring an existing platform, building a custom solution, or a combination. We give you a clear recommendation based on your specific needs and budget.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="compass" /></div>
+          <h3>Integration Architecture</h3>
+          <p>How AI connects to your existing tools. CRM, accounting, comms, project management. We design the data flow so everything works together without rip-and-replace disruption.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="shield" /></div>
+          <h3>Compliance Framework</h3>
+          <p>GDPR, UK data residency, and industry-specific regulations (FCA, SRA, NHS) are designed into the strategy from day one. Not bolted on as an afterthought. This is what makes an AI strategy UK engagement different from a generic one.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="graduation" /></div>
+          <h3>Team Training Plan</h3>
+          <p>What skills your team needs, who needs them, and when. The strategy includes a capability roadmap so your people can manage AI tools independently after implementation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal">AI Strategy UK Pricing</h2>
+      <p class="section-subtitle reveal">Fixed-price. No open-ended billing. You know the total cost before we start.</p>
+      <div class="cards-grid cards-3">
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Small Business</div>
+          <h3>AI Strategy Essentials</h3>
+          <div class="pricing-price">&pound;5,000-&pound;8,000</div>
+          <div class="pricing-duration">3 weeks</div>
+          <ul class="pricing-features">
+            <li>Up to 3 departments mapped</li>
+            <li>Top 5-10 AI opportunities identified</li>
+            <li>Build vs buy recommendations</li>
+            <li>90-day implementation roadmap</li>
+            <li>Compliance overview (GDPR, UK data)</li>
+            <li>Team training summary</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Growing SME</div>
+          <h3>AI Strategy Complete</h3>
+          <div class="pricing-price">&pound;8,000-&pound;12,000</div>
+          <div class="pricing-duration">4-5 weeks</div>
+          <ul class="pricing-features">
+            <li>All departments mapped</li>
+            <li>Top 10-20 AI opportunities with ROI</li>
+            <li>Full build vs buy analysis</li>
+            <li>Integration architecture design</li>
+            <li>90-day implementation roadmap with milestones</li>
+            <li>Full compliance framework</li>
+            <li>Detailed team training plan</li>
+            <li>Vendor evaluation and shortlisting</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-tier">Complex Organisation</div>
+          <h3>AI Strategy Enterprise-Grade</h3>
+          <div class="pricing-price">&pound;12,000-&pound;15,000</div>
+          <div class="pricing-duration">5 weeks</div>
+          <ul class="pricing-features">
+            <li>Multi-site or complex operations</li>
+            <li>Full opportunity register (20+ use cases)</li>
+            <li>Custom integration architecture</li>
+            <li>Phased 12-month implementation roadmap</li>
+            <li>Industry-specific compliance deep dive</li>
+            <li>Change management plan</li>
+            <li>Board-level presentation included</li>
+            <li>Vendor demos and evaluations</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal" style="color:var(--grey-500);font-size:0.9rem;">All prices are fixed and agreed before work starts. <a href="/blog/affordable-ai-consulting-uk-pricing">Read our guide to affordable AI consulting UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">How Your AI Strategy UK Engagement Works</h2>
+      <p class="section-subtitle reveal">A structured 4-step process that takes you from uncertainty to a clear AI roadmap.</p>
+      <div class="cards-grid cards-4">
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="chat" /></div>
+          <h3>Week 1: Discover</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We interview your leadership and key team members, audit your tech stack, and understand your business goals.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="search" /></div>
+          <h3>Weeks 2-3: Map</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We map workflows across departments, identify AI opportunities, and estimate ROI for each one.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="compass" /></div>
+          <h3>Week 4: Design</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">We design the integration architecture, make build-vs-buy decisions, and create the 90-day roadmap.</p>
+        </div>
+        <div class="card reveal" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 16px;"><Icon name="check" /></div>
+          <h3>Week 5: Deliver</h3>
+          <p style="font-size:0.9rem;color:var(--grey-500);">You receive the complete AI strategy document, compliance framework, and training plan. You own it all.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a></p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Is an AI Strategy UK Engagement Right for You?</h2>
+      <p class="section-subtitle reveal">This service is designed for UK businesses that are ready to move beyond experimenting with AI.</p>
+      <div class="cards-grid cards-2">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="check" /></div>
+          <h3>This Is Right for You If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>Your business has 10-250 employees</li>
+            <li>You know AI matters but do not know where to start</li>
+            <li>You have multiple departments with repetitive workflows</li>
+            <li>You want a clear, prioritised roadmap before investing in implementation</li>
+            <li>You need to make the case for AI investment to your board or team</li>
+            <li>You want UK-specific compliance guidance (GDPR, data residency)</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>You May Not Need This If</h3>
+          <ul style="margin-top:12px;font-size:0.95rem;line-height:1.8;">
+            <li>You already have a clear AI strategy and just need implementation help. See our <a href="/services/ai-implementation-uk">AI implementation UK</a> service instead.</li>
+            <li>You want a quick assessment of where AI could help. Start with the <a href="/services#audit">AI Opportunity Audit</a> from &pound;750.</li>
+            <li>You need ongoing AI leadership rather than a one-time strategy. Consider our <a href="/services#fractional-caio">Fractional CAIO</a> service.</li>
+            <li>You want to automate a single specific workflow. See our <a href="/services/ai-automation-uk">AI automation UK</a> service.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-grey" id="faq">
+    <div class="container">
+      <h2 class="section-title reveal">AI Strategy UK FAQs</h2>
+      <p class="section-subtitle reveal">Common questions about our AI strategy UK engagements.</p>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Build Your AI Strategy?"
+    text="Book a free 30-minute discovery call. We will talk through your business and whether an AI strategy engagement is the right starting point for you."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#1a2332"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#00c4a7"/>
+  <g transform="translate(80, 160) scale(1.4)">
+    <path d="M258.686,12.193C267.883,12.597 277.502,15.166 285.674,19.404C288.132,28.275 288.661,38.217 287.156,47.299C279.479,52.379 270.186,55.953 261.084,57.329C253.881,51.597 247.61,43.864 243.488,35.632C246.714,27.01 252.131,18.656 258.686,12.193ZM275.495,48.215C269.11,48.941 262.219,48.236 256.162,46.237C253.588,40.456 252.24,33.735 252.379,27.379C257.173,23.08 263.231,19.632 269.374,17.703C274.911,20.827 280.003,25.416 283.66,30.58C282.288,36.81 279.378,43.095 275.495,48.215Z" fill="#00c4a7"/>
+  </g>
+  <text x="100" y="320" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="white">Practical AI Consulting</text>
+  <text x="100" y="385" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="white">for UK SMEs</text>
+  <text x="100" y="450" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#00c4a7">Enterprise expertise. Independent pricing.</text>
+  <text x="100" y="490" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#00c4a7">Fixed-price engagements from &#163;750.</text>
+  <rect x="100" y="530" width="200" height="3" fill="#00c4a7" opacity="0.6"/>
+</svg>

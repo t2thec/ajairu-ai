@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for Healthcare",
+  metaTitle: "AI for Healthcare UK | Health AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK healthcare. Admin automation, clinical decision support, patient communication, and CQC-compliant implementation.",
+  h1: "AI for Healthcare in the UK",
+  lead: "Practical AI solutions for UK healthcare organisations. Reduce admin burden, improve patient outcomes, and stay compliant with NHS and CQC standards.",
+  useCases: [{"title": "Admin Automation", "desc": "AI automates appointment scheduling, patient follow-ups, and documentation, reducing admin time by 30-50%."}, {"title": "Clinical Decision Support", "desc": "AI analyses patient data to flag potential issues, suggest diagnoses, and support treatment planning. Always with clinician oversight."}, {"title": "Patient Communication", "desc": "AI chatbots handle routine patient enquiries, appointment booking, and medication reminders, available 24/7."}, {"title": "Medical Records Summarisation", "desc": "AI summarises lengthy patient records, highlighting key information for clinicians in seconds."}, {"title": "Resource Optimisation", "desc": "AI predicts patient demand, optimises staff scheduling, and reduces wait times."}, {"title": "Medication Management", "desc": "AI checks for drug interactions, flags potential allergies, and monitors medication adherence."}],
+  benefits: [{"title": "NHS Data Governance", "desc": "We understand NHS data governance frameworks, DSPT requirements, and information governance standards. All implementations comply with NHS data rules."}, {"title": "CQC Compliant", "desc": "AI implementations are designed to support, not replace, clinical judgement. We ensure compliance with CQC standards and clinical governance requirements."}, {"title": "Patient Safety First", "desc": "Every AI tool we implement in healthcare includes human oversight. AI supports clinicians, it doesn't make clinical decisions independently."}],
+  faqs: [{"question": "Is AI safe to use in healthcare?", "answer": "Yes, when implemented correctly. AI in healthcare is designed to support clinicians, not replace them. All our healthcare AI implementations include human oversight, audit trails, and safety controls. AI helps with tasks like admin automation and decision support, but clinicians always make the final decisions."}, {"question": "Does AI in healthcare comply with NHS data rules?", "answer": "Yes, when implemented correctly. We design all healthcare AI solutions to comply with NHS data governance frameworks, DSPT requirements, and information governance standards. We use UK-based data processing where possible and never use patient data to train public AI models."}, {"question": "Can AI replace healthcare admin staff?", "answer": "AI automates many routine admin tasks, but it doesn't replace the need for trained admin staff. Instead, it frees them to focus on complex cases and patient-facing work. Most healthcare organisations find AI helps them do more with existing staff rather than needing to reduce headcount."}, {"question": "How do you handle patient data with AI?", "answer": "Patient data is handled with the highest level of security. We use encrypted, UK-based or EU-based processing environments. All implementations comply with GDPR, the Data Protection Act 2018, and NHS information governance standards. We never use patient data to train public AI models."}],
+  slug: "ai-for-healthcare",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>Healthcare in the UK faces unprecedented pressure. Staff shortages, rising demand, and admin burdens all reduce time spent on patient care. AI can help by automating routine tasks, supporting clinical decisions, and improving patient communication.</p>
+<p>Our team helps UK healthcare organisations adopt AI safely and responsibly. We understand the NHS data governance framework, CQC requirements, and the sensitive nature of healthcare data. Every implementation is designed with patient safety and data protection at its core.</p>
+<p>AI in healthcare is not about replacing clinicians. It's about giving them more time to do what they do best: care for patients. By automating admin work, supporting diagnosis with data, and improving patient communication, AI helps healthcare professionals focus on what matters.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your healthcare practice? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE_NAME, SITE_URL, INDUSTRIES } from '../../config';
+
+const title = `AI Consulting UK by Industry | AI for UK SMEs | ${SITE_NAME}`;
+const description = 'AI consulting UK across 12 industries. Industry-specific AI use cases, benefits, and guidance for UK SMEs. Law, accountancy, healthcare, manufacturing, e-commerce, and more.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': `${SITE_URL}/industries` },
+  ],
+};
+
+const collectionPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  'name': 'AI Consulting UK by Industry',
+  'description': 'AI consulting services UK across 12 industries. Industry-specific AI use cases and guidance for UK SMEs.',
+  'url': `${SITE_URL}/industries`,
+  'isPartOf': { '@id': `${SITE_URL}/#website` },
+  'hasPart': INDUSTRIES.map((ind) => ({
+    '@type': 'WebPage',
+    'name': ind.name,
+    'url': `${SITE_URL}/industries/${ind.slug}`,
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, collectionPageSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Consulting UK by Industry</h1>
+      <p>AI consulting UK services tailored to your sector. We work across 12 UK industries, bringing enterprise-grade AI expertise to each. Explore how AI applies to your industry with use cases, benefits, and sector-specific guidance.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'Industries'}]} />
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:800px;">
+        <p style="font-size:1.1rem;line-height:1.7;">AI is not one-size-fits-all. The way AI creates value for a law firm is fundamentally different from how it helps a manufacturer or an e-commerce business. That is why we offer industry-specific AI consulting UK services, each with tailored use cases, compliance considerations, and implementation approaches.</p>
+        <p style="line-height:1.7;">As an <a href="/">AI consulting UK</a> practice, we have worked with businesses across every major UK SME sector. The principles of good AI adoption are the same everywhere: start with the problem, not the technology. But the specific use cases, tools, and compliance requirements vary significantly by industry. Explore your sector below to see exactly how AI can help your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY GRID -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Explore AI for Your Industry</h2>
+      <p class="section-subtitle reveal">Click through to your sector for specific use cases, benefits, and industry-specific AI guidance.</p>
+      <div class="cards-grid cards-3">
+        {INDUSTRIES.map((ind) => (
+          <a href={`/industries/${ind.slug}`} class="card reveal" style="display:block;padding:32px 24px;">
+            <div class="card-icon"><Icon name={ind.icon} /></div>
+            <h3 style="font-size:1.15rem;margin-bottom:8px;">{ind.name}</h3>
+            <p style="font-size:0.9rem;">AI solutions tailored to your sector. Use cases, benefits, compliance, and pricing guidance.</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">How Our Industry AI Consulting UK Works</h2>
+      <p class="section-subtitle reveal">The same structured process, adapted for your sector's specific needs and regulations.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="search" /></div>
+          <h3>1. Sector-Specific Audit</h3>
+          <p>We assess your operations through the lens of your industry. For law firms, that means SRA compliance. For healthcare, NHS and CQC guidelines. For financial services, FCA requirements. Every audit is tailored.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="map" /></div>
+          <h3>2. Industry-Focused Strategy</h3>
+          <p>Your AI strategy is built around industry-specific use cases. We know what works in your sector and what does not. No generic recommendations. Every opportunity is evaluated against your industry's realities.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="wrench" /></div>
+          <h3>3. Compliant Implementation</h3>
+          <p>Implementation includes all industry-specific compliance requirements. GDPR, UK data residency, and sector regulations are built in from day one. Your AI systems work within your regulatory framework, not against it.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/process">See our full methodology</a> or explore our <a href="/services">AI consulting services UK pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRY BLOG POSTS -->
+  <section class="section bg-grey">
+    <div class="container">
+      <h2 class="section-title reveal">Industry-Specific AI Guides</h2>
+      <p class="section-subtitle reveal">Practical, in-depth guides on how UK businesses in each sector can use AI today.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <span class="blog-tag">Construction</span>
+          <h3 style="font-size:1.1rem;margin-top:8px;"><a href="/blog/10-ways-construction-firms-can-use-ai">10 Ways Construction Firms Can Use AI in the UK</a></h3>
+          <p style="font-size:0.9rem;">From automated takeoffs to safety monitoring, ten practical AI use cases for UK construction firms.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">E-commerce</span>
+          <h3 style="font-size:1.1rem;margin-top:8px;"><a href="/blog/10-ways-ecommerce-businesses-can-use-ai">10 Ways E-commerce Businesses Can Use AI in the UK</a></h3>
+          <p style="font-size:0.9rem;">Product descriptions, search, inventory, customer service. Ten AI use cases for UK online retailers.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">Healthcare</span>
+          <h3 style="font-size:1.1rem;margin-top:8px;"><a href="/blog/10-ways-healthcare-practices-can-use-ai">10 Ways Healthcare Practices Can Use AI in the UK</a></h3>
+          <p style="font-size:0.9rem;">Appointments, clinical documentation, patient communication. Ten AI use cases for UK healthcare practices.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">Hospitality</span>
+          <h3 style="font-size:1.1rem;margin-top:8px;"><a href="/blog/10-ways-hospitality-businesses-can-use-ai">10 Ways Hospitality Businesses Can Use AI in the UK</a></h3>
+          <p style="font-size:0.9rem;">Dynamic pricing, staff scheduling, review management. Ten AI use cases for UK hospitality businesses.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">Manufacturing</span>
+          <h3 style="font-size:1.1rem;margin-top:8px;"><a href="/blog/10-ways-manufacturing-businesses-can-use-ai">10 Ways Manufacturing Businesses Can Use AI in the UK</a></h3>
+          <p style="font-size:0.9rem;">Predictive maintenance, quality control, supply chain. Ten AI use cases for UK manufacturers.</p>
+        </div>
+        <div class="card reveal">
+          <span class="blog-tag">All Industries</span>
+          <h3 style="font-size:1.1rem;margin-top:8px;"><a href="/blog/practical-ai-for-business-cutting-through-hype">Practical AI for Business UK: Cutting Through the Hype</a></h3>
+          <p style="font-size:0.9rem;">A no-nonsense guide to practical AI for UK businesses across all sectors.</p>
+        </div>
+      </div>
+      <p class="text-center mt-3 reveal"><a href="/blog">Read all articles</a></p>
+    </div>
+  </section>
+
+  <CTASection
+    title="Don't See Your Industry?"
+    text="We work with UK SMEs across all sectors. If your industry is not listed here, get in touch and we will tell you whether AI makes sense for your business."
+    secondaryCtaText="View All Services &amp; Pricing"
+    secondaryCtaHref="/services"
+  />
+</BaseLayout>

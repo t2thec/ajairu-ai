@@ -1,0 +1,24 @@
+---
+import IndustryPage from '../../layouts/IndustryPage.astro';
+import { SITE_NAME } from '../../config';
+
+const pageData = {
+  title: "AI for E-commerce",
+  metaTitle: "AI for E-commerce UK | Retail AI Consulting | SITE_NAME".replace('SITE_NAME', SITE_NAME),
+  description: "AI consulting for UK e-commerce businesses. Product recommendations, pricing optimisation, inventory forecasting, and customer service automation.",
+  h1: "AI for E-commerce in the UK",
+  lead: "Practical AI solutions for UK e-commerce businesses. Personalise customer experiences, optimise pricing, and automate operations.",
+  useCases: [{"title": "Product Recommendations", "desc": "AI-powered recommendations increase average order value by 10-30% by showing customers relevant products at the right moment."}, {"title": "Dynamic Pricing", "desc": "AI adjusts prices based on demand, competitor pricing, stock levels, and seasonality, maximising margin without losing sales."}, {"title": "Inventory Forecasting", "desc": "AI predicts demand for each product, reducing stockouts and overstock. Typically reduces inventory costs by 15-25%."}, {"title": "Customer Service Automation", "desc": "AI chatbots handle 60-80% of customer enquiries automatically, from order tracking to returns, freeing your team for complex cases."}, {"title": "Visual Search", "desc": "Customers search with images instead of text, finding products faster and reducing bounce rates."}, {"title": "Review Analysis", "desc": "AI analyses customer reviews to identify product issues, sentiment trends, and improvement opportunities automatically."}],
+  benefits: [{"title": "Platform Integration", "desc": "AI tools that integrate with Shopify, WooCommerce, Magento, and your existing e-commerce platform. No platform migration required."}, {"title": "Fast ROI", "desc": "E-commerce AI typically delivers measurable ROI within 30-60 days. Product recommendations and pricing optimisation pay for themselves quickly."}, {"title": "GDPR Compliant", "desc": "Customer data is handled in compliance with GDPR and UK data protection law. We use tools with UK data residency where possible."}],
+  faqs: [{"question": "Do I need a large e-commerce business to benefit from AI?", "answer": "No. Even small e-commerce businesses can benefit from AI-powered product recommendations, customer service chatbots, and inventory forecasting. The key is starting with the highest-impact use cases for your specific business. Our 750 audit identifies those."}, {"question": "Will AI work with my existing e-commerce platform?", "answer": "Almost certainly. Most modern e-commerce platforms (Shopify, WooCommerce, Magento, BigCommerce) have AI integrations available. We also work with custom platforms. We assess your current setup and recommend the right approach, whether that is configuring existing integrations or building custom ones."}, {"question": "How much does AI increase e-commerce sales?", "answer": "It varies by implementation. Product recommendations typically increase average order value by 10-30%. Dynamic pricing can improve margins by 5-15%. Customer service automation reduces response times and improves satisfaction. Our audit gives you specific estimates for your business."}, {"question": "Is customer data safe with AI tools?", "answer": "Yes, when implemented correctly. We use AI tools that comply with GDPR and process data within the UK or EU where possible. We never use customer data to train public AI models. All implementations include appropriate data protection measures."}],
+  slug: "ai-for-ecommerce",
+};
+---
+
+<IndustryPage {...pageData}>
+<p>E-commerce is competitive. Margins are tight, customer expectations are high, and the difference between winning and losing often comes down to operational efficiency and customer experience. AI can help on both fronts.</p>
+<p>Our team helps UK e-commerce businesses implement AI that delivers measurable ROI. From product recommendations that increase average order value to inventory forecasting that reduces stockouts, we focus on AI that pays for itself.</p>
+<p>E-commerce is one of the sectors where AI delivers the clearest, fastest returns. The data is already there: customer behaviour, purchase history, product data, and logistics. The opportunity is turning that data into automated decisions that improve the customer experience and the bottom line.</p>
+
+<p style="margin-top:32px;">Ready to explore AI for your e-commerce business? <a href="/services">View our services</a> or <a href="/contact">book a free discovery call</a> to get started.</p>
+</IndustryPage>

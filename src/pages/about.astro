@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL, FOUNDER_NAME } from '../config';
+import Icon from '../components/Icon.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `About | AI Advisor UK | ${FOUNDER_NAME} | ${SITE_NAME}`;
+const description = `Founded by ${FOUNDER_NAME}. Former CTO at Fabric Fintech (acquired by Aviva). 27+ years in tech. Now helping UK SMEs adopt AI with enterprise-grade thinking at independent pricing.`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'About', 'item': `${SITE_URL}/about` },
+  ],
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': FOUNDER_NAME,
+  'jobTitle': 'Chief Technology Officer & AI Consultant',
+  'worksFor': { '@type': 'Organization', 'name': SITE_NAME },
+  'description': `AI advisor and consultant for UK SMEs. Former CTO at Fabric Fintech, acquired by Aviva. 27+ years in technology leadership. Delivered Aviva's first customer-facing generative AI product.`,
+  'knowsAbout': ['AI implementation', 'AI strategy', 'technology leadership', 'AI transformation', 'enterprise AI', 'SME consulting', 'generative AI', 'AI governance', 'team leadership'],
+  'nationality': 'British',
+  'address': { '@type': 'PostalAddress', 'addressCountry': 'GB' },
+  'award': ['Tech of the Year 2024 (UK Fintech Awards)', 'Pension Innovation Award 2024 (MoneyFacts)'],
+};
+---
+
+<BaseLayout title={title} description={description} ogType="profile" schema={[breadcrumbSchema, personSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>About {SITE_NAME}</h1>
+      <p>27+ years leading technology teams across businesses of every size. Now bringing that experience to UK SMEs.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'About'}]} />
+
+  <!-- BIO -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="about-photo" role="img" aria-label={`${FOUNDER_NAME}, AI consultant UK, professional portrait`}>
+            <img src="/images/about-professional.jpg" alt={`${FOUNDER_NAME}, AI consultant UK, professional workspace`} width="1200" height="1800" />
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <h2>From enterprise AI to SME reality</h2>
+          <p>{SITE_NAME} was founded by {FOUNDER_NAME}, who has spent 27+ years leading technology teams and helping businesses use technology to solve real problems. Over that career, the work has spanned the full spectrum: small businesses figuring out their first systems, mid-market companies scaling their operations, and large enterprises like Aviva, Jaguar Land Rover, and NHS Digital where the stakes and the complexity are at their highest.</p>
+          <p>Most recently, Toby was CTO at Fabric Fintech, which was acquired by Aviva in late 2023. At Aviva, he led a 45-person cross-functional group that delivered Aviva's first customer-facing generative AI project, taking it from concept to a 1,000-customer pilot in just six months.</p>
+          <p>That project worked because it was built with discipline: clear use cases, proper data governance, and a team that understood both the technology and the business it was serving. It also showed what happens when any of those pieces are missing. AI bolted on as an afterthought fails. AI without governance creates risk. AI without business context creates slideware.</p>
+          <p>The experience left a conviction: the thinking that makes enterprise AI work is not exclusive to enterprises. The principles transfer. The budgets do not have to. What SMEs need is someone who has done it at scale, who can translate that experience into something a 30-person business can actually afford and use.</p>
+          <p>That is what this consultancy does. Fixed-price engagements. Plain English. Working systems, not slideware.</p>
+
+          <div style="margin-top:24px;padding:16px 20px;background:var(--grey-50);border-left:4px solid var(--teal);border-radius:4px;">
+            <p style="font-size:0.95rem;color:var(--grey-600);margin:0;"><strong>Recognition:</strong> UK Fintech Awards, Tech of the Year 2024. MoneyFacts Pension Innovation Award 2024.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY NOW -->
+  <section class="section bg-grey">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin:0 auto;">
+        <h2 class="section-title">Why this consultancy exists now</h2>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">AI has been around long enough that the hype phase is ending. The businesses winning with AI are not the ones chasing every new tool. They are the ones who picked a real problem, applied the right technology, and built something their team can actually use.</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">The problem is that the know-how to do that is still locked inside large enterprises. Big consultancies charge enterprise prices. Freelancers lack the governance and compliance framework. Vendors sell you their product regardless of fit. SMEs are stuck in the middle: too big for generic advice, too small for a six-figure engagement.</p>
+        <p style="font-size:1.05rem;line-height:1.8;color:var(--grey-600);margin-top:16px;">This consultancy sits in that gap. Enterprise experience, independent pricing, and a model designed for businesses that need real AI capability without an enterprise budget.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title reveal">What We Believe About AI</h2>
+      <p class="section-subtitle reveal">Three principles that guide every engagement. We call them The Self-Sufficiency Standard.</p>
+      <div class="cards-grid cards-3">
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="target" /></div>
+          <h3>Outcomes Over Technology</h3>
+          <p>We do not lead with AI. We lead with your business problems. AI is a tool, not a strategy. If a spreadsheet solves your problem better than an AI system, we will tell you that. We have told clients not to build things they asked for, because a simpler tool did the job. The goal is impact: hours saved, costs reduced, revenue grown. Not technology deployed.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="handshake" /></div>
+          <h3>Capability Over Dependency</h3>
+          <p>Too many consultants build systems that only they can maintain. We do the opposite. Every engagement includes documentation, team training, recorded walkthroughs, and a runbook your people can follow. You should be able to run and extend what we build without us in the room. If you cannot, we have not finished the job.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon"><Icon name="scale" /></div>
+          <h3>Honesty Over Hype</h3>
+          <p>AI can't do everything. Some problems aren't AI problems. Some businesses aren't ready yet. We'll tell you that, clearly and early. The &pound;750 audit exists specifically to find out whether AI makes sense for you before you spend &pound;15,000 finding out the hard way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section bg-grey">
+    <div class="container">
+      <div class="split-content">
+        <div class="reveal">
+          <h2 class="section-title">How We Work</h2>
+          <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);">Every engagement is fixed-price, agreed upfront, with clear deliverables. No open-ended billing, no surprise invoices, no scope creep.</p>
+          <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">Toby leads every project directly. The same person who scopes the work does the work. That means no handoff to a junior team, no subcontracted delivery, no account manager acting as a go-between. You talk to the person building your system.</p>
+          <p style="font-size:1.05rem;line-height:1.7;color:var(--grey-600);margin-top:16px;">You own everything we build. Full documentation, training, and handover are included as standard, not sold as an add-on. When the engagement ends, your team can run and extend the work independently.</p>
+          <p style="margin-top:20px;">Learn more about <a href="/process">how we work</a> or explore our <a href="/services">services and pricing</a>.</p>
+        </div>
+        <div class="split-visual reveal" role="img" aria-label="How we work">
+          <img src="/images/ai-technology.jpg" alt="AI technology and data analytics for UK SME implementation" width="1200" height="675" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Let's Talk About Your Business"
+    text="No pitch. No pressure. Just a 30-minute conversation about where AI could help, and whether now's the right time."
+  />
+</BaseLayout>
