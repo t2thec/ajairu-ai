@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `AI Cost Savings Calculator | Estimate Your AI ROI | ${SITE_NAME}`;
+const description = 'Free AI cost savings calculator for UK SMEs. Answer 5 quick questions about your repetitive tasks and get an instant estimate of annual savings, payback period, and where to start.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'AI Cost Savings Calculator', 'item': `${SITE_URL}/ai-cost-savings-calculator` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is the AI cost savings calculator free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. You need an email address to receive your results, but no payment is required.' } },
+    { '@type': 'Question', 'name': 'How accurate is the estimate?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'The calculator gives a realistic indication based on typical automation rates for different task types. Your actual savings will depend on your specific processes, data quality, and how well AI is implemented.' } },
+    { '@type': 'Question', 'name': 'How long does it take?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'About 2 minutes. 5 questions about your team size, repetitive tasks, and goals.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Cost Savings Calculator</h1>
+      <p>5 questions. 2 minutes. An instant estimate of what AI could save your business each year.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'AI Cost Savings Calculator'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Calculator intro -->
+      <div id="calc-intro" class="quiz-intro">
+        <h2 class="section-title" style="text-align:left;">How much could AI save your business?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-bottom:32px;">Answer 5 quick questions about your team and the repetitive tasks that eat up your time. We will estimate your potential annual savings, how quickly the investment pays back, and where you should start. No jargon, no obligation.</p>
+        <button id="calc-start-btn" class="btn btn-primary btn-lg">Start the Calculator</button>
+      </div>
+
+      <!-- Calculator container -->
+      <div id="calc-container" class="quiz-container" style="display:none;">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><div id="calc-progress-fill" class="quiz-progress-fill"></div></div>
+          <span id="calc-progress-text" class="quiz-progress-text">Step 1 of 5</span>
+        </div>
+        <div id="calc-question" class="quiz-question"></div>
+        <div id="calc-options" class="quiz-options"></div>
+        <div class="quiz-nav">
+          <button id="calc-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="calc-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results container -->
+      <div id="calc-results" class="quiz-results" style="display:none;">
+        <div class="calc-savings-hero">
+          <div class="calc-savings-label">Your estimated annual savings</div>
+          <div id="calc-savings-amount" class="calc-savings-num">&pound;0</div>
+          <div id="calc-savings-range" class="calc-savings-range"></div>
+        </div>
+
+        <div id="calc-breakdown" class="calc-breakdown"></div>
+
+        <div id="calc-recommendation" class="calc-recommendation"></div>
+
+        <div class="quiz-email-capture quiz-email-prominent">
+          <h3>Get your full savings report by email</h3>
+          <p>Enter your details and we will send you a breakdown of your estimated savings, payback period, and recommended starting point. We will also follow up with a free 15-minute call to discuss how to make it happen, no pressure.</p>
+          <form id="calc-email-form" class="quiz-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="quiz-form-stacked">
+              <input type="email" id="calc-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="calc-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="calc-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Send My Report &rarr;</button>
+            </div>
+          </form>
+          <p id="calc-email-success" style="display:none;color:var(--teal-dark);font-weight:600;margin-top:12px;">Report saved and sent. Check your inbox.</p>
+        </div>
+
+        <div class="quiz-cta">
+          <h3>Want to make these savings real?</h3>
+          <p>Our AI Opportunity Audit goes much deeper than this calculator. We examine your actual operations, talk to your team, and give you a prioritised report with ROI estimates for your top opportunities. Walk-away protection: you keep the report whether you work with us or not.</p>
+          <div class="quiz-cta-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Free Discovery Call</a>
+            <a href="/services" class="btn btn-outline btn-lg">View Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-tool promotion -->
+  <section class="section" style="background:var(--grey-50);">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">No email needed to see your results. Pick another tool below.</p>
+      <div class="grid-3">
+        <div class="tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📊</div>
+          <h3>AI Readiness Quiz</h3>
+          <p>15 questions, 2 minutes. Find out if your business is ready for AI and what to do next.</p>
+          <a href="/assessment" class="btn btn-primary">Start Quiz</a>
+        </div>
+        <div class="tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🛡️</div>
+          <h3>AI Risk Checker</h3>
+          <p>Check your AI compliance in 2 minutes. Are you GDPR-ready? Get your risk score.</p>
+          <a href="/ai-risk-checker" class="btn btn-primary">Check My Risk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your business and point you to the right service, even if that is none of them yet."
+  />
+</BaseLayout>
+
+<script is:inline>
+  const steps = [
+    {
+      id: 'employees',
+      q: 'How many employees does your business have?',
+      hint: 'This helps us understand the scale of potential savings.',
+      type: 'single',
+      options: [
+        { text: '1 to 10', value: '1-10' },
+        { text: '11 to 50', value: '11-50' },
+        { text: '51 to 100', value: '51-100' },
+        { text: '100 to 250', value: '100-250' },
+      ],
+    },
+    {
+      id: 'hours',
+      q: 'How many hours per week does your team spend on repetitive manual tasks?',
+      hint: 'Think about data entry, copy-pasting between systems, chasing information, and similar work.',
+      type: 'single',
+      options: [
+        { text: 'Under 5 hours', value: 'under-5', hours: 3 },
+        { text: '5 to 15 hours', value: '5-15', hours: 10 },
+        { text: '15 to 30 hours', value: '15-30', hours: 22 },
+        { text: '30+ hours', value: '30-plus', hours: 40 },
+      ],
+    },
+    {
+      id: 'tasks',
+      q: 'What types of repetitive tasks does your team do?',
+      hint: 'Select all that apply. This helps us estimate what proportion of the work AI can take on.',
+      type: 'multi',
+      options: [
+        { text: 'Data entry', value: 'data-entry', automatable: 0.70 },
+        { text: 'Customer support', value: 'customer-support', automatable: 0.50 },
+        { text: 'Document processing', value: 'document-processing', automatable: 0.65 },
+        { text: 'Reporting', value: 'reporting', automatable: 0.60 },
+        { text: 'Scheduling', value: 'scheduling', automatable: 0.55 },
+        { text: 'Other', value: 'other', automatable: 0.30 },
+      ],
+    },
+    {
+      id: 'hourlyCost',
+      q: 'What is the average hourly cost per employee?',
+      hint: 'Include salary, employer NI, pension, and other on-costs. Pick the closest range.',
+      type: 'single',
+      options: [
+        { text: 'Under &pound;15', value: 'under-15', rate: 12 },
+        { text: '&pound;15 to &pound;25', value: '15-25', rate: 20 },
+        { text: '&pound;25 to &pound;35', value: '25-35', rate: 30 },
+        { text: '&pound;35+', value: '35-plus', rate: 40 },
+      ],
+    },
+    {
+      id: 'goal',
+      q: 'What is your main goal for using AI?',
+      hint: 'This shapes our recommendation for where you should start.',
+      type: 'single',
+      options: [
+        { text: 'Reduce costs', value: 'reduce-costs' },
+        { text: 'Improve speed', value: 'improve-speed' },
+        { text: 'Reduce errors', value: 'reduce-errors' },
+        { text: 'Free up team for better work', value: 'free-up-team' },
+      ],
+    },
+  ];
+
+  let currentStep = 0;
+  let answers = {};
+
+  const intro = document.getElementById('calc-intro');
+  const container = document.getElementById('calc-container');
+  const results = document.getElementById('calc-results');
+  const startBtn = document.getElementById('calc-start-btn');
+  const qEl = document.getElementById('calc-question');
+  const optsEl = document.getElementById('calc-options');
+  const prevBtn = document.getElementById('calc-prev');
+  const nextBtn = document.getElementById('calc-next');
+  const progressFill = document.getElementById('calc-progress-fill');
+  const progressText = document.getElementById('calc-progress-text');
+
+  startBtn.addEventListener('click', () => {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderStep();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips the calculator and shows results with pre-filled answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers = {
+      employees: '11-50',
+      hours: '15-30',
+      tasks: ['data-entry', 'document-processing', 'reporting'],
+      hourlyCost: '15-25',
+      goal: 'reduce-costs',
+    };
+    showResults();
+  }
+
+  function renderStep() {
+    const step = steps[currentStep];
+    let html = '<h2 class="quiz-q-text">' + step.q + '</h2>';
+    if (step.hint) html += '<p class="calc-hint">' + step.hint + '</p>';
+    qEl.innerHTML = html;
+    optsEl.innerHTML = '';
+
+    if (step.type === 'single') {
+      step.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        if (answers[step.id] === opt.value) btn.classList.add('selected');
+        btn.innerHTML = opt.text;
+        btn.addEventListener('click', () => {
+          answers[step.id] = opt.value;
+          optsEl.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          nextBtn.disabled = false;
+          nextBtn.classList.add('btn-pulse');
+        });
+        optsEl.appendChild(btn);
+      });
+    } else if (step.type === 'multi') {
+      if (!Array.isArray(answers[step.id])) answers[step.id] = [];
+      step.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option calc-checkbox';
+        if (answers[step.id].includes(opt.value)) btn.classList.add('selected');
+        btn.innerHTML = opt.text;
+        btn.addEventListener('click', () => {
+          const idx = answers[step.id].indexOf(opt.value);
+          if (idx > -1) {
+            answers[step.id].splice(idx, 1);
+            btn.classList.remove('selected');
+          } else {
+            answers[step.id].push(opt.value);
+            btn.classList.add('selected');
+          }
+          nextBtn.disabled = answers[step.id].length === 0;
+          if (answers[step.id].length > 0) nextBtn.classList.add('btn-pulse');
+        });
+        optsEl.appendChild(btn);
+      });
+      // Add a note for multi-select
+      const note = document.createElement('p');
+      note.className = 'calc-multi-note';
+      note.textContent = 'Select at least one. You can choose more than one.';
+      optsEl.appendChild(note);
+    }
+
+    prevBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentStep === steps.length - 1 ? 'See My Results' : 'Next';
+
+    // Determine if Next should be enabled
+    if (step.type === 'single') {
+      nextBtn.disabled = !answers[step.id];
+    } else {
+      nextBtn.disabled = !Array.isArray(answers[step.id]) || answers[step.id].length === 0;
+    }
+
+    const progress = ((currentStep + 1) / steps.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = 'Step ' + (currentStep + 1) + ' of ' + steps.length;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) { currentStep--; renderStep(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const step = steps[currentStep];
+    if (step.type === 'single' && !answers[step.id]) return;
+    if (step.type === 'multi' && (!Array.isArray(answers[step.id]) || answers[step.id].length === 0)) return;
+
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      renderStep();
+    } else {
+      showResults();
+    }
+  });
+
+  function getOptionByValue(stepId, value) {
+    const step = steps.find(s => s.id === stepId);
+    return step.options.find(o => o.value === value);
+  }
+
+  function formatGBP(amount) {
+    return '\u00A3' + Math.round(amount).toLocaleString('en-GB');
+  }
+
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    // Gather inputs
+    const hoursOpt = getOptionByValue('hours', answers.hours);
+    const costOpt = getOptionByValue('hourlyCost', answers.hourlyCost);
+    const weeklyHours = hoursOpt.hours;
+    const hourlyRate = costOpt.rate;
+
+    // Calculate automatable percentage from selected tasks
+    const taskStep = steps.find(s => s.id === 'tasks');
+    const selectedTasks = answers.tasks.map(v => taskStep.options.find(o => o.value === v));
+    const avgAutomatable = selectedTasks.reduce((sum, t) => sum + t.automatable, 0) / selectedTasks.length;
+
+    // Annual savings calculation
+    // annualSavings = weeklyHours x hourlyRate x 48 weeks x avgAutomatable
+    const annualSavings = weeklyHours * hourlyRate * 48 * avgAutomatable;
+
+    // Provide a range (conservative to optimistic)
+    const lowEstimate = annualSavings * 0.75;
+    const highEstimate = annualSavings * 1.25;
+
+    // Implementation cost estimate based on employee count
+    const implCostMap = { '1-10': 3000, '11-50': 6000, '51-100': 10000, '100-250': 15000 };
+    const implCost = implCostMap[answers.employees] || 6000;
+
+    // Payback period in months
+    const monthlySavings = annualSavings / 12;
+    let paybackMonths = 'N/A';
+    if (monthlySavings > 0) {
+      paybackMonths = (implCost / monthlySavings).toFixed(1);
+    }
+
+    // Recommended starting point based on task types and goal
+    const recommendation = getRecommendation(answers, selectedTasks);
+
+    // Display headline savings
+    document.getElementById('calc-savings-amount').innerHTML = formatGBP(annualSavings);
+    document.getElementById('calc-savings-range').textContent = 'Realistic range: ' + formatGBP(lowEstimate) + ' to ' + formatGBP(highEstimate) + ' per year';
+
+    // Breakdown
+    const breakdown = document.getElementById('calc-breakdown');
+    breakdown.innerHTML = '<h3 class="quiz-section-title">How we calculated this</h3>';
+    const rows = [
+      { label: 'Hours of repetitive work per week', value: weeklyHours + ' hours' },
+      { label: 'Average hourly cost per employee', value: formatGBP(hourlyRate) },
+      { label: 'Working weeks per year', value: '48 weeks' },
+      { label: 'Proportion AI can take on', value: Math.round(avgAutomatable * 100) + '%' },
+      { label: 'Estimated implementation cost', value: formatGBP(implCost) },
+      { label: 'Estimated payback period', value: paybackMonths === 'N/A' ? 'N/A' : paybackMonths + ' months' },
+    ];
+    rows.forEach(row => {
+      breakdown.innerHTML += '<div class="calc-breakdown-row"><span class="calc-breakdown-label">' + row.label + '</span><span class="calc-breakdown-value">' + row.value + '</span></div>';
+    });
+    breakdown.innerHTML += '<p class="calc-formula">Calculation: ' + weeklyHours + ' hrs x ' + formatGBP(hourlyRate) + ' x 48 weeks x ' + Math.round(avgAutomatable * 100) + '% = ' + formatGBP(annualSavings) + ' per year</p>';
+
+    // Recommendation
+    const recEl = document.getElementById('calc-recommendation');
+    recEl.innerHTML = '<h3 class="quiz-section-title">Where to start</h3>';
+    recEl.innerHTML += '<div class="calc-rec-card"><span class="quiz-rec-priority">Recommended</span><p>' + recommendation + '</p></div>';
+
+    // Scroll to results
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function getRecommendation(answers, selectedTasks) {
+    const taskNames = selectedTasks.map(t => t.value);
+    const goal = answers.goal;
+
+    // Map task types to starting points
+    if (taskNames.includes('data-entry') || taskNames.includes('document-processing')) {
+      if (goal === 'reduce-errors') {
+        return 'Start with document processing automation. AI can extract data from invoices, receipts, and forms with far fewer errors than manual entry. This is typically the fastest win and cuts error rates by 70% or more. Begin with your highest-volume document type.';
+      }
+      return 'Start with data entry and document processing automation. This is where AI delivers the fastest, most measurable return for most SMEs. Pick your most repetitive document flow (invoices, purchase orders, or application forms) and automate that first.';
+    }
+
+    if (taskNames.includes('customer-support')) {
+      if (goal === 'improve-speed') {
+        return 'Start with AI-powered enquiry triage. AI reads incoming messages, categorises them, drafts a response, and routes to the right person. Most businesses see 60 to 80% of enquiries get a first response in seconds rather than hours.';
+      }
+      return 'Start with customer support automation. An AI assistant can handle common questions, draft responses, and free your team for complex cases. This is a strong starting point that improves both speed and customer satisfaction.';
+    }
+
+    if (taskNames.includes('reporting')) {
+      return 'Start with automated reporting. AI can pull data from your existing systems and generate reports on a schedule, removing hours of manual work each week. Identify the report your team dreads producing the most and automate that first.';
+    }
+
+    if (taskNames.includes('scheduling')) {
+      return 'Start with scheduling automation. AI can handle appointment booking, reminders, and calendar coordination, cutting the back-and-forth that eats up your team\'s day. Begin with the most common booking type in your business.';
+    }
+
+    // Default recommendation based on goal
+    if (goal === 'reduce-costs') {
+      return 'Start by identifying your single most time-consuming repetitive task. That is where AI will deliver the biggest cost saving fastest. Our AI Opportunity Audit can help you pinpoint it and build the business case.';
+    }
+    if (goal === 'improve-speed') {
+      return 'Start with the task that causes the most delays for your customers or team. Automating that one process will give you the quickest visible improvement in speed. Look at where work currently stalls or queues up.';
+    }
+    if (goal === 'reduce-errors') {
+      return 'Start with the task where errors are most costly or frequent. AI is consistent in a way people cannot be, so this is where you will see the clearest improvement. Focus on data-heavy processes first.';
+    }
+    // free-up-team
+    return 'Start with the repetitive task that your most skilled people spend the most time on. Freeing them from that work gives you the biggest lift in output and morale. Our AI Opportunity Audit can help you identify and prioritise it.';
+  }
+
+  // Generate or retrieve user ID from localStorage (no cookies, no consent banner needed)
+  function getUserId() {
+    let userId = localStorage.getItem('ai_consult_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ai_consult_user_id', userId);
+    }
+    return userId;
+  }
+
+  // Save calculator results to database
+  function saveCalcResults(email, phone, company) {
+    const userId = getUserId();
+
+    // Recalculate for the record
+    const hoursOpt = getOptionByValue('hours', answers.hours);
+    const costOpt = getOptionByValue('hourlyCost', answers.hourlyCost);
+    const weeklyHours = hoursOpt.hours;
+    const hourlyRate = costOpt.rate;
+    const taskStep = steps.find(s => s.id === 'tasks');
+    const selectedTasks = answers.tasks.map(v => taskStep.options.find(o => o.value === v));
+    const avgAutomatable = selectedTasks.reduce((sum, t) => sum + t.automatable, 0) / selectedTasks.length;
+    const annualSavings = weeklyHours * hourlyRate * 48 * avgAutomatable;
+
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'calculator',
+        userId: userId,
+        email: email || null,
+        phone: phone || null,
+        company: company || null,
+        employees: answers.employees || null,
+        weeklyHours: answers.hours || null,
+        taskTypes: answers.tasks || [],
+        hourlyCost: answers.hourlyCost || null,
+        goal: answers.goal || null,
+        estimatedAnnualSavings: Math.round(annualSavings),
+        automatablePercent: Math.round(avgAutomatable * 100),
+      }),
+    }).catch(err => console.error('Save failed:', err));
+  }
+
+  document.getElementById('calc-email-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('calc-email-input').value;
+    const phone = document.getElementById('calc-phone-input').value;
+    const company = document.getElementById('calc-company-input').value;
+    saveCalcResults(email, phone, company);
+    document.getElementById('calc-email-success').style.display = 'block';
+    document.getElementById('calc-email-form').style.display = 'none';
+  });
+</script>

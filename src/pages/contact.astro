@@ -213,7 +213,7 @@ const contactSchema = {
           data.userId = getUserId();
           data.action = 'contact';
           try {
-            var response = await fetch('/api/submit', {
+            var response = await fetch('http://' + window.location.hostname + ':8091/api/submit', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data)

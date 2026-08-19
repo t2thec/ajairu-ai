@@ -40,7 +40,7 @@ Start with targeted training, not generic AI courses. A two-hour workshop on usi
 
 75% of UK businesses say they need training and education. The key is making it practical and relevant. Our [AI training workshops](/services) are designed around this principle: teach your team the specific skills they need for their roles, not theoretical AI concepts.
 
-Also, leverage external expertise. You do not need to build AI skills in-house before you start. A consultant can handle the technical work while your team focuses on adoption and usage. Over time, your team builds skills through real use, not theoretical study.
+Also, use external expertise. You do not need to build AI skills in-house before you start. A consultant can handle the technical work while your team focuses on adoption and usage. Over time, your team builds skills through real use, not theoretical study.
 
 ## Barrier 3: High Costs (76% of UK businesses)
 

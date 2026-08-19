@@ -29,7 +29,7 @@ This is fundamentally different from enterprise AI strategy, which often focuses
 
 ## Stage 1: The Readiness Audit
 
-Every AI strategy starts with understanding where you are today. You cannot plan a journey without knowing your starting point.
+Every AI strategy starts with understanding where you are today. You cannot plan a process without knowing your starting point.
 
 An [AI readiness audit](/blog/what-is-ai-readiness-audit) examines your data, processes, technology, and team to answer one question: are you ready to use AI effectively?
 

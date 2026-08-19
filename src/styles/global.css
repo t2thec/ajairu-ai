@@ -239,7 +239,7 @@ p { margin-bottom: 1rem; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--white);
@@ -264,7 +264,7 @@ p { margin-bottom: 1rem; }
 .nav-links a {
   color: rgba(255,255,255,0.8);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: color var(--transition);
 }
 
@@ -296,7 +296,7 @@ p { margin-bottom: 1rem; }
   cursor: pointer;
   color: rgba(255,255,255,0.8);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: color var(--transition);
   background: none;
   border: none;
@@ -343,7 +343,7 @@ p { margin-bottom: 1rem; }
   padding: 10px 14px;
   color: var(--grey-700);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: var(--radius);
   transition: background var(--transition), color var(--transition);
 }
@@ -437,9 +437,9 @@ p { margin-bottom: 1rem; }
 
 /* --- Hero --- */
 .hero {
-  background: linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,58,82,0.88) 100%), url('/images/hero-consulting.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(26,35,50,0.85) 0%, rgba(42,58,82,0.75) 100%), url('/images/hero-consulting.jpg') center center / cover no-repeat;
   color: var(--white);
-  padding: 100px 0 80px;
+  padding: 60px 0 60px;
   position: relative;
   overflow: hidden;
 }
@@ -789,7 +789,7 @@ p { margin-bottom: 1rem; }
 
 .pricing-price span {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--grey-500);
 }
 
@@ -1026,7 +1026,7 @@ p { margin-bottom: 1rem; }
 
 /* --- CTA Section --- */
 .cta-section {
-  background: linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,58,82,0.88) 100%), url('/images/team-collaboration.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(26,35,50,0.85) 0%, rgba(42,58,82,0.75) 100%), url('/images/team-collaboration.jpg') center center / cover no-repeat;
   color: var(--white);
   padding: 72px 0;
   text-align: center;
@@ -1109,7 +1109,7 @@ p { margin-bottom: 1rem; }
 
 /* --- Page Header (interior pages) --- */
 .page-header {
-  background: linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,58,82,0.88) 100%), url('/images/business-meeting.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(26,35,50,0.85) 0%, rgba(42,58,82,0.75) 100%), url('/images/business-meeting.jpg') center center / cover no-repeat;
   color: var(--white);
   padding: 80px 0 56px;
   text-align: center;
@@ -1539,7 +1539,7 @@ p { margin-bottom: 1rem; }
 
 /* --- Industry Page --- */
 .industry-hero {
-  background: linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,58,82,0.88) 100%), url('/images/ai-technology.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(26,35,50,0.85) 0%, rgba(42,58,82,0.75) 100%), url('/images/ai-technology.jpg') center center / cover no-repeat;
   color: var(--white);
   padding: 80px 0 56px;
   text-align: center;
@@ -1573,7 +1573,7 @@ p { margin-bottom: 1rem; }
 .error-page {
   text-align: center;
   padding: 120px 0;
-  background: linear-gradient(135deg, rgba(26,35,50,0.92) 0%, rgba(42,58,82,0.88) 100%), url('/images/hero-consulting.jpg') center center / cover no-repeat;
+  background: linear-gradient(135deg, rgba(26,35,50,0.85) 0%, rgba(42,58,82,0.75) 100%), url('/images/hero-consulting.jpg') center center / cover no-repeat;
   color: var(--white);
   min-height: 60vh;
   display: flex;
@@ -1741,3 +1741,121 @@ p { margin-bottom: 1rem; }
 .quiz-form-row input:focus { outline: none; border-color: var(--teal); }
 .quiz-form-row button { white-space: nowrap; }
 @media (max-width: 640px) { .quiz-form-row { flex-direction: column; } }
+
+
+/* --- Free Tools Cards --- */
+.tool-card {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.tool-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.tool-card p {
+  color: var(--grey-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+/* --- 3-column grid --- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* --- Tagline Band --- */
+.tagline-band {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.tagline-text {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.45;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.tagline-accent {
+  color: var(--teal);
+}
+
+/* --- Three Ways We Help Cards --- */
+.three-ways-card {
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.three-ways-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.three-ways-number {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--teal-dark);
+  background: var(--teal-light);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.three-ways-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.three-ways-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--grey-600);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.three-ways-meta {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.three-ways-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.three-ways-link:hover {
+  color: var(--navy);
+}

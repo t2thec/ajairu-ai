@@ -98,6 +98,13 @@ const faqSchema = {
     secondaryCtaHref="/assessment"
   />
 
+  <!-- TAGLINE BAND -->
+  <section class="tagline-band">
+    <div class="container">
+      <p class="tagline-text">AI won't take your job. <span class="tagline-accent">Someone who uses AI will.</span> We help you become that someone.</p>
+    </div>
+  </section>
+
   <!-- TRUST BAR -->
   <section class="trust-bar">
     <div class="container">
@@ -117,6 +124,41 @@ const faqSchema = {
         <div class="trust-item">
           <div class="num">&pound;750</div>
           <div class="label">Audit with Walk-Away Protection</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE WAYS WE HELP -->
+  <section class="section" id="three-ways">
+    <div class="container">
+      <span class="eyebrow reveal" style="display:block;text-align:center;">Three Ways We Help</span>
+      <h2 class="section-title reveal">Three Ways We Help Your Business with AI</h2>
+      <p class="section-subtitle reveal">From automating what you already have to embedding AI at the core of your operations. Pick the path that fits where you are today.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card three-ways-card">
+          <div class="three-ways-icon">⚙️</div>
+          <div class="three-ways-number">01</div>
+          <h3>Automate What You Have</h3>
+          <p>Keep your existing systems. We add AI automation over the top. AI handles repetitive decisions, data routing, and customer interactions. The fastest ROI at the lowest cost. For businesses that want AI benefits without replacing everything.</p>
+          <div class="three-ways-meta">From &pound;3,000 | 2-4 weeks</div>
+          <a href="/services/ai-automation-uk" class="three-ways-link">Learn more &rarr;</a>
+        </div>
+        <div class="reveal tool-card three-ways-card">
+          <div class="three-ways-icon">🤖</div>
+          <div class="three-ways-number">02</div>
+          <h3>Implement AI Systems</h3>
+          <p>Build AI into your products and processes. Custom AI tools, chatbots, document processing, and predictive analytics. For businesses ready to make AI a core part of how they operate.</p>
+          <div class="three-ways-meta">From &pound;8,000 | 4-8 weeks</div>
+          <a href="/services/ai-implementation-uk" class="three-ways-link">Learn more &rarr;</a>
+        </div>
+        <div class="reveal tool-card three-ways-card">
+          <div class="three-ways-icon">👔</div>
+          <div class="three-ways-number">03</div>
+          <h3>AI Agents &amp; Fractional CAIO</h3>
+          <p>Give every person an AI assistant. We set up, configure, and train AI agents for your team. Fractional CAIO provides strategic oversight and governance. For businesses with 10-30 people who want to move fast on AI.</p>
+          <div class="three-ways-meta">From &pound;2,000/month</div>
+          <a href="/services/fractional-caio-uk" class="three-ways-link">Learn more &rarr;</a>
         </div>
       </div>
     </div>
@@ -174,42 +216,6 @@ const faqSchema = {
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION / 3-TIER SERVICES -->
-  <section class="section" id="solutions">
-    <div class="container">
-      <span class="eyebrow reveal" style="display:block;text-align:center;">Our Approach</span>
-      <h2 class="section-title reveal">AI Consulting UK: Three Steps to AI That Actually Works</h2>
-      <p class="section-subtitle reveal">From finding your first opportunity to a fully implemented AI system. Start at whichever stage fits, no pressure to buy all three. This is AI consulting for SMEs UK made simple.</p>
-      <div class="cards-grid cards-3">
-        <ServiceCard
-          icon="search"
-          title="AI Opportunity Audit"
-          description="A structured assessment of your operations, technology, and team readiness. Find out exactly where AI can save time and money. This is your AI readiness audit, the first step."
-          features={['Prioritised AI opportunity report', 'ROI estimates for top opportunities', 'Team readiness assessment', '1-2 weeks, from \u00a3750']}
-          linkText="Learn about the Audit"
-          linkHref="/services#audit"
-        />
-        <ServiceCard
-          icon="map"
-          title="AI Strategy &amp; Roadmap"
-          description="A complete plan for AI adoption across your business. Workflow mapping, build-vs-buy recommendations, and a 90-day implementation roadmap. Our AI strategy UK service."
-          features={['Full workflow mapping across departments', 'Integration architecture', 'Build vs buy recommendations', '3-5 weeks, from \u00a35,000']}
-          linkText="Learn about AI Strategy UK"
-          linkHref="/services/ai-strategy-uk"
-        />
-        <ServiceCard
-          icon="wrench"
-          title="AI Implementation"
-          description="We configure and integrate AI systems into your existing tools, train your team, and provide 30 days of post-launch support. AI implementation UK businesses can rely on."
-          features={['Configured AI systems tailored to your workflows', 'API integrations with existing tools', 'Team training and documentation', '6-12 weeks, from \\u00a38,000']}
-          linkText="Learn about AI Implementation UK"
-          linkHref="/services/ai-implementation-uk"
-        />
-      </div>
-      <p class="text-center mt-3 reveal">Also available: <a href="/services#fractional-caio">Fractional CAIO</a> (part-time AI leadership), <a href="/services/ai-automation-uk">AI automation UK</a> services, and <a href="/services#training">AI Training Workshops</a> from &pound;1,500.</p>
     </div>
   </section>
 
@@ -277,6 +283,34 @@ const faqSchema = {
     secondaryCtaText="View Services &amp; Pricing"
     secondaryCtaHref="/services"
   />
+
+  <!-- FREE TOOLS PROMO -->
+  <section class="section bg-grey" id="free-tools">
+    <div class="container">
+      <h2 class="reveal" style="text-align:center;">Free Tools to Help You Decide</h2>
+      <p class="reveal" style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">Not ready for a call yet? Try our free tools first. No email needed to see your results.</p>
+      <div class="grid-3">
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📊</div>
+          <h3>AI Readiness Quiz</h3>
+          <p>15 questions, 2 minutes. Find out if your business is ready for AI and what to do next.</p>
+          <a href="/assessment" class="btn btn-primary">Start Quiz</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+          <h3>AI Cost Savings Calculator</h3>
+          <p>Estimate how much AI could save your business each year. See payback period and ROI.</p>
+          <a href="/ai-cost-savings-calculator" class="btn btn-primary">Calculate Savings</a>
+        </div>
+        <div class="reveal tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">🛡️</div>
+          <h3>AI Risk Checker</h3>
+          <p>Check your AI compliance in 2 minutes. Are you GDPR-ready? Get your risk score.</p>
+          <a href="/ai-risk-checker" class="btn btn-primary">Check My Risk</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- WHAT WE DON'T DO -->
   <section class="section bg-grey" id="what-we-dont-do">

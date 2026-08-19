@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import { SITE_NAME, SITE_URL } from '../config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = `AI Risk Checker | Free UK SME AI Compliance Check | ${SITE_NAME}`;
+const description = 'Free AI risk checker for UK SMEs. 8 questions, instant compliance score, risk level and prioritised fixes. Check your AI compliance against GDPR and ICO expectations. No email required to see results.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE_URL },
+    { '@type': 'ListItem', 'position': 2, 'name': 'AI Risk Checker', 'item': `${SITE_URL}/ai-risk-checker` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'Is the AI risk checker free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No email required to see your compliance score and risk level.' } },
+    { '@type': 'Question', 'name': 'How long does the check take?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'About 2 minutes. 8 questions covering your AI inventory, data protection, vendor governance and audit readiness.' } },
+    { '@type': 'Question', 'name': 'What do I get at the end?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'A compliance score out of 100, a risk level from low to critical, a breakdown by risk area, and a prioritised list of what to fix first.' } },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} schema={[breadcrumbSchema, faqSchema]}>
+  <section class="page-header">
+    <div class="container">
+      <h1>AI Risk Checker for UK SMEs</h1>
+      <p>8 questions. 2 minutes. Instant compliance score and risk level. No email required.</p>
+    </div>
+  </section>
+
+  <Breadcrumbs items={[{name:'Home',href:'/'},{name:'AI Risk Checker'}]} />
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <!-- Intro -->
+      <div id="rc-intro" class="rc-intro">
+        <h2 class="section-title" style="text-align:left;">Could you pass an ICO audit on your AI use?</h2>
+        <p style="font-size:1.1rem;line-height:1.7;color:var(--grey-600);margin-bottom:32px;">Most UK SMEs are using AI tools without knowing what data goes in, who is responsible, or whether their vendor can train on their data. Answer 8 quick questions and get an instant compliance score, risk level, and a prioritised list of what to fix first. No email required to see your results.</p>
+        <button id="rc-start-btn" class="btn btn-primary btn-lg">Start the Check</button>
+      </div>
+
+      <!-- Question container -->
+      <div id="rc-container" class="rc-container" style="display:none;">
+        <div class="rc-progress">
+          <div class="rc-progress-bar"><div id="rc-progress-fill" class="rc-progress-fill"></div></div>
+          <span id="rc-progress-text" class="rc-progress-text">Question 1 of 8</span>
+        </div>
+        <div id="rc-question" class="rc-question"></div>
+        <div id="rc-options" class="rc-options"></div>
+        <div class="rc-nav">
+          <button id="rc-prev" class="btn btn-outline" style="display:none;">Previous</button>
+          <button id="rc-next" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="rc-results" class="rc-results" style="display:none;">
+        <div class="rc-score-card">
+          <div class="rc-score-label">Your AI Compliance Score</div>
+          <div id="rc-score" class="rc-score-num">0<span class="rc-score-total">/100</span></div>
+          <div id="rc-risk-badge" class="rc-risk-badge"></div>
+          <div id="rc-score-label" class="rc-score-verdict"></div>
+        </div>
+
+        <div id="rc-breakdown" class="rc-breakdown"></div>
+
+        <div id="rc-fixes" class="rc-fixes"></div>
+
+        <!-- Email capture -->
+        <div class="rc-email-capture rc-email-prominent">
+          <h3>Get your full risk report by email</h3>
+          <p>Enter your details and we will send you your score, risk breakdown, and prioritised action plan. We will also follow up with a free 15-minute call to talk through your results, no pressure.</p>
+          <form id="rc-email-form" class="rc-email-form">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+            <div class="rc-form-stacked">
+              <input type="email" id="rc-email-input" placeholder="your@email.co.uk" required />
+              <input type="tel" id="rc-phone-input" placeholder="Phone number (optional)" />
+              <input type="text" id="rc-company-input" placeholder="Company name (optional)" />
+              <button type="submit" class="btn btn-primary btn-lg">Send My Report &rarr;</button>
+            </div>
+          </form>
+          <p id="rc-email-success" style="display:none;color:var(--teal-dark);font-weight:600;margin-top:12px;">Report saved and sent. Check your inbox.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="rc-cta">
+          <h3>Want help fixing the gaps?</h3>
+          <p>Our AI governance service helps UK SMEs put the right policies, agreements and controls in place. Fixed price, practical, and built around how your business actually works.</p>
+          <div class="rc-cta-buttons">
+            <a href="/services/ai-governance-uk" class="btn btn-primary btn-lg">Explore AI Governance</a>
+            <a href="/contact" class="btn btn-secondary btn-lg">Book a Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-tool promotion -->
+  <section class="section" style="background:var(--grey-50);">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center;">Try Our Other Free Tools</h2>
+      <p style="text-align:center;max-width:600px;margin:0 auto 40px;color:var(--grey-600);font-size:1.1rem;">No email needed to see your results. Pick another tool below.</p>
+      <div class="grid-3">
+        <div class="tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">📊</div>
+          <h3>AI Readiness Quiz</h3>
+          <p>15 questions, 2 minutes. Find out if your business is ready for AI and what to do next.</p>
+          <a href="/assessment" class="btn btn-primary">Start Quiz</a>
+        </div>
+        <div class="tool-card">
+          <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+          <h3>AI Cost Savings Calculator</h3>
+          <p>Estimate how much AI could save your business each year. See payback period and ROI.</p>
+          <a href="/ai-cost-savings-calculator" class="btn btn-primary">Calculate Savings</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Not Sure Where to Start?"
+    text="Book a free 30-minute discovery call. We will talk through your AI use and point you to the right next step, even if that is doing nothing yet."
+  />
+</BaseLayout>
+
+<script is:inline>
+  const questions = [
+    { category: 'inventory', q: 'Can you list every AI tool your business uses?', options: [
+      { text: 'Yes', score: 3 },
+      { text: 'No', score: 0 },
+      { text: 'Not sure', score: 1 },
+    ]},
+    { category: 'data', q: 'Do you know what data goes into each AI tool?', options: [
+      { text: 'Yes, all of them', score: 3 },
+      { text: 'Yes, some of them', score: 1 },
+      { text: 'No', score: 0 },
+    ]},
+    { category: 'vendor', q: 'Do you have a Data Processing Agreement with each AI vendor?', options: [
+      { text: 'Yes, all of them', score: 3 },
+      { text: 'Some', score: 1 },
+      { text: 'No', score: 0 },
+      { text: "Don't know", score: 0 },
+    ]},
+    { category: 'data', q: 'Does any AI tool process personal data about your customers or staff?', options: [
+      { text: 'No', score: 3 },
+      { text: 'Yes', score: 2 },
+      { text: 'Not sure', score: 0 },
+    ]},
+    { category: 'data', q: 'Have you completed a DPIA for any AI processing?', options: [
+      { text: 'Yes', score: 3 },
+      { text: 'In progress', score: 2 },
+      { text: 'No', score: 0 },
+      { text: "Don't know what this is", score: 0 },
+    ]},
+    { category: 'inventory', q: 'Do you have a named person responsible for each AI tool?', options: [
+      { text: 'Yes', score: 3 },
+      { text: 'For some', score: 1 },
+      { text: 'No', score: 0 },
+    ]},
+    { category: 'vendor', q: 'Have you checked whether your AI vendor uses your data for model training?', options: [
+      { text: 'Yes, checked', score: 3 },
+      { text: 'Checked some', score: 1 },
+      { text: 'No', score: 0 },
+      { text: "Didn't know to ask", score: 0 },
+    ]},
+    { category: 'audit', q: 'Would you pass an ICO audit tomorrow?', options: [
+      { text: 'Confident', score: 3 },
+      { text: 'Somewhat', score: 2 },
+      { text: 'Not confident', score: 0 },
+      { text: "Haven't thought about it", score: 0 },
+    ]},
+  ];
+
+  const categoryLabels = {
+    inventory: 'AI Inventory and Accountability',
+    data: 'Data Protection and Privacy',
+    vendor: 'Vendor and Contract Governance',
+    audit: 'Audit Readiness',
+  };
+
+  const categoryDescriptions = {
+    inventory: 'You need to know what AI tools are in use and who is accountable for each one. Shadow AI, where staff use tools without oversight, is one of the biggest compliance risks for SMEs.',
+    data: 'If AI tools process personal data, you need to understand what goes in, whether a DPIA is required, and how that data is protected under UK GDPR.',
+    vendor: 'Your contracts with AI vendors should include Data Processing Agreements and clear terms on whether your data is used to train their models.',
+    audit: 'The ICO expects organisations to demonstrate compliance on demand. Being audit-ready means having your policies, records and controls documented.',
+  };
+
+  const fixMap = {
+    inventory: 'Start by listing every AI tool in your business. Ask each team what they use, including free tools and browser extensions. Then assign a named owner to each tool so there is clear accountability.',
+    data: 'Map what data goes into each AI tool. If any tool processes personal data, complete a Data Protection Impact Assessment (DPIA). This is required under UK GDPR for high-risk processing.',
+    vendor: 'Get a Data Processing Agreement in place with each AI vendor. Check their terms for model training clauses. If your data is being used to train models, you need to know and decide if that is acceptable.',
+    audit: 'Document your AI usage, data flows and risk assessments. The ICO calls this accountability. If you cannot show your working, you are not audit-ready.',
+  };
+
+  let currentQ = 0;
+  let answers = new Array(questions.length).fill(null);
+  let lastCatScores = {};
+  let lastRiskLevel = '';
+
+  const intro = document.getElementById('rc-intro');
+  const container = document.getElementById('rc-container');
+  const results = document.getElementById('rc-results');
+  const startBtn = document.getElementById('rc-start-btn');
+  const qEl = document.getElementById('rc-question');
+  const optsEl = document.getElementById('rc-options');
+  const prevBtn = document.getElementById('rc-prev');
+  const nextBtn = document.getElementById('rc-next');
+  const progressFill = document.getElementById('rc-progress-fill');
+  const progressText = document.getElementById('rc-progress-text');
+
+  startBtn.addEventListener('click', () => {
+    intro.style.display = 'none';
+    container.style.display = 'block';
+    renderQuestion();
+  });
+
+  // Dev/demo shortcut: ?results=1 skips questions and shows results with pre-filled answers
+  if (new URLSearchParams(window.location.search).get('results') === '1') {
+    answers = questions.map((q, i) => i % q.options.length);
+    showResults();
+  }
+
+  function renderQuestion() {
+    const q = questions[currentQ];
+    qEl.innerHTML = `<h2 class="rc-q-text">${q.q}</h2>`;
+    optsEl.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'rc-option';
+      if (answers[currentQ] === i) btn.classList.add('selected');
+      btn.textContent = opt.text;
+      btn.addEventListener('click', () => {
+        answers[currentQ] = i;
+        document.querySelectorAll('.rc-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        nextBtn.disabled = false;
+        nextBtn.classList.add('btn-pulse');
+      });
+      optsEl.appendChild(btn);
+    });
+    prevBtn.style.display = currentQ > 0 ? 'inline-block' : 'none';
+    nextBtn.textContent = currentQ === questions.length - 1 ? 'See My Results' : 'Next';
+    nextBtn.disabled = answers[currentQ] === null;
+    const progress = ((currentQ + 1) / questions.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentQ > 0) { currentQ--; renderQuestion(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (answers[currentQ] === null) return;
+    if (currentQ < questions.length - 1) {
+      currentQ++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  });
+
+  function showResults() {
+    container.style.display = 'none';
+    results.style.display = 'block';
+
+    const cats = { inventory: [], data: [], vendor: [], audit: [] };
+    questions.forEach((q, i) => {
+      const answerIdx = answers[i];
+      const score = q.options[answerIdx].score;
+      cats[q.category].push(score);
+    });
+
+    const catMax = { inventory: 6, data: 9, vendor: 6, audit: 3 };
+    const catScores = {};
+    Object.keys(cats).forEach(cat => {
+      const actual = cats[cat].reduce((a, b) => a + b, 0);
+      const max = catMax[cat];
+      catScores[cat] = Math.round((actual / max) * 100);
+    });
+
+    const totalScore = Math.round(Object.values(catScores).reduce((a, b) => a + b, 0) / 4);
+
+    let riskLevel = '';
+    let riskClass = '';
+    let verdict = '';
+    if (totalScore >= 75) { riskLevel = 'Low'; riskClass = 'rc-risk-low'; verdict = 'You are in good shape. A few gaps to close but you have solid foundations in place.'; }
+    else if (totalScore >= 50) { riskLevel = 'Medium'; riskClass = 'rc-risk-medium'; verdict = 'You have some controls but significant gaps remain. Address the priority areas below.'; }
+    else if (totalScore >= 25) { riskLevel = 'High'; riskClass = 'rc-risk-high'; verdict = 'Your AI use has serious compliance gaps. Act on the priorities below before anything else.'; }
+    else { riskLevel = 'Critical'; riskClass = 'rc-risk-critical'; verdict = 'You are exposed. Your AI use is largely unmanaged and could put you at risk of regulatory action or data breaches.'; }
+
+    lastCatScores = catScores;
+    lastRiskLevel = riskLevel;
+
+    document.getElementById('rc-score').innerHTML = totalScore + '<span class="rc-score-total">/100</span>';
+    const badge = document.getElementById('rc-risk-badge');
+    badge.textContent = 'Risk Level: ' + riskLevel;
+    badge.className = 'rc-risk-badge ' + riskClass;
+    document.getElementById('rc-score-label').textContent = verdict;
+
+    // Breakdown by risk area
+    const breakdown = document.getElementById('rc-breakdown');
+    breakdown.innerHTML = '<h3 class="rc-section-title">Breakdown by Risk Area</h3>';
+    Object.keys(catScores).forEach(cat => {
+      const score = catScores[cat];
+      const barColor = score >= 67 ? 'var(--teal)' : score >= 34 ? 'var(--navy)' : '#e53935';
+      breakdown.innerHTML += `
+        <div class="rc-cat">
+          <div class="rc-cat-header">
+            <span class="rc-cat-name">${categoryLabels[cat]}</span>
+            <span class="rc-cat-score">${score}/100</span>
+          </div>
+          <div class="rc-cat-bar"><div class="rc-cat-fill" style="width:${score}%;background:${barColor};"></div></div>
+          <p class="rc-cat-desc">${categoryDescriptions[cat]}</p>
+        </div>
+      `;
+    });
+
+    // What to fix first
+    const fixes = document.getElementById('rc-fixes');
+    fixes.innerHTML = '<h3 class="rc-section-title">What to Fix First</h3>';
+    const sortedCats = Object.entries(catScores).sort((a, b) => a[1] - b[1]);
+    sortedCats.slice(0, 2).forEach(([cat, score]) => {
+      fixes.innerHTML += `<div class="rc-fix"><span class="rc-fix-priority">Priority</span><p>${fixMap[cat]}</p></div>`;
+    });
+    if (totalScore >= 50) {
+      fixes.innerHTML += `<div class="rc-fix rc-fix-cta"><p style="margin:0;">You have a good foundation. Our <a href="/services/ai-governance-uk">AI governance service</a> can help you close the remaining gaps and get fully audit-ready. <a href="/contact">Book a free call</a> to discuss.</p></div>`;
+    } else {
+      fixes.innerHTML += `<div class="rc-fix rc-fix-cta"><p style="margin:0;">Your AI compliance needs attention. <a href="/contact">Book a free call</a> and we will help you build a practical plan to fix the gaps. No pressure, no jargon.</p></div>`;
+    }
+  }
+
+  // Generate or retrieve user ID from localStorage (no cookies, no consent banner needed)
+  function getUserId() {
+    let userId = localStorage.getItem('ai_consult_user_id');
+    if (!userId) {
+      userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('ai_consult_user_id', userId);
+    }
+    return userId;
+  }
+
+  // Save risk checker results to database
+  function saveResults(email, phone, company) {
+    const scoreEl = document.getElementById('rc-score');
+    const score = parseInt(scoreEl.textContent) || 0;
+    const userId = getUserId();
+
+    fetch('http://' + window.location.hostname + ':8091/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'risk_checker',
+        userId: userId,
+        email: email || null,
+        phone: phone || null,
+        company: company || null,
+        score: score,
+        riskLevel: lastRiskLevel,
+        categoryScores: lastCatScores,
+        answers: answers,
+      }),
+    }).catch(err => console.error('Save failed:', err));
+  }
+
+  document.getElementById('rc-email-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('rc-email-input').value;
+    const phone = document.getElementById('rc-phone-input').value;
+    const company = document.getElementById('rc-company-input').value;
+    saveResults(email, phone, company);
+    document.getElementById('rc-email-success').style.display = 'block';
+    document.getElementById('rc-email-form').style.display = 'none';
+  });
+</script>

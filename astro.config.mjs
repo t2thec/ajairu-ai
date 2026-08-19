@@ -5,12 +5,9 @@ import { SITE_URL } from './src/config.ts';
 
 export default defineConfig({
   site: SITE_URL,
-  output: 'server',
+  output: 'static',
   integrations: [
     mdx(),
     sitemap(),
   ],
-  server: {
-    port: 8090,
-  },
 });
